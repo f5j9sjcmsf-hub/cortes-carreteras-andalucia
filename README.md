@@ -85,6 +85,6 @@ la rama `estado`, separada del código de `main`.
 
 ```bash
 python -m pip install -r requirements.txt
-python -m unittest discover -s tests -v
+python -m pytest -q
 ```
 
