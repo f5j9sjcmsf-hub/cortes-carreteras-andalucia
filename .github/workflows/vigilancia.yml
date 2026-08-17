@@ -1,0 +1,138 @@
+name: Vigilancia de carreteras cortadas - Andalucía
+
+on:
+  workflow_dispatch:
+
+permissions:
+  actions: write
+  contents: write
+
+concurrency:
+  group: carreteras-cortadas-andalucia-vigilancia
+  cancel-in-progress: false
+
+jobs:
+  vigilar:
+    name: Seis comprobaciones de la DGT
+    runs-on: ubuntu-latest
+    timeout-minutes: 100
+    env:
+      STATE_BRANCH: estado
+      STATE_FILE: data/state.json
+      TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+      TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+
+    steps:
+      - name: Descargar el codigo
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          fetch-depth: 0
+
+      - name: Preparar Python
+        uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Instalar dependencias y ejecutar todas las pruebas
+        run: |
+          python -m pip install --disable-pip-version-check -r requirements.txt
+          python -m pytest -q
+
+      - name: Cargar el estado operativo
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+
+          state_worktree="${RUNNER_TEMP}/carreteras-cortadas-andalucia-estado"
+          echo "STATE_WORKTREE=${state_worktree}" >> "${GITHUB_ENV}"
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          state_branch_exists=false
+          if git ls-remote --exit-code --heads origin "${STATE_BRANCH}" >/dev/null; then
+            state_branch_exists=true
+          else
+            lookup_status=$?
+            if [[ "${lookup_status}" -ne 2 ]]; then
+              echo "No se pudo consultar la rama remota de estado." >&2
+              exit "${lookup_status}"
+            fi
+          fi
+
+          if [[ "${state_branch_exists}" == true ]]; then
+            git fetch --no-tags origin \
+              "refs/heads/${STATE_BRANCH}:refs/remotes/origin/${STATE_BRANCH}"
+            git worktree add -b "${STATE_BRANCH}" \
+              "${state_worktree}" "origin/${STATE_BRANCH}"
+          else
+            # Primer arranque: se prepara una rama huerfana y se publicara
+            # directamente el primer estado real, sin un commit vacio previo.
+            git worktree add --detach "${state_worktree}" HEAD
+            git -C "${state_worktree}" switch --orphan "${STATE_BRANCH}"
+            git -C "${state_worktree}" rm -rf --ignore-unmatch .
+            mkdir -p "${state_worktree}/data"
+            printf '{}\n' > "${state_worktree}/${STATE_FILE}"
+          fi
+
+          mkdir -p "$(dirname "${STATE_FILE}")"
+          if [[ -f "${state_worktree}/${STATE_FILE}" ]]; then
+            python -m json.tool "${state_worktree}/${STATE_FILE}" >/dev/null
+            cp "${state_worktree}/${STATE_FILE}" "${STATE_FILE}.tmp"
+          else
+            printf '{}\n' > "${STATE_FILE}.tmp"
+          fi
+          mv "${STATE_FILE}.tmp" "${STATE_FILE}"
+
+      - name: Vigilar y guardar cada cambio de estado
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+
+          for comprobacion in 1 2 3 4 5 6; do
+            echo "Comprobacion ${comprobacion} de 6"
+            python src/main.py
+
+            python -m json.tool "${STATE_FILE}" >/dev/null
+            mkdir -p "${STATE_WORKTREE}/$(dirname "${STATE_FILE}")"
+            cp "${STATE_FILE}" "${STATE_WORKTREE}/${STATE_FILE}.tmp"
+            mv "${STATE_WORKTREE}/${STATE_FILE}.tmp" \
+              "${STATE_WORKTREE}/${STATE_FILE}"
+
+            git -C "${STATE_WORKTREE}" add -f -- "${STATE_FILE}"
+            if ! git -C "${STATE_WORKTREE}" diff --cached --quiet -- "${STATE_FILE}"; then
+              git -C "${STATE_WORKTREE}" commit \
+                -m "Actualiza estado tras comprobacion ${comprobacion}"
+              git -C "${STATE_WORKTREE}" push origin "HEAD:${STATE_BRANCH}"
+            fi
+
+            if [[ "${comprobacion}" -lt 6 ]]; then
+              sleep 900
+            fi
+          done
+
+  relevo:
+    name: Lanzar la siguiente ejecucion
+    needs: vigilar
+    if: ${{ always() && !cancelled() }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    permissions:
+      actions: write
+      contents: read
+
+    steps:
+      - name: Esperar antes del relevo si fallo la vigilancia
+        if: ${{ needs.vigilar.result == 'failure' }}
+        run: sleep 900
+
+      - name: Despachar el relevo
+        env:
+          GH_TOKEN: ${{ github.token }}
+          DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}
+        run: >-
+          gh workflow run vigilancia.yml
+          --repo "${GITHUB_REPOSITORY}"
+          --ref "${DEFAULT_BRANCH}"
+
