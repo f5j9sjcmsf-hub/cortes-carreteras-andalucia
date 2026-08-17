@@ -10,6 +10,7 @@ previous baseline untouched.
 from __future__ import annotations
 
 from copy import deepcopy
+from datetime import datetime
 from decimal import Decimal, InvalidOperation
 from hashlib import sha256
 from html import escape
@@ -45,6 +46,7 @@ _CLOSURE_FIELDS = (
     "reason",
     "cause_code",
     "detail_code",
+    "published_at",
 )
 
 # Only user-visible changes produce a Telegram update.  Identifiers and DGT
@@ -57,6 +59,7 @@ _VISIBLE_FIELDS = (
     "direction",
     "km_start",
     "km_end",
+    "published_at",
 )
 
 _DIRECTION_LABELS = {
@@ -70,15 +73,13 @@ _DIRECTION_ALIASES = {
     "increasing": "increasing",
     "increase": "increasing",
     "increasing direction": "increasing",
-    # In the Spanish DGT profile these signs describe the carriageway side,
-    # not the intuitive arithmetic direction.
-    "negative": "increasing",
+    "positive": "increasing",
     "creciente": "increasing",
     "ascendente": "increasing",
     "decreasing": "decreasing",
     "decrease": "decreasing",
     "decreasing direction": "decreasing",
-    "positive": "decreasing",
+    "negative": "decreasing",
     "decreciente": "decreasing",
     "descendente": "decreasing",
     "both": "both",
@@ -264,6 +265,7 @@ def normalize_closure(raw: Mapping[str, Any]) -> dict[str, Any]:
         "reason": _clean_text(raw.get("reason")),
         "cause_code": _clean_text(raw.get("cause_code")),
         "detail_code": _clean_text(raw.get("detail_code")),
+        "published_at": _normalise_published_at(raw.get("published_at")),
     }
 
 
@@ -279,14 +281,16 @@ def format_message(closure: Mapping[str, Any], event: str) -> str:
     road = item["road"] or "No indicada"
     direction = _DIRECTION_LABELS[item["direction"]]
     kilometres = _format_kilometres(item["km_start"], item["km_end"])
+    published = _format_published_at(item["published_at"])
 
     return (
         f"<b>{EVENT_TITLES[event]}</b>\n\n"
-        f"📍 {escape(province)} — {escape(locality)}\n"
-        f"{escape(reason)}\n\n"
-        f"Vía: {escape(road)}\n"
-        f"Sentido: {direction}\n"
-        f"Kilómetros: {escape(kilometres)}"
+        f"<i>📍 {escape(province)} — {escape(locality)}</i>\n"
+        f"<b>{escape(reason)}</b>\n\n"
+        f"<b>{escape(road)}</b>\n\n"
+        f"<i>{direction}</i>\n"
+        f"<i>{escape(kilometres)}</i>\n"
+        f"<i>Publicado: {escape(published)}</i>"
     )
 
 
@@ -605,6 +609,32 @@ def _normalise_km(value: Any) -> str:
     return "0" if normalised in {"-0", ""} else normalised
 
 
+def _normalise_published_at(value: Any) -> str:
+    text = _clean_text(value)
+    if not text:
+        return ""
+    parsed = _parse_published_at(text)
+    if parsed is None:
+        return ""
+    # Canonicalising avoids false updates when DATEX alternates equivalent
+    # forms such as a trailing Z and +00:00 or optional zero microseconds.
+    return parsed.isoformat(timespec="seconds")
+
+
+def _parse_published_at(value: str) -> datetime | None:
+    candidate = value[:-1] + "+00:00" if value.endswith(("Z", "z")) else value
+    try:
+        parsed = datetime.fromisoformat(candidate)
+    except ValueError:
+        return None
+    # DATEX creation times are required to carry their own zone.  A naive
+    # timestamp cannot fulfil the display contract, so use the explicit
+    # fallback instead of guessing the runner's timezone.
+    if parsed.tzinfo is None or parsed.utcoffset() is None:
+        return None
+    return parsed
+
+
 def _parse_decimal(text: str) -> Decimal | None:
     candidate = text.strip().replace(" ", "")
     if "," in candidate and "." in candidate:
@@ -645,4 +675,13 @@ def _format_single_km(value: str) -> str:
         return value
     # DGT road points conventionally use three decimal positions.
     return f"{number:.3f}".replace(".", ",")
+
+
+def _format_published_at(value: str) -> str:
+    parsed = _parse_published_at(value) if value else None
+    if parsed is None:
+        return "Fecha no indicada"
+    # Do not convert to the GitHub runner's zone: the displayed wall time and
+    # date intentionally come from the offset carried by the DGT timestamp.
+    return parsed.strftime("%d/%m/%Y · %H:%M h")
 

@@ -5,6 +5,9 @@ import unittest
 
 from src.logic import (
     EVENT_CLOSED,
+    EVENT_PARTIAL_REOPEN,
+    EVENT_REOPENED,
+    EVENT_UPDATED,
     UnsupportedStateVersion,
     format_message,
     plan_changes,
@@ -32,6 +35,7 @@ def closure(**overrides):
         "reason": "Desprendimiento",
         "cause_code": "infrastructureDamageObstruction",
         "detail_code": "rockfalls",
+        "published_at": "2026-08-17T13:45:00+02:00",
     }
     item.update(overrides)
     return item
@@ -72,13 +76,14 @@ class ReconciliationTests(unittest.TestCase):
 
         self.assertEqual(messages, reversed_messages)
         self.assertEqual(len(messages), 2)
-        self.assertIn("📍 Almería — Níjar", messages[0])
+        self.assertIn("<i>📍 Almería — Níjar</i>", messages[0])
         self.assertIn("<b>🔴 CARRETERA CORTADA</b>", messages[0])
-        self.assertIn("Vía: A-7", messages[0])
-        self.assertIn("Sentido: Creciente", messages[0])
-        self.assertIn("Kilómetros: 481,500", messages[0])
-        self.assertIn("📍 Granada — Güéjar Sierra", messages[1])
-        self.assertIn("Kilómetros: 31,000–39,000", messages[1])
+        self.assertIn("<b>A-7</b>", messages[0])
+        self.assertIn("<i>Creciente</i>", messages[0])
+        self.assertIn("<i>481,500</i>", messages[0])
+        self.assertIn("<i>Publicado: 17/08/2026 · 13:45 h</i>", messages[0])
+        self.assertIn("<i>📍 Granada — Güéjar Sierra</i>", messages[1])
+        self.assertIn("<i>31,000–39,000</i>", messages[1])
         self.assertEqual(state["version"], 1)
         self.assertIs(state["initialized"], True)
         self.assertEqual(state["revision"], 1)
@@ -124,19 +129,19 @@ class ReconciliationTests(unittest.TestCase):
         messages, next_state = plan_changes(state, [closure(), new], NOW_2)
         self.assertEqual(len(messages), 1)
         self.assertIn("🔴 CARRETERA CORTADA", messages[0])
-        self.assertIn("📍 Jaén — Cazorla", messages[0])
-        self.assertIn("Sentido: Decreciente", messages[0])
+        self.assertIn("<i>📍 Jaén — Cazorla</i>", messages[0])
+        self.assertIn("<i>Decreciente</i>", messages[0])
         self.assertEqual(len(next_state["active"]), 2)
 
     def test_every_user_visible_field_change_is_announced_as_update(self):
         cases = [
-            ("province", "Málaga", "📍 Málaga — Güéjar Sierra"),
-            ("localities", ["Monachil"], "📍 Granada — Monachil"),
-            ("reason", "Obras", "\nObras\n"),
-            ("road", "A-92", "Vía: A-92"),
-            ("direction", "increasing", "Sentido: Creciente"),
-            ("km_start", 32, "Kilómetros: 32,000–39,000"),
-            ("km_end", 40, "Kilómetros: 31,000–40,000"),
+            ("province", "Málaga", "<i>📍 Málaga — Güéjar Sierra</i>"),
+            ("localities", ["Monachil"], "<i>📍 Granada — Monachil</i>"),
+            ("reason", "Obras", "<b>Obras</b>"),
+            ("road", "A-92", "<b>A-92</b>"),
+            ("direction", "increasing", "<i>Creciente</i>"),
+            ("km_start", 32, "<i>32,000–39,000</i>"),
+            ("km_end", 40, "<i>31,000–40,000</i>"),
         ]
         for field, value, expected in cases:
             with self.subTest(field=field):
@@ -240,7 +245,7 @@ class ReconciliationTests(unittest.TestCase):
         messages, next_state = plan_changes(state, [remaining], NOW_2)
         self.assertEqual(len(messages), 1)
         self.assertIn("🟠 REAPERTURA PARCIAL", messages[0])
-        self.assertIn("Sentido: Creciente", messages[0])
+        self.assertIn("<i>Creciente</i>", messages[0])
         self.assertEqual(only_active(next_state)["direction"], "increasing")
 
     def test_direction_reduction_without_id_overlap_is_regular_update(self):
@@ -271,7 +276,7 @@ class ReconciliationTests(unittest.TestCase):
         messages, next_state = plan_changes(state, [], NOW_2)
         self.assertEqual(len(messages), 1)
         self.assertIn("🟢 CARRETERA REABIERTA", messages[0])
-        self.assertIn("Vía: A-395", messages[0])
+        self.assertIn("<b>A-395</b>", messages[0])
         self.assertEqual(next_state["active"], {})
 
     def test_reclosure_after_total_reopening_is_announced_again(self):
@@ -325,24 +330,78 @@ class ReconciliationTests(unittest.TestCase):
                 km_end=None,
                 direction="not-a-datex-direction",
                 reason="Obras <urgentes>",
+                published_at=None,
             ),
             EVENT_CLOSED,
         )
         self.assertIn("Cádiz &amp; Málaga — &lt;Ronda&gt;", message)
         self.assertIn("Obras &lt;urgentes&gt;", message)
-        self.assertIn("Vía: No indicada", message)
-        self.assertIn("Sentido: No indicado", message)
-        self.assertIn("Kilómetros: No indicados", message)
+        self.assertIn("<b>No indicada</b>", message)
+        self.assertIn("<i>No indicado</i>", message)
+        self.assertIn("<i>No indicados</i>", message)
+        self.assertIn("<i>Publicado: Fecha no indicada</i>", message)
 
-    def test_spanish_dgt_signed_directions_use_the_profile_semantics(self):
+    def test_etraffic_signed_directions_use_the_official_semantics(self):
         negative = format_message(
             closure(direction="negative"), EVENT_CLOSED
         )
         positive = format_message(
             closure(direction="positive"), EVENT_CLOSED
         )
-        self.assertIn("Sentido: Creciente", negative)
-        self.assertIn("Sentido: Decreciente", positive)
+        self.assertIn("<i>Decreciente</i>", negative)
+        self.assertIn("<i>Creciente</i>", positive)
+
+    def test_all_event_types_use_the_exact_confirmed_html_layout(self):
+        expected_titles = {
+            EVENT_CLOSED: "🔴 CARRETERA CORTADA",
+            EVENT_UPDATED: "🟠 CORTE ACTUALIZADO",
+            EVENT_PARTIAL_REOPEN: "🟠 REAPERTURA PARCIAL",
+            EVENT_REOPENED: "🟢 CARRETERA REABIERTA",
+        }
+        expected_body = (
+            "<i>📍 Granada — Güéjar Sierra</i>\n"
+            "<b>Desprendimiento</b>\n\n"
+            "<b>A-395</b>\n\n"
+            "<i>Doble sentido</i>\n"
+            "<i>31,000–39,000</i>\n"
+            "<i>Publicado: 17/08/2026 · 13:45 h</i>"
+        )
+        for event, title in expected_titles.items():
+            with self.subTest(event=event):
+                self.assertEqual(
+                    format_message(closure(), event),
+                    f"<b>{title}</b>\n\n{expected_body}",
+                )
+
+    def test_published_at_is_preserved_and_a_real_change_is_an_update(self):
+        state = baseline()
+        self.assertEqual(
+            only_active(state)["published_at"],
+            "2026-08-17T13:45:00+02:00",
+        )
+
+        changed = closure(published_at="2026-08-17T14:30:00+02:00")
+        messages, next_state = plan_changes(state, [changed], NOW_2)
+
+        self.assertEqual(len(messages), 1)
+        self.assertIn("🟠 CORTE ACTUALIZADO", messages[0])
+        self.assertIn("<i>Publicado: 17/08/2026 · 14:30 h</i>", messages[0])
+        self.assertEqual(
+            only_active(next_state)["published_at"],
+            "2026-08-17T14:30:00+02:00",
+        )
+
+    def test_published_at_keeps_the_timezone_carried_by_dgt(self):
+        message = format_message(
+            closure(published_at="2026-12-03T23:05:30-03:00"), EVENT_CLOSED
+        )
+        self.assertIn("<i>Publicado: 03/12/2026 · 23:05 h</i>", message)
+
+    def test_equivalent_utc_timestamp_spelling_does_not_create_false_update(self):
+        state = baseline(closure(published_at="2026-08-17T11:45:00Z"))
+        equivalent = closure(published_at="2026-08-17T11:45:00+00:00")
+        messages, _ = plan_changes(state, [equivalent], NOW_2)
+        self.assertEqual(messages, [])
 
     def test_reconcile_selects_initial_then_incremental_mode(self):
         initial_messages, state = reconcile(None, [closure()], NOW_1)

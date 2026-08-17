@@ -21,6 +21,9 @@ def _record(
     validity: str = "active",
     management_type: str = "roadClosed",
     lane_usage: str | None = "allLanesCompleteCarriageway",
+    vehicle_type: str | None = "anyVehicle",
+    creation_time: str | None = "2026-08-01T10:15:30.000+02:00",
+    version_time: str | None = "2026-08-02T12:00:00.000+02:00",
     cause: str = "environmentalObstruction",
     detail_tag: str = "environmentalObstructionType",
     detail: str = "rockfalls",
@@ -35,6 +38,23 @@ def _record(
         if lane_usage is not None
         else ""
     )
+    vehicle_xml = (
+        "<sit:forVehiclesWithCharacteristicsOf>"
+        f"<com:vehicleType>{vehicle_type}</com:vehicleType>"
+        "</sit:forVehiclesWithCharacteristicsOf>"
+        if vehicle_type is not None
+        else ""
+    )
+    creation_xml = (
+        f"<sit:situationRecordCreationTime>{creation_time}</sit:situationRecordCreationTime>"
+        if creation_time is not None
+        else ""
+    )
+    version_xml = (
+        f"<sit:situationRecordVersionTime>{version_time}</sit:situationRecordVersionTime>"
+        if version_time is not None
+        else ""
+    )
     location_values = "".join(
         f"<lse:municipality>{municipality}</lse:municipality>"
         for municipality in municipalities
@@ -46,8 +66,9 @@ def _record(
     return f"""
       <sit:situation id="{situation_id}">
         <sit:situationRecord id="{record_id}">
+          {creation_xml}
+          {version_xml}
           <sit:validity><sit:validityStatus>{validity}</sit:validityStatus></sit:validity>
-          <sit:roadOrCarriagewayOrLaneManagementType>{management_type}</sit:roadOrCarriagewayOrLaneManagementType>
           <sit:cause>
             <sit:causeType>{cause}</sit:causeType>
             <sit:{detail_tag}>{detail}</sit:{detail_tag}>
@@ -68,6 +89,8 @@ def _record(
               </loc:from>
             </loc:tpegLinearLocation>
           </sit:locationReference>
+          {vehicle_xml}
+          <sit:roadOrCarriagewayOrLaneManagementType>{management_type}</sit:roadOrCarriagewayOrLaneManagementType>
         </sit:situationRecord>
       </sit:situation>
     """
@@ -78,6 +101,7 @@ def _xml(*situations: str) -> bytes:
     <d2:D2LogicalModel
       xmlns:d2="urn:datex:d2"
       xmlns:sit="urn:datex:situation"
+      xmlns:com="urn:datex:common"
       xmlns:loc="urn:datex:location"
       xmlns:lse="urn:dgt:location-extension">
       <d2:payload>{''.join(situations)}</d2:payload>
@@ -93,6 +117,7 @@ def test_extracts_normalised_fields_from_namespaced_xml():
             "source_ids": ["s1:r1"],
             "situation_ids": ["s1"],
             "record_ids": ["r1"],
+            "published_at": "2026-08-01T10:15:30.000+02:00",
             "province": "Málaga",
             "localities": ["Casares"],
             "road": "A-7150",
@@ -109,8 +134,8 @@ def test_extracts_normalised_fields_from_namespaced_xml():
 @pytest.mark.parametrize(
     ("source", "expected"),
     [
-        ("negative", "increasing"),
-        ("positive", "decreasing"),
+        ("negative", "decreasing"),
+        ("positive", "increasing"),
         ("both", "both"),
         ("unknown", "unknown"),
         ("futureDirection", "unknown"),
@@ -123,17 +148,19 @@ def test_dgt_direction_mapping(source: str, expected: str):
 
 def test_exact_opposite_directions_are_grouped_and_ids_combined():
     increasing = _record(
-        situation_id="s-negative",
-        record_id="r-negative",
-        direction="negative",
+        situation_id="s-increasing",
+        record_id="r-increasing",
+        direction="positive",
         municipalities=("MANILVA", "CASARES"),
+        creation_time="2026-08-01T10:00:00.000+02:00",
     )
     decreasing = _record(
-        situation_id="s-positive",
-        record_id="r-positive",
-        direction="positive",
+        situation_id="s-decreasing",
+        record_id="r-decreasing",
+        direction="negative",
         municipalities=("CASARES", "MANILVA"),
         kilometres=("1.2", "2.25"),
+        creation_time="2026-08-01T08:30:00.000+00:00",
     )
 
     closures = dgt.parse_closures(_xml(increasing, decreasing))
@@ -142,11 +169,12 @@ def test_exact_opposite_directions_are_grouped_and_ids_combined():
     assert closures[0]["direction"] == "both"
     assert closures[0]["localities"] == ["Casares", "Manilva"]
     assert closures[0]["source_ids"] == [
-        "s-negative:r-negative",
-        "s-positive:r-positive",
+        "s-increasing:r-increasing",
+        "s-decreasing:r-decreasing",
     ]
-    assert closures[0]["situation_ids"] == ["s-negative", "s-positive"]
-    assert closures[0]["record_ids"] == ["r-negative", "r-positive"]
+    assert closures[0]["situation_ids"] == ["s-increasing", "s-decreasing"]
+    assert closures[0]["record_ids"] == ["r-increasing", "r-decreasing"]
+    assert closures[0]["published_at"] == "2026-08-01T10:00:00.000+02:00"
 
 
 @pytest.mark.parametrize(
@@ -195,6 +223,7 @@ def test_native_both_record_is_preserved_and_absorbs_redundant_direction():
         {"validity": "suspended"},
         {"management_type": "laneClosures"},
         {"lane_usage": "rightLane"},
+        {"vehicle_type": "heavyGoodsVehicle"},
     ],
 )
 def test_filters_non_matching_records(overrides):
@@ -204,6 +233,151 @@ def test_filters_non_matching_records(overrides):
 def test_accepts_complete_road_closure_when_lane_usage_is_absent():
     closures = dgt.parse_closures(_xml(_record(lane_usage=None)))
     assert len(closures) == 1
+
+
+def test_published_at_uses_creation_time_not_version_time():
+    closure = dgt.parse_closures(
+        _xml(
+            _record(
+                creation_time="2026-07-10T13:01:47.000+02:00",
+                version_time="2026-08-17T09:30:00.000+02:00",
+            )
+        )
+    )[0]
+    assert closure["published_at"] == "2026-07-10T13:01:47.000+02:00"
+
+
+def test_missing_creation_time_is_returned_as_empty_string():
+    closure = dgt.parse_closures(_xml(_record(creation_time=None)))[0]
+    assert closure["published_at"] == ""
+
+
+def test_a44_complete_carriageway_closure_is_included_regression():
+    closure = dgt.parse_closures(
+        _xml(
+            _record(
+                situation_id="20856706",
+                record_id="25008029",
+                province="JAÉN",
+                municipalities=("PEGALAJAR", "CAMBIL"),
+                road="A-44",
+                kilometres=("55.8", "62.5"),
+                direction="negative",
+                management_type="carriagewayClosures",
+                lane_usage="allLanesCompleteCarriageway",
+                cause="roadMaintenance",
+                detail_tag="roadMaintenanceType",
+                detail="roadworks",
+                creation_time="2026-07-10T13:01:47.000+02:00",
+            )
+        )
+    )[0]
+
+    assert closure["road"] == "A-44"
+    assert closure["province"] == "Jaén"
+    assert closure["localities"] == ["Cambil", "Pegalajar"]
+    assert (closure["km_start"], closure["km_end"]) == (55.8, 62.5)
+    assert closure["direction"] == "decreasing"
+    assert closure["reason"] == "Obras"
+    assert closure["published_at"] == "2026-07-10T13:01:47.000+02:00"
+
+
+def test_a44_partial_companion_records_remain_excluded_regression():
+    partial_lane = _record(
+        situation_id="20856706",
+        record_id="25008030",
+        province="JAÉN",
+        municipalities=("CAMBIL", "PEGALAJAR"),
+        road="A-44",
+        kilometres=("62.5", "55.8"),
+        direction="positive",
+        management_type="laneClosures",
+        lane_usage="leftLane",
+        cause="roadMaintenance",
+        detail_tag="roadMaintenanceType",
+        detail="roadworks",
+    )
+    allowed_tidal_lane = _record(
+        situation_id="20856706",
+        record_id="25008031",
+        province="JAÉN",
+        municipalities=("PEGALAJAR", "CAMBIL"),
+        road="A-44",
+        kilometres=("55.8", "62.5"),
+        direction="negative",
+        management_type="useOfSpecifiedLanesOrCarriagewaysAllowed",
+        lane_usage="tidalFlowLane",
+        cause="roadMaintenance",
+        detail_tag="roadMaintenanceType",
+        detail="roadworks",
+    )
+
+    assert dgt.parse_closures(_xml(partial_lane, allowed_tidal_lane)) == []
+
+
+def test_a401_jodar_opposite_carriageway_closures_are_grouped_regression():
+    positive = _record(
+        situation_id="22173663",
+        record_id="26393064",
+        province="JAÉN",
+        municipalities=("ÚBEDA", "ÚBEDA"),
+        road="A-401",
+        kilometres=("13.2", "12.0"),
+        direction="positive",
+        management_type="carriagewayClosures",
+        cause="roadMaintenance",
+        detail_tag="roadMaintenanceType",
+        detail="roadworks",
+        creation_time="2026-08-06T13:48:48.000+02:00",
+    )
+    negative = _record(
+        situation_id="22173663",
+        record_id="26393065",
+        province="JAÉN",
+        municipalities=("ÚBEDA", "ÚBEDA"),
+        road="A-401",
+        kilometres=("12.0", "13.2"),
+        direction="negative",
+        management_type="carriagewayClosures",
+        cause="roadMaintenance",
+        detail_tag="roadMaintenanceType",
+        detail="roadworks",
+        creation_time="2026-08-06T13:48:53.000+02:00",
+    )
+
+    closures = dgt.parse_closures(_xml(positive, negative))
+
+    assert len(closures) == 1
+    assert closures[0]["road"] == "A-401"
+    assert closures[0]["localities"] == ["Úbeda"]
+    assert closures[0]["direction"] == "both"
+    assert closures[0]["record_ids"] == ["26393064", "26393065"]
+    assert closures[0]["published_at"] == "2026-08-06T13:48:48.000+02:00"
+
+
+def test_closure_value_after_nested_other_is_detected_regression():
+    closure = dgt.parse_closures(
+        _xml(
+            _record(
+                situation_id="22352607",
+                record_id="26579448",
+                province="MÁLAGA",
+                municipalities=("MÁLAGA",),
+                road="MA-20",
+                kilometres=("7.0",),
+                direction="negative",
+                management_type="carriagewayClosures",
+                cause="roadOrCarriagewayOrLaneManagement",
+                detail_tag="roadOrCarriagewayOrLaneManagementType",
+                detail="other",
+                creation_time="2026-08-11T00:01:29.000+02:00",
+            )
+        )
+    )[0]
+
+    assert closure["direction"] == "decreasing"
+    assert closure["reason"] == "Regulación especial"
+    assert closure["source_ids"] == ["22352607:26579448"]
 
 
 def test_uses_andalusian_province_fallback_when_community_is_absent():

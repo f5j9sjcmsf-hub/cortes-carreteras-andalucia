@@ -11,9 +11,18 @@ bot de incendios forestales. El funcionamiento del bot anterior no se modifica.
 
 La fuente oficial es la publicación de incidencias
 [DATEX II v3.7 de la DGT](https://nap.dgt.es/en/dataset/incidencias-dgt-datex2-v3-7).
-El bot incluye únicamente registros activos con cierre completo de la carretera
-o de un sentido. Se excluyen retenciones, carriles aislados cerrados,
-circulación alterna y restricciones que no supongan un corte total.
+El bot incluye únicamente registros activos que DGT publica como alguno de
+estos dos tipos DATEX II:
+
+- `roadClosed`: carretera o tramo completo cerrado;
+- `carriagewayClosures`: calzada completa cerrada, normalmente todo un sentido
+  de una vía dividida. Si el registro informa del uso de carriles, debe indicar
+  `allLanesCompleteCarriageway`.
+
+Se excluyen `laneClosures`, los cierres de uno o varios carriles que no abarcan
+la calzada completa, las retenciones, la circulación alterna y las
+restricciones para clases concretas de vehículos. Por tanto, un sentido con
+todos sus carriles cerrados sí se publica; un carril parcial cerrado, no.
 
 Se incluyen todas las causas publicadas por DGT: obras, desprendimientos,
 daños en la vía, meteorología, inundaciones, nieve, accidentes, obstáculos y
@@ -22,15 +31,19 @@ cualquier categoría futura que acompañe a un cierre completo.
 ## Sentidos y agrupación
 
 - `negative` en el perfil español de DGT significa sentido kilométrico
-  creciente.
-- `positive` significa sentido kilométrico decreciente.
+  decreciente.
+- `positive` significa sentido kilométrico creciente.
 - `both` significa doble sentido.
 - Dos registros opuestos con la misma vía, tramo, provincia, localidades y
   causa se presentan como un único corte de doble sentido.
 
-La agrupación conserva todos los identificadores DGT originales. Si desaparece
-solo uno de los dos sentidos, se publica una reapertura parcial; si desaparecen
-ambos, se publica la reapertura total.
+La agrupación conserva todos los identificadores DGT originales. Los dos
+sentidos continúan siguiéndose por separado aunque se muestren en un único
+aviso: si desaparece solo uno, se publica una reapertura parcial y el sentido
+restante sigue activo; si desaparecen ambos, se publica la reapertura total. Si
+el tramo vuelve a cerrarse después, se anuncia como un nuevo cierre. De este
+modo se mantiene el seguimiento completo de cierres, cambios, aperturas
+parciales, reaperturas totales y cierres posteriores.
 
 ## Avisos
 
@@ -43,18 +56,20 @@ se envían mensajes cuando ocurre alguno de estos cambios:
 - reapertura total;
 - cierre posterior de una carretera que ya había sido reabierta.
 
-El formato general es:
+El aviso no añade etiquetas delante de la vía, el sentido ni los kilómetros.
+La ubicación, el sentido, el tramo y la fecha de publicación aparecen en
+cursiva; la causa y la vía, en negrita. Por ejemplo:
 
-```text
-🔴 CARRETERA CORTADA
-
-📍 Granada — Güéjar Sierra
-Desprendimiento
-
-Vía: A-395
-Sentido: Doble sentido
-Kilómetros: 31–39
-```
+> **🔴 CARRETERA CORTADA**
+>
+> *📍 Granada — Güéjar Sierra*  
+> **Desprendimiento**
+>
+> **A-395**
+>
+> *Doble sentido*  
+> *31,000–39,000*  
+> *Publicado: 17/08/2026 · 13:45 h*
 
 ## Configuración de Telegram
 

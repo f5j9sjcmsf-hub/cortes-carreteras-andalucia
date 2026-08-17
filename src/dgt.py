@@ -8,6 +8,7 @@ and have changed between DATEX releases.
 from __future__ import annotations
 
 from collections import defaultdict
+from datetime import datetime, timezone
 import math
 import re
 import unicodedata
@@ -27,13 +28,22 @@ class DGTFeedError(RuntimeError):
 
 
 DIRECTION_MAP = {
-    # In the DGT profile, "negative" follows increasing kilometre posts and
-    # "positive" follows decreasing kilometre posts.
-    "negative": "increasing",
-    "positive": "decreasing",
+    # These labels follow the official eTraffic presentation of the DGT feed.
+    "negative": "decreasing",
+    "positive": "increasing",
     "both": "both",
     "bothways": "both",
     "unknown": "unknown",
+}
+
+
+# Both values are closure types in the DATEX II Road Closures reference
+# profile.  ``roadClosed`` closes the referenced road/direction, while
+# ``carriagewayClosures`` closes the referenced carriageway (normally one
+# complete direction on a divided road).
+COMPLETE_CLOSURE_MANAGEMENT_TYPES = {
+    "roadclosed",
+    "carriagewayclosures",
 }
 
 
@@ -51,6 +61,7 @@ GENERIC_REASON_MAP = {
     "nonWeatherRelatedRoadConditions": "Estado deficiente de la vía",
     "poorEnvironmentConditions": "Condiciones ambientales adversas",
     "publicEvent": "Evento público",
+    "roadOrCarriagewayOrLaneManagement": "Regulación especial",
     "roadMaintenance": "Obras o mantenimiento",
     "roadworks": "Obras",
     "vehicleObstruction": "Vehículo obstaculizando la vía",
@@ -498,15 +509,26 @@ def _record_to_closure(
 ) -> dict[str, Any] | None:
     if _first_text(record, "validityStatus").casefold() != "active":
         return None
-    if (
-        _first_text(record, "roadOrCarriagewayOrLaneManagementType").casefold()
-        != "roadclosed"
-    ):
+    management_types = {
+        value.casefold()
+        for value in _texts(record, "roadOrCarriagewayOrLaneManagementType")
+    }
+    if management_types.isdisjoint(COMPLETE_CLOSURE_MANAGEMENT_TYPES):
         return None
 
     lane_usages = _texts(record, "laneUsage")
     if lane_usages and not all(
         value.casefold() == "alllanescompletecarriageway" for value in lane_usages
+    ):
+        return None
+
+    # DATEX closure records may target vehicles with particular
+    # characteristics.  Those are restrictions, not complete closures for all
+    # traffic.  An omitted vehicle type means all vehicles in DATEX; DGT's
+    # complete closures normally state ``anyVehicle`` explicitly.
+    vehicle_types = _texts(record, "vehicleType")
+    if vehicle_types and not any(
+        value.casefold() == "anyvehicle" for value in vehicle_types
     ):
         return None
 
@@ -528,6 +550,7 @@ def _record_to_closure(
         "source_ids": [source_id] if source_id else [],
         "situation_ids": [situation_id] if situation_id else [],
         "record_ids": [record_id] if record_id else [],
+        "published_at": _first_text(record, "situationRecordCreationTime"),
         "province": _canonical_province(province_values),
         "localities": localities,
         "road": _first_text(record, "roadName", "roadNumber", "roadIdentifier"),
@@ -561,7 +584,26 @@ def _merge(records: list[dict[str, Any]], direction: str) -> dict[str, Any]:
         merged[field] = _unique(
             value for record in records for value in record[field]
         )
+    publication_times = [
+        record["published_at"] for record in records if record["published_at"]
+    ]
+    merged["published_at"] = (
+        min(publication_times, key=_publication_sort_key) if publication_times else ""
+    )
     return merged
+
+
+def _publication_sort_key(value: str) -> tuple[int, datetime, str]:
+    """Compare source ISO timestamps chronologically while preserving them."""
+
+    try:
+        parsed = datetime.fromisoformat(value.replace("Z", "+00:00"))
+    except ValueError:
+        return 1, datetime.max, value
+    if parsed.tzinfo is None:
+        parsed = parsed.replace(tzinfo=timezone.utc)
+    as_utc = parsed.astimezone(timezone.utc).replace(tzinfo=None)
+    return 0, as_utc, value
 
 
 def _group_opposite_directions(
@@ -696,6 +738,7 @@ def fetch_closures(
 __all__ = [
     "DGT_FEED_URL",
     "DGTFeedError",
+    "COMPLETE_CLOSURE_MANAGEMENT_TYPES",
     "DETAIL_REASON_MAP",
     "DIRECTION_MAP",
     "GENERIC_REASON_MAP",
