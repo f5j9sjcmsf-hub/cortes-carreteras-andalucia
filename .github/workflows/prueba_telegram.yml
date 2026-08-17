@@ -62,8 +62,14 @@ jobs:
               },
               timeout=30,
           )
-          response.raise_for_status()
-          if response.json().get("ok") is not True:
-              raise SystemExit("Telegram no confirmo el envio del mensaje.")
-          PY
+          try:
+              payload = response.json()
+          except ValueError:
+              payload = {}
 
+          if not response.ok or payload.get("ok") is not True:
+              detail = payload.get("description", "respuesta sin detalle")
+              raise SystemExit(
+                  f"Telegram rechazo el envio ({response.status_code}): {detail}"
+              )
+          PY
