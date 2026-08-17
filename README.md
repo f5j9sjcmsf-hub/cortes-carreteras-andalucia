@@ -4,9 +4,6 @@ Bot independiente de Telegram que vigila todos los cortes completos de
 carreteras publicados por la Dirección General de Tráfico en Andalucía, sin
 limitarse a una causa concreta.
 
-Este proyecto no comparte bot, canal, repositorio, secretos ni estado con el
-bot de incendios forestales. El funcionamiento del bot anterior no se modifica.
-
 ## Fuente y alcance
 
 La fuente oficial es la publicación de incidencias
