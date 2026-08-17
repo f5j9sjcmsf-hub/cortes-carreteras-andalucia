@@ -1,3 +1,287 @@
-{}
-
-
+{
+  "active": {
+    "src-05ecbaa67e7cc5418f5f": {
+      "cause_code": "infrastructureDamageObstruction",
+      "detail_code": "damagedRoadSurface",
+      "direction": "both",
+      "first_seen_at": "2026-08-17T23:22:06+02:00",
+      "km_end": "12.4",
+      "km_start": "0",
+      "last_changed_at": "2026-08-17T23:22:06+02:00",
+      "last_seen_at": "2026-08-17T23:22:06+02:00",
+      "localities": [
+        "Algámitas",
+        "Pruna"
+      ],
+      "province": "Sevilla",
+      "reason": "Daños en la calzada",
+      "record_ids": [
+        "22560898"
+      ],
+      "road": "SE-9225",
+      "situation_ids": [
+        "18545642"
+      ],
+      "source_ids": [
+        "18545642:22560898"
+      ]
+    },
+    "src-089ddd74f60bce696598": {
+      "cause_code": "environmentalObstruction",
+      "detail_code": "rockfalls",
+      "direction": "both",
+      "first_seen_at": "2026-08-17T23:22:06+02:00",
+      "km_end": "42.8",
+      "km_start": "42.75",
+      "last_changed_at": "2026-08-17T23:22:06+02:00",
+      "last_seen_at": "2026-08-17T23:22:06+02:00",
+      "localities": [
+        "Priego de Córdoba"
+      ],
+      "province": "Córdoba",
+      "reason": "Desprendimientos",
+      "record_ids": [
+        "20711965"
+      ],
+      "road": "A-4154",
+      "situation_ids": [
+        "16830819"
+      ],
+      "source_ids": [
+        "16830819:20711965"
+      ]
+    },
+    "src-0ff9d801ead6c016ed4a": {
+      "cause_code": "infrastructureDamageObstruction",
+      "detail_code": "damagedRoadSurface",
+      "direction": "both",
+      "first_seen_at": "2026-08-17T23:22:06+02:00",
+      "km_end": "10",
+      "km_start": "10",
+      "last_changed_at": "2026-08-17T23:22:06+02:00",
+      "last_seen_at": "2026-08-17T23:22:06+02:00",
+      "localities": [
+        "Ronda"
+      ],
+      "province": "Málaga",
+      "reason": "Daños en la calzada",
+      "record_ids": [
+        "20251606"
+      ],
+      "road": "MA-7402",
+      "situation_ids": [
+        "16395579"
+      ],
+      "source_ids": [
+        "16395579:20251606"
+      ]
+    },
+    "src-234d87f1350b9900b240": {
+      "cause_code": "infrastructureDamageObstruction",
+      "detail_code": "damagedRoadSurface",
+      "direction": "both",
+      "first_seen_at": "2026-08-17T23:22:06+02:00",
+      "km_end": "33.2",
+      "km_start": "30",
+      "last_changed_at": "2026-08-17T23:22:06+02:00",
+      "last_seen_at": "2026-08-17T23:22:06+02:00",
+      "localities": [
+        "Algodonales"
+      ],
+      "province": "Cádiz",
+      "reason": "Daños en la calzada",
+      "record_ids": [
+        "21110044"
+      ],
+      "road": "A-8126",
+      "situation_ids": [
+        "17195217"
+      ],
+      "source_ids": [
+        "17195217:21110044"
+      ]
+    },
+    "src-46356cc20cee84f068bf": {
+      "cause_code": "roadMaintenance",
+      "detail_code": "roadworks",
+      "direction": "both",
+      "first_seen_at": "2026-08-17T23:22:06+02:00",
+      "km_end": "2.16",
+      "km_start": "0",
+      "last_changed_at": "2026-08-17T23:22:06+02:00",
+      "last_seen_at": "2026-08-17T23:22:06+02:00",
+      "localities": [
+        "Sevilla"
+      ],
+      "province": "Sevilla",
+      "reason": "Obras",
+      "record_ids": [
+        "5684393"
+      ],
+      "road": "A-8005",
+      "situation_ids": [
+        "3343801"
+      ],
+      "source_ids": [
+        "3343801:5684393"
+      ]
+    },
+    "src-7324f9d142faa878a801": {
+      "cause_code": "infrastructureDamageObstruction",
+      "detail_code": "damagedRoadSurface",
+      "direction": "both",
+      "first_seen_at": "2026-08-17T23:22:06+02:00",
+      "km_end": "13.65",
+      "km_start": "13.65",
+      "last_changed_at": "2026-08-17T23:22:06+02:00",
+      "last_seen_at": "2026-08-17T23:22:06+02:00",
+      "localities": [
+        "Palma del Río"
+      ],
+      "province": "Córdoba",
+      "reason": "Daños en la calzada",
+      "record_ids": [
+        "22560662"
+      ],
+      "road": "SE-GI-01",
+      "situation_ids": [
+        "18545408"
+      ],
+      "source_ids": [
+        "18545408:22560662"
+      ]
+    },
+    "src-84a723d899f840d41dca": {
+      "cause_code": "environmentalObstruction",
+      "detail_code": "rockfalls",
+      "direction": "both",
+      "first_seen_at": "2026-08-17T23:22:06+02:00",
+      "km_end": "33",
+      "km_start": "32",
+      "last_changed_at": "2026-08-17T23:22:06+02:00",
+      "last_seen_at": "2026-08-17T23:22:06+02:00",
+      "localities": [
+        "Montefrío"
+      ],
+      "province": "Granada",
+      "reason": "Desprendimientos",
+      "record_ids": [
+        "20407222"
+      ],
+      "road": "A-335",
+      "situation_ids": [
+        "16542405"
+      ],
+      "source_ids": [
+        "16542405:20407222"
+      ]
+    },
+    "src-95047396713510e914b3": {
+      "cause_code": "environmentalObstruction",
+      "detail_code": "rockfalls",
+      "direction": "both",
+      "first_seen_at": "2026-08-17T23:22:06+02:00",
+      "km_end": "5.01",
+      "km_start": "5",
+      "last_changed_at": "2026-08-17T23:22:06+02:00",
+      "last_seen_at": "2026-08-17T23:22:06+02:00",
+      "localities": [
+        "Cabra"
+      ],
+      "province": "Córdoba",
+      "reason": "Desprendimientos",
+      "record_ids": [
+        "20712055"
+      ],
+      "road": "CO-6212",
+      "situation_ids": [
+        "16830892"
+      ],
+      "source_ids": [
+        "16830892:20712055"
+      ]
+    },
+    "src-af4a422b8bbb39cb0052": {
+      "cause_code": "environmentalObstruction",
+      "detail_code": "rockfalls",
+      "direction": "both",
+      "first_seen_at": "2026-08-17T23:22:06+02:00",
+      "km_end": "3.2",
+      "km_start": "0",
+      "last_changed_at": "2026-08-17T23:22:06+02:00",
+      "last_seen_at": "2026-08-17T23:22:06+02:00",
+      "localities": [
+        "Lucena",
+        "Rute"
+      ],
+      "province": "Córdoba",
+      "reason": "Desprendimientos",
+      "record_ids": [
+        "20276492"
+      ],
+      "road": "C-334A",
+      "situation_ids": [
+        "16418290"
+      ],
+      "source_ids": [
+        "16418290:20276492"
+      ]
+    },
+    "src-b08997cf6ea2b33e2553": {
+      "cause_code": "environmentalObstruction",
+      "detail_code": "rockfalls",
+      "direction": "both",
+      "first_seen_at": "2026-08-17T23:22:06+02:00",
+      "km_end": "2.25",
+      "km_start": "1.2",
+      "last_changed_at": "2026-08-17T23:22:06+02:00",
+      "last_seen_at": "2026-08-17T23:22:06+02:00",
+      "localities": [
+        "Casares"
+      ],
+      "province": "Málaga",
+      "reason": "Desprendimientos",
+      "record_ids": [
+        "20213984"
+      ],
+      "road": "A-7150",
+      "situation_ids": [
+        "16359717"
+      ],
+      "source_ids": [
+        "16359717:20213984"
+      ]
+    },
+    "src-e3a78bd522b761573ffb": {
+      "cause_code": "infrastructureDamageObstruction",
+      "detail_code": "damagedRoadSurface",
+      "direction": "both",
+      "first_seen_at": "2026-08-17T23:22:06+02:00",
+      "km_end": "14.1",
+      "km_start": "12.5",
+      "last_changed_at": "2026-08-17T23:22:06+02:00",
+      "last_seen_at": "2026-08-17T23:22:06+02:00",
+      "localities": [
+        "Carmona",
+        "Marchena"
+      ],
+      "province": "Sevilla",
+      "reason": "Daños en la calzada",
+      "record_ids": [
+        "20737924"
+      ],
+      "road": "VIAS SE-225",
+      "situation_ids": [
+        "16854637"
+      ],
+      "source_ids": [
+        "16854637:20737924"
+      ]
+    }
+  },
+  "initialized": true,
+  "initialized_at": "2026-08-17T23:22:06+02:00",
+  "revision": 1,
+  "updated_at": "2026-08-17T23:22:06+02:00",
+  "version": 1
+}
