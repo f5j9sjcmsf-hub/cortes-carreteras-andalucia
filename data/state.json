@@ -8,7 +8,7 @@
       "km_end": "12.4",
       "km_start": "0",
       "last_changed_at": "2026-08-17T23:22:06+02:00",
-      "last_seen_at": "2026-08-17T23:22:06+02:00",
+      "last_seen_at": "2026-08-17T23:37:21+02:00",
       "localities": [
         "Algámitas",
         "Pruna"
@@ -34,7 +34,7 @@
       "km_end": "42.8",
       "km_start": "42.75",
       "last_changed_at": "2026-08-17T23:22:06+02:00",
-      "last_seen_at": "2026-08-17T23:22:06+02:00",
+      "last_seen_at": "2026-08-17T23:37:21+02:00",
       "localities": [
         "Priego de Córdoba"
       ],
@@ -59,7 +59,7 @@
       "km_end": "10",
       "km_start": "10",
       "last_changed_at": "2026-08-17T23:22:06+02:00",
-      "last_seen_at": "2026-08-17T23:22:06+02:00",
+      "last_seen_at": "2026-08-17T23:37:21+02:00",
       "localities": [
         "Ronda"
       ],
@@ -84,7 +84,7 @@
       "km_end": "33.2",
       "km_start": "30",
       "last_changed_at": "2026-08-17T23:22:06+02:00",
-      "last_seen_at": "2026-08-17T23:22:06+02:00",
+      "last_seen_at": "2026-08-17T23:37:21+02:00",
       "localities": [
         "Algodonales"
       ],
@@ -109,7 +109,7 @@
       "km_end": "2.16",
       "km_start": "0",
       "last_changed_at": "2026-08-17T23:22:06+02:00",
-      "last_seen_at": "2026-08-17T23:22:06+02:00",
+      "last_seen_at": "2026-08-17T23:37:21+02:00",
       "localities": [
         "Sevilla"
       ],
@@ -134,7 +134,7 @@
       "km_end": "13.65",
       "km_start": "13.65",
       "last_changed_at": "2026-08-17T23:22:06+02:00",
-      "last_seen_at": "2026-08-17T23:22:06+02:00",
+      "last_seen_at": "2026-08-17T23:37:21+02:00",
       "localities": [
         "Palma del Río"
       ],
@@ -159,7 +159,7 @@
       "km_end": "33",
       "km_start": "32",
       "last_changed_at": "2026-08-17T23:22:06+02:00",
-      "last_seen_at": "2026-08-17T23:22:06+02:00",
+      "last_seen_at": "2026-08-17T23:37:21+02:00",
       "localities": [
         "Montefrío"
       ],
@@ -184,7 +184,7 @@
       "km_end": "5.01",
       "km_start": "5",
       "last_changed_at": "2026-08-17T23:22:06+02:00",
-      "last_seen_at": "2026-08-17T23:22:06+02:00",
+      "last_seen_at": "2026-08-17T23:37:21+02:00",
       "localities": [
         "Cabra"
       ],
@@ -209,7 +209,7 @@
       "km_end": "3.2",
       "km_start": "0",
       "last_changed_at": "2026-08-17T23:22:06+02:00",
-      "last_seen_at": "2026-08-17T23:22:06+02:00",
+      "last_seen_at": "2026-08-17T23:37:21+02:00",
       "localities": [
         "Lucena",
         "Rute"
@@ -235,7 +235,7 @@
       "km_end": "2.25",
       "km_start": "1.2",
       "last_changed_at": "2026-08-17T23:22:06+02:00",
-      "last_seen_at": "2026-08-17T23:22:06+02:00",
+      "last_seen_at": "2026-08-17T23:37:21+02:00",
       "localities": [
         "Casares"
       ],
@@ -260,7 +260,7 @@
       "km_end": "14.1",
       "km_start": "12.5",
       "last_changed_at": "2026-08-17T23:22:06+02:00",
-      "last_seen_at": "2026-08-17T23:22:06+02:00",
+      "last_seen_at": "2026-08-17T23:37:21+02:00",
       "localities": [
         "Carmona",
         "Marchena"
@@ -281,7 +281,7 @@
   },
   "initialized": true,
   "initialized_at": "2026-08-17T23:22:06+02:00",
-  "revision": 1,
-  "updated_at": "2026-08-17T23:22:06+02:00",
+  "revision": 2,
+  "updated_at": "2026-08-17T23:37:21+02:00",
   "version": 1
 }
