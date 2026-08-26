@@ -8,7 +8,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: carreteras-cortadas-andalucia-vigilancia
+  group: carreteras-cortadas-andalucia-vigilancia-v2
   cancel-in-progress: false
 
 jobs:
