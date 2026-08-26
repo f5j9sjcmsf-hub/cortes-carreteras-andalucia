@@ -1,1 +1,813 @@
-{}
+{
+  "active": {
+    "src-05ecbaa67e7cc5418f5f": {
+      "alternative": "",
+      "cause_code": "infrastructureDamageObstruction",
+      "detail_code": "damagedRoadSurface",
+      "direction": "both",
+      "first_seen_at": "2026-08-27T00:52:31+02:00",
+      "km_end": "12.4",
+      "km_start": "0",
+      "last_changed_at": "2026-08-27T00:52:31+02:00",
+      "last_seen_at": "2026-08-27T00:52:31+02:00",
+      "localities": [
+        "Algámitas",
+        "Pruna"
+      ],
+      "province": "Sevilla",
+      "published_at": "2026-04-29T09:51:53+02:00",
+      "reason": "Daños en la calzada",
+      "record_ids": [
+        "22560898"
+      ],
+      "road": "SE-9225",
+      "situation_ids": [
+        "18545642"
+      ],
+      "source_ids": [
+        "18545642:22560898"
+      ],
+      "source_updated_at": "2026-04-29T09:51:53+02:00"
+    },
+    "src-089ddd74f60bce696598": {
+      "alternative": "",
+      "cause_code": "environmentalObstruction",
+      "detail_code": "rockfalls",
+      "direction": "both",
+      "first_seen_at": "2026-08-27T00:52:31+02:00",
+      "km_end": "42.8",
+      "km_start": "42.75",
+      "last_changed_at": "2026-08-27T00:52:31+02:00",
+      "last_seen_at": "2026-08-27T00:52:31+02:00",
+      "localities": [
+        "Priego de Córdoba"
+      ],
+      "province": "Córdoba",
+      "published_at": "2026-02-19T13:19:14+01:00",
+      "reason": "Desprendimientos",
+      "record_ids": [
+        "20711965"
+      ],
+      "road": "A-4154",
+      "situation_ids": [
+        "16830819"
+      ],
+      "source_ids": [
+        "16830819:20711965"
+      ],
+      "source_updated_at": "2026-02-19T13:19:14+01:00"
+    },
+    "src-0d7015b1577d922b4ebc": {
+      "alternative": "",
+      "cause_code": "roadMaintenance",
+      "detail_code": "roadworks",
+      "direction": "both",
+      "first_seen_at": "2026-08-27T00:52:31+02:00",
+      "km_end": "13.2",
+      "km_start": "12",
+      "last_changed_at": "2026-08-27T00:52:31+02:00",
+      "last_seen_at": "2026-08-27T00:52:31+02:00",
+      "localities": [
+        "Úbeda"
+      ],
+      "province": "Jaén",
+      "published_at": "2026-08-06T13:48:48+02:00",
+      "reason": "Obras",
+      "record_ids": [
+        "26393064",
+        "26393065"
+      ],
+      "road": "A-401",
+      "situation_ids": [
+        "22173663"
+      ],
+      "source_ids": [
+        "22173663:26393064",
+        "22173663:26393065"
+      ],
+      "source_updated_at": "2026-08-06T13:48:53+02:00"
+    },
+    "src-0ff9d801ead6c016ed4a": {
+      "alternative": "",
+      "cause_code": "infrastructureDamageObstruction",
+      "detail_code": "damagedRoadSurface",
+      "direction": "both",
+      "first_seen_at": "2026-08-27T00:52:31+02:00",
+      "km_end": "10",
+      "km_start": "10",
+      "last_changed_at": "2026-08-27T00:52:31+02:00",
+      "last_seen_at": "2026-08-27T00:52:31+02:00",
+      "localities": [
+        "Ronda"
+      ],
+      "province": "Málaga",
+      "published_at": "2026-02-04T20:02:58+01:00",
+      "reason": "Daños en la calzada",
+      "record_ids": [
+        "20251606"
+      ],
+      "road": "MA-7402",
+      "situation_ids": [
+        "16395579"
+      ],
+      "source_ids": [
+        "16395579:20251606"
+      ],
+      "source_updated_at": "2026-02-04T20:02:58+01:00"
+    },
+    "src-234d87f1350b9900b240": {
+      "alternative": "",
+      "cause_code": "infrastructureDamageObstruction",
+      "detail_code": "damagedRoadSurface",
+      "direction": "both",
+      "first_seen_at": "2026-08-27T00:52:31+02:00",
+      "km_end": "33.2",
+      "km_start": "30",
+      "last_changed_at": "2026-08-27T00:52:31+02:00",
+      "last_seen_at": "2026-08-27T00:52:31+02:00",
+      "localities": [
+        "Algodonales"
+      ],
+      "province": "Cádiz",
+      "published_at": "2026-03-08T00:22:34+01:00",
+      "reason": "Daños en la calzada",
+      "record_ids": [
+        "21110044"
+      ],
+      "road": "A-8126",
+      "situation_ids": [
+        "17195217"
+      ],
+      "source_ids": [
+        "17195217:21110044"
+      ],
+      "source_updated_at": "2026-03-08T00:22:34+01:00"
+    },
+    "src-31cf866711b3de82037c": {
+      "alternative": "",
+      "cause_code": "environmentalObstruction",
+      "detail_code": "rockfalls",
+      "direction": "decreasing",
+      "first_seen_at": "2026-08-27T00:52:31+02:00",
+      "km_end": "31",
+      "km_start": "25",
+      "last_changed_at": "2026-08-27T00:52:31+02:00",
+      "last_seen_at": "2026-08-27T00:52:31+02:00",
+      "localities": [
+        "Medina Sidonia"
+      ],
+      "province": "Cádiz",
+      "published_at": "2026-02-13T08:30:17+01:00",
+      "reason": "Desprendimientos",
+      "record_ids": [
+        "20517840"
+      ],
+      "road": "A-381",
+      "situation_ids": [
+        "16645749"
+      ],
+      "source_ids": [
+        "16645749:20517840"
+      ],
+      "source_updated_at": "2026-02-13T08:30:17+01:00"
+    },
+    "src-34530437943095d12c30": {
+      "alternative": "",
+      "cause_code": "roadMaintenance",
+      "detail_code": "roadworks",
+      "direction": "increasing",
+      "first_seen_at": "2026-08-27T00:52:31+02:00",
+      "km_end": "0.6",
+      "km_start": "0",
+      "last_changed_at": "2026-08-27T00:52:31+02:00",
+      "last_seen_at": "2026-08-27T00:52:31+02:00",
+      "localities": [
+        "Almedinilla"
+      ],
+      "province": "Córdoba",
+      "published_at": "2026-05-27T07:34:13+02:00",
+      "reason": "Obras",
+      "record_ids": [
+        "22293349"
+      ],
+      "road": "CO-8204",
+      "situation_ids": [
+        "18299494"
+      ],
+      "source_ids": [
+        "18299494:22293349"
+      ],
+      "source_updated_at": "2026-05-27T07:34:13+02:00"
+    },
+    "src-4574b44eff9a78e6e9a9": {
+      "alternative": "",
+      "cause_code": "roadMaintenance",
+      "detail_code": "roadworks",
+      "direction": "increasing",
+      "first_seen_at": "2026-08-27T00:52:31+02:00",
+      "km_end": "392.3",
+      "km_start": "390",
+      "last_changed_at": "2026-08-27T00:52:31+02:00",
+      "last_seen_at": "2026-08-27T00:52:31+02:00",
+      "localities": [
+        "Pechina",
+        "Viator"
+      ],
+      "province": "Almería",
+      "published_at": "2026-08-21T15:00:49+02:00",
+      "reason": "Obras",
+      "record_ids": [
+        "26912234"
+      ],
+      "road": "A-92",
+      "situation_ids": [
+        "22672159"
+      ],
+      "source_ids": [
+        "22672159:26912234"
+      ],
+      "source_updated_at": "2026-08-21T15:00:49+02:00"
+    },
+    "src-46356cc20cee84f068bf": {
+      "alternative": "",
+      "cause_code": "roadMaintenance",
+      "detail_code": "roadworks",
+      "direction": "both",
+      "first_seen_at": "2026-08-27T00:52:31+02:00",
+      "km_end": "2.16",
+      "km_start": "0",
+      "last_changed_at": "2026-08-27T00:52:31+02:00",
+      "last_seen_at": "2026-08-27T00:52:31+02:00",
+      "localities": [
+        "Sevilla"
+      ],
+      "province": "Sevilla",
+      "published_at": "2023-11-21T18:50:51+01:00",
+      "reason": "Obras",
+      "record_ids": [
+        "5684393"
+      ],
+      "road": "A-8005",
+      "situation_ids": [
+        "3343801"
+      ],
+      "source_ids": [
+        "3343801:5684393"
+      ],
+      "source_updated_at": "2023-11-21T18:50:51+01:00"
+    },
+    "src-4e2ea6a752dd05d52934": {
+      "alternative": "",
+      "cause_code": "roadMaintenance",
+      "detail_code": "roadworks",
+      "direction": "both",
+      "first_seen_at": "2026-08-27T00:52:31+02:00",
+      "km_end": "1.6",
+      "km_start": "0",
+      "last_changed_at": "2026-08-27T00:52:31+02:00",
+      "last_seen_at": "2026-08-27T00:52:31+02:00",
+      "localities": [
+        "Vícar"
+      ],
+      "province": "Almería",
+      "published_at": "2026-08-10T10:07:07+02:00",
+      "reason": "Obras",
+      "record_ids": [
+        "26396555",
+        "26396556"
+      ],
+      "road": "AL-3308",
+      "situation_ids": [
+        "22176962"
+      ],
+      "source_ids": [
+        "22176962:26396555",
+        "22176962:26396556"
+      ],
+      "source_updated_at": "2026-08-12T08:10:35+02:00"
+    },
+    "src-54577bf6eb5459876b7f": {
+      "alternative": "",
+      "cause_code": "roadMaintenance",
+      "detail_code": "roadworks",
+      "direction": "increasing",
+      "first_seen_at": "2026-08-27T00:52:31+02:00",
+      "km_end": "11",
+      "km_start": "2",
+      "last_changed_at": "2026-08-27T00:52:31+02:00",
+      "last_seen_at": "2026-08-27T00:52:31+02:00",
+      "localities": [
+        "Carmona"
+      ],
+      "province": "Sevilla",
+      "published_at": "2026-03-05T10:32:00+01:00",
+      "reason": "Obras",
+      "record_ids": [
+        "21044582"
+      ],
+      "road": "A-8100",
+      "situation_ids": [
+        "17135391"
+      ],
+      "source_ids": [
+        "17135391:21044582"
+      ],
+      "source_updated_at": "2026-03-05T10:32:00+01:00"
+    },
+    "src-62af3d785bc78795a197": {
+      "alternative": "",
+      "cause_code": "roadMaintenance",
+      "detail_code": "roadworks",
+      "direction": "increasing",
+      "first_seen_at": "2026-08-27T00:52:31+02:00",
+      "km_end": "13.7",
+      "km_start": "10.4",
+      "last_changed_at": "2026-08-27T00:52:31+02:00",
+      "last_seen_at": "2026-08-27T00:52:31+02:00",
+      "localities": [
+        "Comares",
+        "Riogordo"
+      ],
+      "province": "Málaga",
+      "published_at": "2026-07-02T09:34:04+02:00",
+      "reason": "Obras",
+      "record_ids": [
+        "24536701"
+      ],
+      "road": "MA-3107",
+      "situation_ids": [
+        "20411906"
+      ],
+      "source_ids": [
+        "20411906:24536701"
+      ],
+      "source_updated_at": "2026-07-02T09:34:04+02:00"
+    },
+    "src-7324f9d142faa878a801": {
+      "alternative": "",
+      "cause_code": "infrastructureDamageObstruction",
+      "detail_code": "damagedRoadSurface",
+      "direction": "both",
+      "first_seen_at": "2026-08-27T00:52:31+02:00",
+      "km_end": "13.65",
+      "km_start": "13.65",
+      "last_changed_at": "2026-08-27T00:52:31+02:00",
+      "last_seen_at": "2026-08-27T00:52:31+02:00",
+      "localities": [
+        "Palma del Río"
+      ],
+      "province": "Córdoba",
+      "published_at": "2026-04-29T09:44:01+02:00",
+      "reason": "Daños en la calzada",
+      "record_ids": [
+        "22560662"
+      ],
+      "road": "SE-GI-01",
+      "situation_ids": [
+        "18545408"
+      ],
+      "source_ids": [
+        "18545408:22560662"
+      ],
+      "source_updated_at": "2026-04-29T09:44:01+02:00"
+    },
+    "src-84a723d899f840d41dca": {
+      "alternative": "",
+      "cause_code": "environmentalObstruction",
+      "detail_code": "rockfalls",
+      "direction": "both",
+      "first_seen_at": "2026-08-27T00:52:31+02:00",
+      "km_end": "33",
+      "km_start": "32",
+      "last_changed_at": "2026-08-27T00:52:31+02:00",
+      "last_seen_at": "2026-08-27T00:52:31+02:00",
+      "localities": [
+        "Montefrío"
+      ],
+      "province": "Granada",
+      "published_at": "2026-02-10T07:16:15+01:00",
+      "reason": "Desprendimientos",
+      "record_ids": [
+        "20407222"
+      ],
+      "road": "A-335",
+      "situation_ids": [
+        "16542405"
+      ],
+      "source_ids": [
+        "16542405:20407222"
+      ],
+      "source_updated_at": "2026-02-10T07:16:15+01:00"
+    },
+    "src-8d6e1be5229e31898288": {
+      "alternative": "Tráfico desviado por un carril reversible habilitado en la calzada contraria",
+      "cause_code": "roadMaintenance",
+      "detail_code": "roadworks",
+      "direction": "decreasing",
+      "first_seen_at": "2026-08-27T00:52:31+02:00",
+      "km_end": "59.7",
+      "km_start": "55.8",
+      "last_changed_at": "2026-08-27T00:52:31+02:00",
+      "last_seen_at": "2026-08-27T00:52:31+02:00",
+      "localities": [
+        "Cárcheles",
+        "Pegalajar"
+      ],
+      "province": "Jaén",
+      "published_at": "2026-08-21T11:45:36+02:00",
+      "reason": "Obras",
+      "record_ids": [
+        "26870209"
+      ],
+      "road": "A-44",
+      "situation_ids": [
+        "22631304"
+      ],
+      "source_ids": [
+        "22631304:26870209"
+      ],
+      "source_updated_at": "2026-08-21T11:45:36+02:00"
+    },
+    "src-95047396713510e914b3": {
+      "alternative": "",
+      "cause_code": "environmentalObstruction",
+      "detail_code": "rockfalls",
+      "direction": "both",
+      "first_seen_at": "2026-08-27T00:52:31+02:00",
+      "km_end": "5.01",
+      "km_start": "5",
+      "last_changed_at": "2026-08-27T00:52:31+02:00",
+      "last_seen_at": "2026-08-27T00:52:31+02:00",
+      "localities": [
+        "Cabra"
+      ],
+      "province": "Córdoba",
+      "published_at": "2026-02-19T13:21:19+01:00",
+      "reason": "Desprendimientos",
+      "record_ids": [
+        "20712055"
+      ],
+      "road": "CO-6212",
+      "situation_ids": [
+        "16830892"
+      ],
+      "source_ids": [
+        "16830892:20712055"
+      ],
+      "source_updated_at": "2026-02-19T13:21:19+01:00"
+    },
+    "src-9691c4839f7bcb0dda2c": {
+      "alternative": "",
+      "cause_code": "roadMaintenance",
+      "detail_code": "roadworks",
+      "direction": "increasing",
+      "first_seen_at": "2026-08-27T00:52:31+02:00",
+      "km_end": "1.8",
+      "km_start": "0.5",
+      "last_changed_at": "2026-08-27T00:52:31+02:00",
+      "last_seen_at": "2026-08-27T00:52:31+02:00",
+      "localities": [
+        "Jimena de la Frontera"
+      ],
+      "province": "Cádiz",
+      "published_at": "2026-08-24T10:19:10+02:00",
+      "reason": "Obras",
+      "record_ids": [
+        "26722944"
+      ],
+      "road": "CA-8201",
+      "situation_ids": [
+        "22489298"
+      ],
+      "source_ids": [
+        "22489298:26722944"
+      ],
+      "source_updated_at": "2026-08-24T10:19:10+02:00"
+    },
+    "src-979eea6c17f1665938cb": {
+      "alternative": "Paso alternativo regulado por un único carril para ambos sentidos",
+      "cause_code": "roadMaintenance",
+      "detail_code": "roadworks",
+      "direction": "decreasing",
+      "first_seen_at": "2026-08-27T00:52:31+02:00",
+      "km_end": "23.7",
+      "km_start": "23.7",
+      "last_changed_at": "2026-08-27T00:52:31+02:00",
+      "last_seen_at": "2026-08-27T00:52:31+02:00",
+      "localities": [
+        "Güéjar Sierra"
+      ],
+      "province": "Granada",
+      "published_at": "2026-08-26T08:42:21+02:00",
+      "reason": "Obras",
+      "record_ids": [
+        "27174129"
+      ],
+      "road": "A-395",
+      "situation_ids": [
+        "22923756"
+      ],
+      "source_ids": [
+        "22923756:27174129"
+      ],
+      "source_updated_at": "2026-08-26T08:42:21+02:00"
+    },
+    "src-9dca823087713b75e7ff": {
+      "alternative": "",
+      "cause_code": "roadMaintenance",
+      "detail_code": "roadworks",
+      "direction": "increasing",
+      "first_seen_at": "2026-08-27T00:52:31+02:00",
+      "km_end": "64",
+      "km_start": "61.8",
+      "last_changed_at": "2026-08-27T00:52:31+02:00",
+      "last_seen_at": "2026-08-27T00:52:31+02:00",
+      "localities": [
+        "Villacarrillo"
+      ],
+      "province": "Jaén",
+      "published_at": "2026-02-06T19:20:27+01:00",
+      "reason": "Obras",
+      "record_ids": [
+        "20321927"
+      ],
+      "road": "A-32",
+      "situation_ids": [
+        "16460865"
+      ],
+      "source_ids": [
+        "16460865:20321927"
+      ],
+      "source_updated_at": "2026-02-06T19:20:27+01:00"
+    },
+    "src-a9d3a2c68aa4e8e1a86c": {
+      "alternative": "",
+      "cause_code": "roadMaintenance",
+      "detail_code": "roadworks",
+      "direction": "both",
+      "first_seen_at": "2026-08-27T00:52:31+02:00",
+      "km_end": "1.7",
+      "km_start": "1",
+      "last_changed_at": "2026-08-27T00:52:31+02:00",
+      "last_seen_at": "2026-08-27T00:52:31+02:00",
+      "localities": [
+        "Monachil"
+      ],
+      "province": "Granada",
+      "published_at": "2026-07-14T07:26:53+02:00",
+      "reason": "Obras",
+      "record_ids": [
+        "25303098",
+        "25303099"
+      ],
+      "road": "A-395R2",
+      "situation_ids": [
+        "21136277"
+      ],
+      "source_ids": [
+        "21136277:25303098",
+        "21136277:25303099"
+      ],
+      "source_updated_at": "2026-07-14T07:27:01+02:00"
+    },
+    "src-ac4e0b85b27c795050b5": {
+      "alternative": "",
+      "cause_code": "roadMaintenance",
+      "detail_code": "roadworks",
+      "direction": "both",
+      "first_seen_at": "2026-08-27T00:52:31+02:00",
+      "km_end": "3",
+      "km_start": "0",
+      "last_changed_at": "2026-08-27T00:52:31+02:00",
+      "last_seen_at": "2026-08-27T00:52:31+02:00",
+      "localities": [
+        "Lucainena de las Torres",
+        "Turrillas"
+      ],
+      "province": "Almería",
+      "published_at": "2026-04-01T08:28:22+02:00",
+      "reason": "Obras",
+      "record_ids": [
+        "21756919",
+        "21756920"
+      ],
+      "road": "AL-3105",
+      "situation_ids": [
+        "17797323"
+      ],
+      "source_ids": [
+        "17797323:21756919",
+        "17797323:21756920"
+      ],
+      "source_updated_at": "2026-04-01T08:28:26+02:00"
+    },
+    "src-af4a422b8bbb39cb0052": {
+      "alternative": "",
+      "cause_code": "environmentalObstruction",
+      "detail_code": "rockfalls",
+      "direction": "both",
+      "first_seen_at": "2026-08-27T00:52:31+02:00",
+      "km_end": "3.2",
+      "km_start": "0",
+      "last_changed_at": "2026-08-27T00:52:31+02:00",
+      "last_seen_at": "2026-08-27T00:52:31+02:00",
+      "localities": [
+        "Lucena",
+        "Rute"
+      ],
+      "province": "Córdoba",
+      "published_at": "2026-02-05T14:37:44+01:00",
+      "reason": "Desprendimientos",
+      "record_ids": [
+        "20276492"
+      ],
+      "road": "C-334A",
+      "situation_ids": [
+        "16418290"
+      ],
+      "source_ids": [
+        "16418290:20276492"
+      ],
+      "source_updated_at": "2026-02-05T14:37:44+01:00"
+    },
+    "src-b08997cf6ea2b33e2553": {
+      "alternative": "",
+      "cause_code": "environmentalObstruction",
+      "detail_code": "rockfalls",
+      "direction": "both",
+      "first_seen_at": "2026-08-27T00:52:31+02:00",
+      "km_end": "2.25",
+      "km_start": "1.2",
+      "last_changed_at": "2026-08-27T00:52:31+02:00",
+      "last_seen_at": "2026-08-27T00:52:31+02:00",
+      "localities": [
+        "Casares"
+      ],
+      "province": "Málaga",
+      "published_at": "2026-02-03T16:45:05+01:00",
+      "reason": "Desprendimientos",
+      "record_ids": [
+        "20213984"
+      ],
+      "road": "A-7150",
+      "situation_ids": [
+        "16359717"
+      ],
+      "source_ids": [
+        "16359717:20213984"
+      ],
+      "source_updated_at": "2026-02-03T16:45:05+01:00"
+    },
+    "src-c8955c0efa41ddfd9f54": {
+      "alternative": "",
+      "cause_code": "roadMaintenance",
+      "detail_code": "roadworks",
+      "direction": "increasing",
+      "first_seen_at": "2026-08-27T00:52:31+02:00",
+      "km_end": "6.85",
+      "km_start": "6.8",
+      "last_changed_at": "2026-08-27T00:52:31+02:00",
+      "last_seen_at": "2026-08-27T00:52:31+02:00",
+      "localities": [
+        "La Línea de la Concepción"
+      ],
+      "province": "Cádiz",
+      "published_at": "2026-08-18T09:27:51+02:00",
+      "reason": "Obras",
+      "record_ids": [
+        "26821704"
+      ],
+      "road": "A-383",
+      "situation_ids": [
+        "22584519"
+      ],
+      "source_ids": [
+        "22584519:26821704"
+      ],
+      "source_updated_at": "2026-08-18T09:27:51+02:00"
+    },
+    "src-d412e8cfbc9289d6cf2d": {
+      "alternative": "",
+      "cause_code": "roadMaintenance",
+      "detail_code": "roadworks",
+      "direction": "both",
+      "first_seen_at": "2026-08-27T00:52:31+02:00",
+      "km_end": "12.8",
+      "km_start": "0",
+      "last_changed_at": "2026-08-27T00:52:31+02:00",
+      "last_seen_at": "2026-08-27T00:52:31+02:00",
+      "localities": [
+        "Gerena",
+        "Olivares"
+      ],
+      "province": "Sevilla",
+      "published_at": "2026-08-26T11:47:31+02:00",
+      "reason": "Obras",
+      "record_ids": [
+        "24940396",
+        "24940397"
+      ],
+      "road": "SE-3405",
+      "situation_ids": [
+        "20794162"
+      ],
+      "source_ids": [
+        "20794162:24940396",
+        "20794162:24940397"
+      ],
+      "source_updated_at": "2026-08-26T11:47:46+02:00"
+    },
+    "src-d5acf1b9f62b42a14bb3": {
+      "alternative": "",
+      "cause_code": "roadMaintenance",
+      "detail_code": "roadworks",
+      "direction": "increasing",
+      "first_seen_at": "2026-08-27T00:52:31+02:00",
+      "km_end": "520.5",
+      "km_start": "520.5",
+      "last_changed_at": "2026-08-27T00:52:31+02:00",
+      "last_seen_at": "2026-08-27T00:52:31+02:00",
+      "localities": [
+        "Carmona"
+      ],
+      "province": "Sevilla",
+      "published_at": "2026-07-21T15:27:30+02:00",
+      "reason": "Obras",
+      "record_ids": [
+        "25750213"
+      ],
+      "road": "A-4",
+      "situation_ids": [
+        "21561024"
+      ],
+      "source_ids": [
+        "21561024:25750213"
+      ],
+      "source_updated_at": "2026-07-21T15:27:30+02:00"
+    },
+    "src-e3a78bd522b761573ffb": {
+      "alternative": "",
+      "cause_code": "infrastructureDamageObstruction",
+      "detail_code": "damagedRoadSurface",
+      "direction": "both",
+      "first_seen_at": "2026-08-27T00:52:31+02:00",
+      "km_end": "14.1",
+      "km_start": "12.5",
+      "last_changed_at": "2026-08-27T00:52:31+02:00",
+      "last_seen_at": "2026-08-27T00:52:31+02:00",
+      "localities": [
+        "Carmona",
+        "Marchena"
+      ],
+      "province": "Sevilla",
+      "published_at": "2026-06-10T07:05:51+02:00",
+      "reason": "Daños en la calzada",
+      "record_ids": [
+        "20737924"
+      ],
+      "road": "VIAS SE-225",
+      "situation_ids": [
+        "16854637"
+      ],
+      "source_ids": [
+        "16854637:20737924"
+      ],
+      "source_updated_at": "2026-06-10T07:05:51+02:00"
+    },
+    "src-fc78a837a9379cdad745": {
+      "alternative": "",
+      "cause_code": "roadMaintenance",
+      "detail_code": "roadworks",
+      "direction": "both",
+      "first_seen_at": "2026-08-27T00:52:31+02:00",
+      "km_end": "1.2",
+      "km_start": "0.6",
+      "last_changed_at": "2026-08-27T00:52:31+02:00",
+      "last_seen_at": "2026-08-27T00:52:31+02:00",
+      "localities": [
+        "Algeciras"
+      ],
+      "province": "Cádiz",
+      "published_at": "2026-07-31T08:33:58+02:00",
+      "reason": "Obras",
+      "record_ids": [
+        "21723517",
+        "21723518"
+      ],
+      "road": "N-350",
+      "situation_ids": [
+        "17767627"
+      ],
+      "source_ids": [
+        "17767627:21723517",
+        "17767627:21723518"
+      ],
+      "source_updated_at": "2026-07-31T08:34:02+02:00"
+    }
+  },
+  "initialized": true,
+  "initialized_at": "2026-08-27T00:52:31+02:00",
+  "revision": 1,
+  "updated_at": "2026-08-27T00:52:31+02:00",
+  "version": 1
+}
