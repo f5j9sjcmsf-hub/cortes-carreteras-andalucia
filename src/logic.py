@@ -47,6 +47,7 @@ _CLOSURE_FIELDS = (
     "cause_code",
     "detail_code",
     "published_at",
+    "alternative",
 )
 
 # Only user-visible changes produce a Telegram update.  Identifiers and DGT
@@ -60,6 +61,7 @@ _VISIBLE_FIELDS = (
     "km_start",
     "km_end",
     "published_at",
+    "alternative",
 )
 
 _DIRECTION_LABELS = {
@@ -266,6 +268,7 @@ def normalize_closure(raw: Mapping[str, Any]) -> dict[str, Any]:
         "cause_code": _clean_text(raw.get("cause_code")),
         "detail_code": _clean_text(raw.get("detail_code")),
         "published_at": _normalise_published_at(raw.get("published_at")),
+        "alternative": _clean_text(raw.get("alternative")),
     }
 
 
@@ -282,6 +285,14 @@ def format_message(closure: Mapping[str, Any], event: str) -> str:
     direction = _DIRECTION_LABELS[item["direction"]]
     kilometres = _format_kilometres(item["km_start"], item["km_end"])
     published = _format_published_at(item["published_at"])
+    alternative = item["alternative"]
+
+    alternative_line = ""
+    if alternative and event != EVENT_REOPENED:
+        alternative_line = (
+            "\n↪️ <b>Alternativa:</b> "
+            f"{escape(alternative)}"
+        )
 
     return (
         f"<b>{EVENT_TITLES[event]}</b>\n\n"
@@ -289,7 +300,7 @@ def format_message(closure: Mapping[str, Any], event: str) -> str:
         f"<i>{escape(locality)}</i>\n\n"
         f"<b>{escape(road)}</b>, {escape(reason)}\n\n"
         f"<i>{escape(kilometres)}</i>\n"
-        f"<i>{direction}</i>\n\n"
+        f"<i>{direction}</i>{alternative_line}\n\n"
         f"<i>Publicado: {escape(published)}</i>"
     )
 

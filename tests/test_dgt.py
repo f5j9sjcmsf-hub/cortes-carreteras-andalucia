@@ -127,6 +127,7 @@ def test_extracts_normalised_fields_from_namespaced_xml():
             "reason": "Desprendimientos",
             "cause_code": "environmentalObstruction",
             "detail_code": "rockfalls",
+            "alternative": "",
         }
     ]
 
@@ -313,6 +314,124 @@ def test_a44_partial_companion_records_remain_excluded_regression():
     )
 
     assert dgt.parse_closures(_xml(partial_lane, allowed_tidal_lane)) == []
+
+
+def test_a44_tidal_lane_is_attached_as_an_alternative_to_complete_closure():
+    complete_closure = _record(
+        situation_id="22631304",
+        record_id="26870209",
+        province="JAÉN",
+        municipalities=("CÁRCHELES", "PEGALAJAR"),
+        road="A-44",
+        kilometres=("59.7", "55.8"),
+        direction="negative",
+        management_type="carriagewayClosures",
+        lane_usage="allLanesCompleteCarriageway",
+        cause="roadMaintenance",
+        detail_tag="roadMaintenanceType",
+        detail="roadworks",
+    )
+    tidal_lane = _record(
+        situation_id="22631304",
+        record_id="26870211",
+        province="JAÉN",
+        municipalities=("CÁRCHELES", "PEGALAJAR"),
+        road="A-44",
+        kilometres=("59.7", "55.8"),
+        direction="negative",
+        management_type="useOfSpecifiedLanesOrCarriagewaysAllowed",
+        lane_usage="tidalFlowLane",
+        cause="roadMaintenance",
+        detail_tag="roadMaintenanceType",
+        detail="roadworks",
+    )
+
+    closures = dgt.parse_closures(_xml(complete_closure, tidal_lane))
+
+    assert len(closures) == 1
+    assert closures[0]["record_ids"] == ["26870209"]
+    assert closures[0]["alternative"] == (
+        "Tráfico desviado por un carril reversible habilitado "
+        "en la calzada contraria"
+    )
+
+
+def test_a395_single_alternate_line_is_attached_as_an_alternative():
+    complete_closure = _record(
+        situation_id="22923756",
+        record_id="27174129",
+        province="GRANADA",
+        municipalities=("GÜÉJAR SIERRA",),
+        road="A-395",
+        kilometres=("23.7",),
+        direction="negative",
+        management_type="carriagewayClosures",
+        lane_usage="allLanesCompleteCarriageway",
+        cause="roadMaintenance",
+        detail_tag="roadMaintenanceType",
+        detail="roadworks",
+    )
+    alternate_line = _record(
+        situation_id="22923756",
+        record_id="27174130",
+        province="GRANADA",
+        municipalities=("GÜÉJAR SIERRA",),
+        road="A-395",
+        kilometres=("23.7",),
+        direction="both",
+        management_type="singleAlternateLineTraffic",
+        lane_usage="allLanesCompleteCarriageway",
+        cause="roadMaintenance",
+        detail_tag="roadMaintenanceType",
+        detail="roadworks",
+    )
+
+    closures = dgt.parse_closures(_xml(complete_closure, alternate_line))
+
+    assert len(closures) == 1
+    assert closures[0]["record_ids"] == ["27174129"]
+    assert closures[0]["alternative"] == (
+        "Paso alternativo regulado por un único carril para ambos sentidos"
+    )
+
+
+@pytest.mark.parametrize(
+    "changed",
+    [
+        {"validity": "suspended"},
+        {"lane_usage": "leftLane"},
+        {"management_type": "laneClosures"},
+        {"vehicle_type": "heavyGoodsVehicle"},
+        {"kilometres": ("55.8", "60.0")},
+        {"direction": "positive"},
+        {"situation_id": "different-situation"},
+    ],
+)
+def test_unverified_or_unrelated_tidal_lane_is_not_announced(changed):
+    complete_closure = _record(
+        situation_id="shared-situation",
+        record_id="closure",
+        road="A-44",
+        kilometres=("55.8", "59.7"),
+        direction="negative",
+        management_type="carriagewayClosures",
+    )
+    alternative_options = {
+        "situation_id": "shared-situation",
+        "record_id": "alternative",
+        "road": "A-44",
+        "kilometres": ("55.8", "59.7"),
+        "direction": "negative",
+        "management_type": "useOfSpecifiedLanesOrCarriagewaysAllowed",
+        "lane_usage": "tidalFlowLane",
+    }
+    alternative_options.update(changed)
+    alternative = _record(**alternative_options)
+
+    closures = dgt.parse_closures(_xml(complete_closure, alternative))
+
+    assert len(closures) == 1
+    assert closures[0]["alternative"] == ""
 
 
 def test_a401_jodar_opposite_carriageway_closures_are_grouped_regression():

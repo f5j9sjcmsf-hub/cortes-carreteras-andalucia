@@ -47,6 +47,28 @@ COMPLETE_CLOSURE_MANAGEMENT_TYPES = {
 }
 
 
+# eTraffic publishes an operative bypass as a separate management record in
+# the same situation as the complete closure.  A tidal-flow lane is the DATEX
+# value shown by eTraffic as ``Carril Reversible``.
+ALTERNATIVE_MANAGEMENT_TYPES = {
+    "singlealternatelinetraffic",
+    "useofspecifiedlanesorcarriagewaysallowed",
+}
+
+ALTERNATIVE_MANAGEMENT_LABELS = {
+    "singlealternatelinetraffic": (
+        "Paso alternativo regulado por un único carril para ambos sentidos"
+    ),
+}
+
+ALTERNATIVE_LANE_LABELS = {
+    "tidalflowlane": (
+        "Tráfico desviado por un carril reversible habilitado "
+        "en la calzada contraria"
+    ),
+}
+
+
 GENERIC_REASON_MAP = {
     "abnormalTraffic": "Tráfico anormal",
     "accident": "Accidente",
@@ -560,7 +582,86 @@ def _record_to_closure(
         "reason": _reason(cause_code, detail_code),
         "cause_code": cause_code,
         "detail_code": detail_code,
+        "alternative": "",
     }
+
+
+def _record_to_alternative(
+    situation: ET.Element,
+    record: ET.Element,
+) -> dict[str, Any] | None:
+    """Return a verified traffic alternative advertised by eTraffic.
+
+    Alternative records are deliberately stricter than closure records.  The
+    bot only announces a bypass when DGT marks it active, open to any vehicle,
+    and explicitly identifies a supported operative lane.
+    """
+
+    if _first_text(record, "validityStatus").casefold() != "active":
+        return None
+    management_types = {
+        value.casefold()
+        for value in _texts(record, "roadOrCarriagewayOrLaneManagementType")
+    }
+    if management_types.isdisjoint(ALTERNATIVE_MANAGEMENT_TYPES):
+        return None
+
+    labels = _unique(
+        ALTERNATIVE_MANAGEMENT_LABELS[value]
+        for value in management_types
+        if value in ALTERNATIVE_MANAGEMENT_LABELS
+    )
+    labels.extend(_unique(
+        ALTERNATIVE_LANE_LABELS[value.casefold()]
+        for value in _texts(record, "laneUsage")
+        if value.casefold() in ALTERNATIVE_LANE_LABELS
+    ))
+    if not labels:
+        return None
+
+    vehicle_types = _texts(record, "vehicleType")
+    if vehicle_types and not any(
+        value.casefold() == "anyvehicle" for value in vehicle_types
+    ):
+        return None
+
+    province_values = _texts(record, "province")
+    if not _is_andalusian(record, province_values):
+        return None
+
+    km_start, km_end = _kilometres(record)
+    return {
+        "situation_id": _attribute(situation, "id"),
+        "road": _first_text(record, "roadName", "roadNumber", "roadIdentifier"),
+        "km_start": km_start,
+        "km_end": km_end,
+        "direction": _direction(record),
+        "label": " / ".join(labels),
+    }
+
+
+def _attach_alternatives(
+    closures: list[dict[str, Any]],
+    alternatives: list[dict[str, Any]],
+) -> list[dict[str, Any]]:
+    for closure in closures:
+        labels = _unique(
+            alternative["label"]
+            for alternative in alternatives
+            if alternative["situation_id"]
+            and alternative["situation_id"] in closure["situation_ids"]
+            and _fold(alternative["road"]) == _fold(closure["road"])
+            and alternative["km_start"] == closure["km_start"]
+            and alternative["km_end"] == closure["km_end"]
+            and (
+                closure["direction"] == "both"
+                or alternative["direction"] == "unknown"
+                or alternative["direction"] == "both"
+                or alternative["direction"] == closure["direction"]
+            )
+        )
+        closure["alternative"] = " / ".join(labels)
+    return closures
 
 
 def _identity(closure: dict[str, Any]) -> tuple[Any, ...]:
@@ -674,6 +775,7 @@ def parse_closures(xml_data: bytes | str) -> list[dict[str, Any]]:
         )
 
     closures: list[dict[str, Any]] = []
+    alternatives: list[dict[str, Any]] = []
     for situation in (
         element for element in root.iter() if _local_name(element.tag) == "situation"
     ):
@@ -685,7 +787,11 @@ def parse_closures(xml_data: bytes | str) -> list[dict[str, Any]]:
             closure = _record_to_closure(situation, record)
             if closure is not None:
                 closures.append(closure)
-    return _group_opposite_directions(closures)
+            alternative = _record_to_alternative(situation, record)
+            if alternative is not None:
+                alternatives.append(alternative)
+    grouped = _group_opposite_directions(closures)
+    return _attach_alternatives(grouped, alternatives)
 
 
 def parse_dgt_xml(xml_data: bytes | str) -> list[dict[str, Any]]:
@@ -739,6 +845,9 @@ __all__ = [
     "DGT_FEED_URL",
     "DGTFeedError",
     "COMPLETE_CLOSURE_MANAGEMENT_TYPES",
+    "ALTERNATIVE_LANE_LABELS",
+    "ALTERNATIVE_MANAGEMENT_LABELS",
+    "ALTERNATIVE_MANAGEMENT_TYPES",
     "DETAIL_REASON_MAP",
     "DIRECTION_MAP",
     "GENERIC_REASON_MAP",

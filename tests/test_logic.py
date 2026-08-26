@@ -36,6 +36,7 @@ def closure(**overrides):
         "cause_code": "infrastructureDamageObstruction",
         "detail_code": "rockfalls",
         "published_at": "2026-08-17T13:45:00+02:00",
+        "alternative": "",
     }
     item.update(overrides)
     return item
@@ -142,6 +143,11 @@ class ReconciliationTests(unittest.TestCase):
             ("direction", "increasing", "<i>Creciente</i>"),
             ("km_start", 32, "<i>32,000–39,000</i>"),
             ("km_end", 40, "<i>31,000–40,000</i>"),
+            (
+                "alternative",
+                "Tráfico por un carril reversible",
+                "↪️ <b>Alternativa:</b> Tráfico por un carril reversible",
+            ),
         ]
         for field, value, expected in cases:
             with self.subTest(field=field):
@@ -372,6 +378,25 @@ class ReconciliationTests(unittest.TestCase):
                     format_message(closure(), event),
                     f"<b>{title}</b>\n\n{expected_body}",
                 )
+
+    def test_verified_alternative_is_shown_except_after_total_reopening(self):
+        item = closure(
+            alternative=(
+                "Tráfico desviado por un carril reversible habilitado "
+                "en la calzada contraria"
+            )
+        )
+        active_message = format_message(item, EVENT_CLOSED)
+        reopened_message = format_message(item, EVENT_REOPENED)
+
+        self.assertIn(
+            "<i>Doble sentido</i>\n"
+            "↪️ <b>Alternativa:</b> Tráfico desviado por un carril reversible "
+            "habilitado en la calzada contraria\n\n"
+            "<i>Publicado:",
+            active_message,
+        )
+        self.assertNotIn("Alternativa:", reopened_message)
 
     def test_published_at_is_preserved_and_a_real_change_is_an_update(self):
         state = baseline()
