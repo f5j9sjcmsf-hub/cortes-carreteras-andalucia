@@ -36,6 +36,26 @@ def test_html_parse_mode_is_preserved(configured_telegram):
     assert post.call_args.kwargs["data"]["text"] == "<b>Carretera cortada</b>"
 
 
+def test_message_can_be_routed_to_a_forum_topic(configured_telegram):
+    with patch("telegram.requests.post", return_value=telegram_response()) as post:
+        telegram.send_message(
+            "mensaje provincial",
+            chat_id="-1001234567890",
+            message_thread_id=42,
+        )
+
+    data = post.call_args.kwargs["data"]
+    assert data["chat_id"] == "-1001234567890"
+    assert data["message_thread_id"] == "42"
+
+
+def test_forum_pending_extracts_the_province_and_deduplicates():
+    message = "<b>🔴 CARRETERA CORTADA</b>\n\n📍 Granada\n<i>Güéjar Sierra</i>"
+    pending = telegram.build_forum_pending([message])
+    assert pending[0]["province"] == "Granada"
+    assert telegram.merge_forum_pending(pending, pending) == pending
+
+
 def test_429_retries_only_the_current_message_and_honours_retry_after(
     configured_telegram,
 ):

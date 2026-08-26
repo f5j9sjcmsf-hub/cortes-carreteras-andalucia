@@ -1,0 +1,76 @@
+name: Registrar temas provinciales de Telegram
+
+on:
+  workflow_dispatch:
+
+permissions:
+  actions: write
+  contents: write
+
+concurrency:
+  group: carreteras-cortadas-andalucia-vigilancia-v2
+  cancel-in-progress: true
+
+jobs:
+  registrar:
+    name: Descubrir y verificar los ocho temas
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      STATE_BRANCH: estado
+      STATE_FILE: data/state.json
+      TELEGRAM_FORUM_CONFIG_FILE: data/telegram_forum.enc
+      TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+      TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+
+    steps:
+      - name: Descargar el código
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          fetch-depth: 0
+
+      - name: Preparar Python
+        uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Instalar dependencias y ejecutar las pruebas
+        run: |
+          python -m pip install --disable-pip-version-check -r requirements.txt
+          python -m pytest -q
+
+      - name: Preparar la rama privada de estado operativo
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+          state_worktree="${RUNNER_TEMP}/registro-temas-estado"
+          echo "STATE_WORKTREE=${state_worktree}" >> "${GITHUB_ENV}"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git fetch --no-tags origin \
+            "refs/heads/${STATE_BRANCH}:refs/remotes/origin/${STATE_BRANCH}"
+          git worktree add -b "${STATE_BRANCH}" \
+            "${state_worktree}" "origin/${STATE_BRANCH}"
+
+      - name: Registrar, probar y cifrar los destinos provinciales
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+          python src/register_forum.py \
+            --state "${STATE_WORKTREE}/${STATE_FILE}" \
+            --output "${STATE_WORKTREE}/${TELEGRAM_FORUM_CONFIG_FILE}"
+
+          git -C "${STATE_WORKTREE}" add -f -- "${TELEGRAM_FORUM_CONFIG_FILE}"
+          git -C "${STATE_WORKTREE}" commit \
+            -m "Registra los temas provinciales de Telegram"
+          git -C "${STATE_WORKTREE}" push origin "HEAD:${STATE_BRANCH}"
+
+      - name: Reactivar la vigilancia normal
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: >-
+          gh workflow run vigilancia.yml
+          --repo "${GITHUB_REPOSITORY}"
+          --ref "${GITHUB_REF_NAME}"
+

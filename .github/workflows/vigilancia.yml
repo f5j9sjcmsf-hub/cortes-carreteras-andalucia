@@ -19,6 +19,7 @@ jobs:
     env:
       STATE_BRANCH: estado
       STATE_FILE: data/state.json
+      TELEGRAM_FORUM_CONFIG_FILE: data/telegram_forum.enc
       TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
       TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
 
@@ -84,6 +85,14 @@ jobs:
             printf '{}\n' > "${STATE_FILE}.tmp"
           fi
           mv "${STATE_FILE}.tmp" "${STATE_FILE}"
+
+          if [[ -f "${state_worktree}/${TELEGRAM_FORUM_CONFIG_FILE}" ]]; then
+            mkdir -p "$(dirname "${TELEGRAM_FORUM_CONFIG_FILE}")"
+            cp "${state_worktree}/${TELEGRAM_FORUM_CONFIG_FILE}" \
+              "${TELEGRAM_FORUM_CONFIG_FILE}.tmp"
+            mv "${TELEGRAM_FORUM_CONFIG_FILE}.tmp" \
+              "${TELEGRAM_FORUM_CONFIG_FILE}"
+          fi
 
       - name: Vigilar y guardar cada cambio de estado
         shell: bash

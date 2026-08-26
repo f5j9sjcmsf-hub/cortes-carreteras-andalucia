@@ -1,4 +1,6 @@
 import math
+import hashlib
+import re
 import time
 
 import requests
@@ -6,8 +8,10 @@ import requests
 from config import (
     TELEGRAM_BOT_TOKEN,
     TELEGRAM_CHAT_ID,
+    TELEGRAM_FORUM_CONFIG_FILE,
     TELEGRAM_TIMEOUT_SECONDS,
 )
+from forum_config import load_forum_config
 
 
 MAX_MESSAGE_LENGTH = 4000
@@ -45,6 +49,8 @@ def validate_configuration():
         raise RuntimeError("Falta el secreto TELEGRAM_BOT_TOKEN.")
     if not TELEGRAM_CHAT_ID:
         raise RuntimeError("Falta el secreto TELEGRAM_CHAT_ID.")
+    if TELEGRAM_FORUM_CONFIG_FILE.exists():
+        load_forum_config(TELEGRAM_FORUM_CONFIG_FILE, TELEGRAM_BOT_TOKEN)
 
 
 def _status_code(response):
@@ -99,18 +105,21 @@ def _telegram_error(status, payload):
     return RuntimeError(f"Telegram rechazó el envío ({diagnostic}).")
 
 
-def _send_chunk(endpoint, chunk):
+def _send_chunk(endpoint, chunk, chat_id, message_thread_id=None):
     rate_limit_retries = 0
     while True:
         try:
+            data = {
+                "chat_id": chat_id,
+                "text": chunk,
+                "parse_mode": "HTML",
+                "disable_web_page_preview": "true",
+            }
+            if message_thread_id is not None:
+                data["message_thread_id"] = str(message_thread_id)
             response = requests.post(
                 endpoint,
-                data={
-                    "chat_id": TELEGRAM_CHAT_ID,
-                    "text": chunk,
-                    "parse_mode": "HTML",
-                    "disable_web_page_preview": "true",
-                },
+                data=data,
                 timeout=TELEGRAM_TIMEOUT_SECONDS,
             )
         except requests.RequestException:
@@ -143,14 +152,15 @@ def _send_chunk(endpoint, chunk):
         return
 
 
-def send_message(text):
+def send_message(text, *, chat_id=None, message_thread_id=None):
     validate_configuration()
     endpoint = f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/sendMessage"
+    destination = TELEGRAM_CHAT_ID if chat_id is None else chat_id
 
     for index, chunk in enumerate(_split_message(text)):
         if index:
             time.sleep(MESSAGE_INTERVAL_SECONDS)
-        _send_chunk(endpoint, chunk)
+        _send_chunk(endpoint, chunk, destination, message_thread_id)
 
 
 def send_messages(messages):
@@ -158,4 +168,83 @@ def send_messages(messages):
         if index:
             time.sleep(MESSAGE_INTERVAL_SECONDS)
         send_message(message)
+
+
+_PROVINCE_LINE = re.compile(r"(?m)^📍\s+([^<\n]+)\s*$")
+
+
+def forum_is_configured():
+    return TELEGRAM_FORUM_CONFIG_FILE.exists()
+
+
+def _message_province(message):
+    match = _PROVINCE_LINE.search(message)
+    return match.group(1).strip() if match else ""
+
+
+def build_forum_pending(messages):
+    pending = []
+    for message in messages:
+        province = _message_province(message)
+        if not province:
+            continue
+        pending.append(
+            {
+                "id": hashlib.sha256(message.encode("utf-8")).hexdigest()[:24],
+                "province": province,
+                "message": message,
+            }
+        )
+    return pending
+
+
+def merge_forum_pending(previous, current):
+    merged = {}
+    for item in [*(previous or []), *(current or [])]:
+        if not isinstance(item, dict):
+            continue
+        identifier = item.get("id")
+        province = item.get("province")
+        message = item.get("message")
+        if all(isinstance(value, str) and value for value in (
+            identifier,
+            province,
+            message,
+        )):
+            merged[identifier] = {
+                "id": identifier,
+                "province": province,
+                "message": message,
+            }
+    return [merged[key] for key in sorted(merged)]
+
+
+def deliver_forum_pending(pending):
+    config = load_forum_config(
+        TELEGRAM_FORUM_CONFIG_FILE,
+        TELEGRAM_BOT_TOKEN,
+    )
+    if config is None:
+        return list(pending)
+
+    remaining = []
+    for index, item in enumerate(pending):
+        if index:
+            time.sleep(MESSAGE_INTERVAL_SECONDS)
+        province = item["province"]
+        thread_id = config["topics"].get(province)
+        if thread_id is None:
+            print(f"Aviso: no existe destino provincial para {province}.")
+            remaining.append(item)
+            continue
+        try:
+            send_message(
+                item["message"],
+                chat_id=config["group_chat_id"],
+                message_thread_id=thread_id,
+            )
+        except RuntimeError as error:
+            print(f"Aviso: falló el envío al tema de {province}: {error}")
+            remaining.append(item)
+    return remaining
 

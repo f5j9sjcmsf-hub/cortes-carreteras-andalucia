@@ -7,6 +7,7 @@ ROOT = Path(__file__).resolve().parents[1]
 WORKFLOWS = ROOT / ".github" / "workflows"
 VIGILANCIA = WORKFLOWS / "vigilancia.yml"
 PRUEBA_TELEGRAM = WORKFLOWS / "prueba_telegram.yml"
+REGISTRAR_TEMAS = WORKFLOWS / "registrar_temas.yml"
 
 CHECKOUT_SHA = "3d3c42e5aac5ba805825da76410c181273ba90b1"
 SETUP_PYTHON_SHA = "5fda3b95a4ea91299a34e894583c3862153e4b97"
@@ -21,14 +22,15 @@ class WorkflowTests(unittest.TestCase):
     def setUpClass(cls):
         cls.vigilancia = read(VIGILANCIA)
         cls.prueba = read(PRUEBA_TELEGRAM)
+        cls.registrar = read(REGISTRAR_TEMAS)
 
     def test_both_workflows_are_manual_only(self):
-        for text in (self.vigilancia, self.prueba):
+        for text in (self.vigilancia, self.prueba, self.registrar):
             self.assertRegex(text, r"(?m)^\s{2}workflow_dispatch:\s*$")
             self.assertNotRegex(text, r"(?mi)^\s*(schedule|cron)\s*:")
 
     def test_official_actions_are_pinned_to_full_known_shas(self):
-        for text in (self.vigilancia, self.prueba):
+        for text in (self.vigilancia, self.prueba, self.registrar):
             self.assertIn(f"actions/checkout@{CHECKOUT_SHA}", text)
             self.assertIn(f"actions/setup-python@{SETUP_PYTHON_SHA}", text)
             for action, revision in re.findall(
@@ -54,6 +56,12 @@ class WorkflowTests(unittest.TestCase):
         self.assertIn("secrets.TELEGRAM_BOT_TOKEN", self.vigilancia)
         self.assertIn("secrets.TELEGRAM_CHAT_ID", self.vigilancia)
         self.assertNotRegex(self.vigilancia, r"(?i)INFOCA")
+
+    def test_provincial_registration_never_prints_identifiers(self):
+        self.assertIn("src/register_forum.py", self.registrar)
+        self.assertIn("data/telegram_forum.enc", self.registrar)
+        self.assertIn("cancel-in-progress: true", self.registrar)
+        self.assertNotRegex(self.registrar, r"(?i)echo.*(chat|thread|topic).*(id|ident)")
 
     def test_tests_run_before_the_six_checks(self):
         tests = "python -m pytest -q"
