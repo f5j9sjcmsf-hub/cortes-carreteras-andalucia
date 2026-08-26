@@ -42,7 +42,7 @@ class WorkflowTests(unittest.TestCase):
 
     def test_vigilance_has_its_own_non_cancelling_concurrency_group(self):
         self.assertIn(
-            "group: carreteras-cortadas-andalucia-vigilancia",
+            "group: carreteras-cortadas-andalucia-vigilancia-v2",
             self.vigilancia,
         )
         self.assertIn("cancel-in-progress: false", self.vigilancia)
