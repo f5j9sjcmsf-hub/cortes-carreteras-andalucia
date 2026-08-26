@@ -118,6 +118,7 @@ def test_extracts_normalised_fields_from_namespaced_xml():
             "situation_ids": ["s1"],
             "record_ids": ["r1"],
             "published_at": "2026-08-01T10:15:30.000+02:00",
+            "source_updated_at": "2026-08-02T12:00:00.000+02:00",
             "province": "Málaga",
             "localities": ["Casares"],
             "road": "A-7150",
@@ -246,11 +247,13 @@ def test_published_at_uses_creation_time_not_version_time():
         )
     )[0]
     assert closure["published_at"] == "2026-07-10T13:01:47.000+02:00"
+    assert closure["source_updated_at"] == "2026-08-17T09:30:00.000+02:00"
 
 
 def test_missing_creation_time_is_returned_as_empty_string():
     closure = dgt.parse_closures(_xml(_record(creation_time=None)))[0]
     assert closure["published_at"] == ""
+    assert closure["source_updated_at"] == "2026-08-02T12:00:00.000+02:00"
 
 
 def test_a44_complete_carriageway_closure_is_included_regression():

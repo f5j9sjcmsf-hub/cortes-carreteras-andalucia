@@ -36,6 +36,7 @@ def closure(**overrides):
         "cause_code": "infrastructureDamageObstruction",
         "detail_code": "rockfalls",
         "published_at": "2026-08-17T13:45:00+02:00",
+        "source_updated_at": "2026-08-17T14:05:00+02:00",
         "alternative": "",
     }
     item.update(overrides)
@@ -367,16 +368,24 @@ class ReconciliationTests(unittest.TestCase):
         expected_body = (
             "📍 Granada\n"
             "<i>Güéjar Sierra</i>\n\n"
-            "<b>A-395</b>, Desprendimiento\n\n"
+            "<b>A-395</b>, Desprendimiento\n"
             "<i>31,000–39,000</i>\n"
-            "<i>Doble sentido</i>\n\n"
-            "<i>Publicado: 17/08/2026 · 13:45 h</i>"
+            "<i>Doble sentido</i>"
         )
+        expected_dates = {
+            EVENT_CLOSED: "Publicado: 17/08/2026 · 13:45 h",
+            EVENT_UPDATED: "Actualizado: 17/08/2026 · 14:05 h",
+            EVENT_PARTIAL_REOPEN: "Reapertura parcial: 17/08/2026 · 14:05 h",
+            EVENT_REOPENED: "Reabierto: 17/08/2026 · 20:00 h",
+        }
         for event, title in expected_titles.items():
             with self.subTest(event=event):
                 self.assertEqual(
-                    format_message(closure(), event),
-                    f"<b>{title}</b>\n\n{expected_body}",
+                    format_message(closure(), event, event_at=NOW_1),
+                    (
+                        f"<b>{title}</b>\n\n{expected_body}\n\n"
+                        f"<i>{expected_dates[event]}</i>"
+                    ),
                 )
 
     def test_verified_alternative_is_shown_except_after_total_reopening(self):
@@ -387,16 +396,61 @@ class ReconciliationTests(unittest.TestCase):
             )
         )
         active_message = format_message(item, EVENT_CLOSED)
-        reopened_message = format_message(item, EVENT_REOPENED)
+        reopened_message = format_message(item, EVENT_REOPENED, event_at=NOW_2)
 
         self.assertIn(
-            "<i>Doble sentido</i>\n"
+            "<i>Doble sentido</i>\n\n"
             "↪️ <b>Alternativa:</b> Tráfico desviado por un carril reversible "
             "habilitado en la calzada contraria\n\n"
             "<i>Publicado:",
             active_message,
         )
         self.assertNotIn("Alternativa:", reopened_message)
+        self.assertIn("<i>Reabierto: 17/08/2026 · 20:15 h</i>", reopened_message)
+
+    def test_road_and_kilometres_are_consecutive_lines(self):
+        message = format_message(closure(), EVENT_CLOSED)
+        self.assertIn(
+            "<b>A-395</b>, Desprendimiento\n<i>31,000–39,000</i>",
+            message,
+        )
+        self.assertNotIn(
+            "<b>A-395</b>, Desprendimiento\n\n<i>31,000–39,000</i>",
+            message,
+        )
+
+    def test_event_dates_follow_the_event_semantics(self):
+        state = baseline()
+        changed = closure(
+            reason="Obras",
+            source_updated_at="2026-08-17T20:12:34+02:00",
+        )
+
+        updated_messages, updated_state = plan_changes(state, [changed], NOW_2)
+        reopened_messages, _ = plan_changes(updated_state, [], NOW_3)
+
+        self.assertEqual(len(updated_messages), 1)
+        self.assertIn(
+            "<i>Actualizado: 17/08/2026 · 20:12 h</i>",
+            updated_messages[0],
+        )
+        self.assertEqual(len(reopened_messages), 1)
+        self.assertIn(
+            "<i>Reabierto: 17/08/2026 · 20:30 h</i>",
+            reopened_messages[0],
+        )
+        self.assertNotIn("Publicado:", reopened_messages[0])
+
+    def test_update_without_valid_dgt_version_uses_detection_time(self):
+        state = baseline()
+        changed = closure(reason="Obras", source_updated_at="no-es-una-fecha")
+
+        messages, _ = plan_changes(state, [changed], NOW_2)
+
+        self.assertIn(
+            "<i>Actualizado: 17/08/2026 · 20:15 h</i>",
+            messages[0],
+        )
 
     def test_published_at_is_preserved_and_a_real_change_is_an_update(self):
         state = baseline()
@@ -410,7 +464,7 @@ class ReconciliationTests(unittest.TestCase):
 
         self.assertEqual(len(messages), 1)
         self.assertIn("🟠 CORTE ACTUALIZADO", messages[0])
-        self.assertIn("<i>Publicado: 17/08/2026 · 14:30 h</i>", messages[0])
+        self.assertIn("<i>Actualizado: 17/08/2026 · 14:05 h</i>", messages[0])
         self.assertEqual(
             only_active(next_state)["published_at"],
             "2026-08-17T14:30:00+02:00",

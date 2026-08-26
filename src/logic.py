@@ -33,6 +33,13 @@ EVENT_TITLES = {
     EVENT_REOPENED: "🟢 CARRETERA REABIERTA",
 }
 
+EVENT_DATE_LABELS = {
+    EVENT_CLOSED: "Publicado",
+    EVENT_UPDATED: "Actualizado",
+    EVENT_PARTIAL_REOPEN: "Reapertura parcial",
+    EVENT_REOPENED: "Reabierto",
+}
+
 _CLOSURE_FIELDS = (
     "source_ids",
     "situation_ids",
@@ -47,6 +54,7 @@ _CLOSURE_FIELDS = (
     "cause_code",
     "detail_code",
     "published_at",
+    "source_updated_at",
     "alternative",
 )
 
@@ -176,7 +184,7 @@ def plan_changes(
     matches = _match_closures(old_closures, closures)
 
     next_active: dict[str, dict[str, Any]] = {}
-    events: list[tuple[str, dict[str, Any]]] = []
+    events: list[tuple[str, dict[str, Any], str]] = []
     matched_old = set(matches.values())
 
     for current_index, closure in enumerate(closures):
@@ -189,7 +197,7 @@ def plan_changes(
                 last_seen_at=now_iso,
                 last_changed_at=now_iso,
             )
-            events.append((EVENT_CLOSED, closure))
+            events.append((EVENT_CLOSED, closure, now_iso))
             continue
 
         old_closure = old_closures[old_key]
@@ -197,9 +205,17 @@ def plan_changes(
         changed = _visible_signature(old_closure) != _visible_signature(closure)
         if changed:
             if _is_partial_reopening(old_closure, closure):
-                events.append((EVENT_PARTIAL_REOPEN, closure))
+                events.append((
+                    EVENT_PARTIAL_REOPEN,
+                    closure,
+                    closure["source_updated_at"] or now_iso,
+                ))
             else:
-                events.append((EVENT_UPDATED, closure))
+                events.append((
+                    EVENT_UPDATED,
+                    closure,
+                    closure["source_updated_at"] or now_iso,
+                ))
 
         next_active[old_key] = _state_entry(
             closure,
@@ -214,10 +230,13 @@ def plan_changes(
 
     for old_key, old_closure in old_closures.items():
         if old_key not in matched_old:
-            events.append((EVENT_REOPENED, old_closure))
+            events.append((EVENT_REOPENED, old_closure, now_iso))
 
     events.sort(key=lambda item: (_closure_sort_key(item[1]), _event_rank(item[0])))
-    messages = [format_message(closure, event) for event, closure in events]
+    messages = [
+        format_message(closure, event, event_at=event_at)
+        for event, closure, event_at in events
+    ]
 
     next_state = {
         "version": STATE_VERSION,
@@ -268,11 +287,19 @@ def normalize_closure(raw: Mapping[str, Any]) -> dict[str, Any]:
         "cause_code": _clean_text(raw.get("cause_code")),
         "detail_code": _clean_text(raw.get("detail_code")),
         "published_at": _normalise_published_at(raw.get("published_at")),
+        "source_updated_at": _normalise_published_at(
+            raw.get("source_updated_at")
+        ),
         "alternative": _clean_text(raw.get("alternative")),
     }
 
 
-def format_message(closure: Mapping[str, Any], event: str) -> str:
+def format_message(
+    closure: Mapping[str, Any],
+    event: str,
+    *,
+    event_at: Any = None,
+) -> str:
     """Render one Telegram message using HTML parse mode."""
 
     if event not in EVENT_TITLES:
@@ -284,13 +311,20 @@ def format_message(closure: Mapping[str, Any], event: str) -> str:
     road = item["road"] or "No indicada"
     direction = _DIRECTION_LABELS[item["direction"]]
     kilometres = _format_kilometres(item["km_start"], item["km_end"])
-    published = _format_published_at(item["published_at"])
+    fallback_event_at = _normalise_published_at(event_at)
+    if event == EVENT_CLOSED:
+        timestamp = item["published_at"] or fallback_event_at
+    elif event in {EVENT_UPDATED, EVENT_PARTIAL_REOPEN}:
+        timestamp = item["source_updated_at"] or fallback_event_at
+    else:
+        timestamp = fallback_event_at
+    formatted_timestamp = _format_published_at(timestamp)
     alternative = item["alternative"]
 
     alternative_line = ""
     if alternative and event != EVENT_REOPENED:
         alternative_line = (
-            "\n↪️ <b>Alternativa:</b> "
+            "\n\n↪️ <b>Alternativa:</b> "
             f"{escape(alternative)}"
         )
 
@@ -298,10 +332,10 @@ def format_message(closure: Mapping[str, Any], event: str) -> str:
         f"<b>{EVENT_TITLES[event]}</b>\n\n"
         f"📍 {escape(province)}\n"
         f"<i>{escape(locality)}</i>\n\n"
-        f"<b>{escape(road)}</b>, {escape(reason)}\n\n"
+        f"<b>{escape(road)}</b>, {escape(reason)}\n"
         f"<i>{escape(kilometres)}</i>\n"
         f"<i>{direction}</i>{alternative_line}\n\n"
-        f"<i>Publicado: {escape(published)}</i>"
+        f"<i>{EVENT_DATE_LABELS[event]}: {escape(formatted_timestamp)}</i>"
     )
 
 

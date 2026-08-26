@@ -573,6 +573,11 @@ def _record_to_closure(
         "situation_ids": [situation_id] if situation_id else [],
         "record_ids": [record_id] if record_id else [],
         "published_at": _first_text(record, "situationRecordCreationTime"),
+        "source_updated_at": _first_text(
+            record,
+            "situationRecordVersionTime",
+            "situationRecordCreationTime",
+        ),
         "province": _canonical_province(province_values),
         "localities": localities,
         "road": _first_text(record, "roadName", "roadNumber", "roadIdentifier"),
@@ -637,6 +642,11 @@ def _record_to_alternative(
         "km_end": km_end,
         "direction": _direction(record),
         "label": " / ".join(labels),
+        "source_updated_at": _first_text(
+            record,
+            "situationRecordVersionTime",
+            "situationRecordCreationTime",
+        ),
     }
 
 
@@ -645,8 +655,8 @@ def _attach_alternatives(
     alternatives: list[dict[str, Any]],
 ) -> list[dict[str, Any]]:
     for closure in closures:
-        labels = _unique(
-            alternative["label"]
+        matching = [
+            alternative
             for alternative in alternatives
             if alternative["situation_id"]
             and alternative["situation_id"] in closure["situation_ids"]
@@ -659,8 +669,18 @@ def _attach_alternatives(
                 or alternative["direction"] == "both"
                 or alternative["direction"] == closure["direction"]
             )
-        )
+        ]
+        labels = _unique(alternative["label"] for alternative in matching)
         closure["alternative"] = " / ".join(labels)
+        update_times = [
+            value
+            for value in (
+                closure.get("source_updated_at", ""),
+                *(alternative["source_updated_at"] for alternative in matching),
+            )
+            if value
+        ]
+        closure["source_updated_at"] = _latest_timestamp(update_times)
     return closures
 
 
@@ -691,7 +711,21 @@ def _merge(records: list[dict[str, Any]], direction: str) -> dict[str, Any]:
     merged["published_at"] = (
         min(publication_times, key=_publication_sort_key) if publication_times else ""
     )
+    update_times = [
+        record["source_updated_at"]
+        for record in records
+        if record["source_updated_at"]
+    ]
+    merged["source_updated_at"] = _latest_timestamp(update_times)
     return merged
+
+
+def _latest_timestamp(values: Iterable[str]) -> str:
+    values = list(values)
+    if not values:
+        return ""
+    valid = [value for value in values if _publication_sort_key(value)[0] == 0]
+    return max(valid, key=_publication_sort_key) if valid else max(values)
 
 
 def _publication_sort_key(value: str) -> tuple[int, datetime, str]:
