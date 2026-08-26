@@ -32,44 +32,30 @@ jobs:
       - name: Instalar dependencias
         run: python -m pip install --disable-pip-version-check -r requirements.txt
 
-      - name: Enviar prueba inequivoca del bot nuevo
+      - name: Enviar una carretera de prueba con el formato real
         shell: bash
         run: |
           python - <<'PY'
-          import os
-          import requests
+          import sys
 
-          token = os.environ.get("TELEGRAM_BOT_TOKEN", "").strip()
-          chat_id = os.environ.get("TELEGRAM_CHAT_ID", "").strip()
-          if not token or not chat_id:
-              raise SystemExit(
-                  "Faltan TELEGRAM_BOT_TOKEN o TELEGRAM_CHAT_ID en los "
-                  "Repository secrets."
-              )
+          sys.path.insert(0, "src")
 
-          message = (
-              "\u2705 PRUEBA CORRECTA DEL BOT NUEVO\n\n"
-              "Carreteras cortadas - Andalucía\n"
-              "Canal general de cortes completos de la DGT en Andalucía.\n"
-              "Incluye todos los motivos de corte."
-          )
-          response = requests.post(
-              f"https://api.telegram.org/bot{token}/sendMessage",
-              data={
-                  "chat_id": chat_id,
-                  "text": message,
-                  "disable_web_page_preview": "true",
-              },
-              timeout=30,
-          )
-          try:
-              payload = response.json()
-          except ValueError:
-              payload = {}
+          from logic import EVENT_CLOSED, format_message
+          from telegram import send_message
 
-          if not response.ok or payload.get("ok") is not True:
-              detail = payload.get("description", "respuesta sin detalle")
-              raise SystemExit(
-                  f"Telegram rechazo el envio ({response.status_code}): {detail}"
-              )
+          sample = {
+              "source_ids": ["prueba-formato"],
+              "situation_ids": ["prueba"],
+              "record_ids": ["prueba"],
+              "province": "Sevilla",
+              "localities": ["Sevilla"],
+              "road": "A-8005",
+              "km_start": 0,
+              "km_end": 2.160,
+              "direction": "both",
+              "reason": "Obras",
+              "published_at": "2026-08-27T10:30:00+02:00",
+          }
+          send_message(format_message(sample, EVENT_CLOSED))
           PY
+

@@ -76,13 +76,13 @@ class ReconciliationTests(unittest.TestCase):
 
         self.assertEqual(messages, reversed_messages)
         self.assertEqual(len(messages), 2)
-        self.assertIn("<i>📍 Almería — Níjar</i>", messages[0])
+        self.assertIn("📍 Almería\n<i>Níjar</i>", messages[0])
         self.assertIn("<b>🔴 CARRETERA CORTADA</b>", messages[0])
         self.assertIn("<b>A-7</b>", messages[0])
         self.assertIn("<i>Creciente</i>", messages[0])
         self.assertIn("<i>481,500</i>", messages[0])
         self.assertIn("<i>Publicado: 17/08/2026 · 13:45 h</i>", messages[0])
-        self.assertIn("<i>📍 Granada — Güéjar Sierra</i>", messages[1])
+        self.assertIn("📍 Granada\n<i>Güéjar Sierra</i>", messages[1])
         self.assertIn("<i>31,000–39,000</i>", messages[1])
         self.assertEqual(state["version"], 1)
         self.assertIs(state["initialized"], True)
@@ -129,15 +129,15 @@ class ReconciliationTests(unittest.TestCase):
         messages, next_state = plan_changes(state, [closure(), new], NOW_2)
         self.assertEqual(len(messages), 1)
         self.assertIn("🔴 CARRETERA CORTADA", messages[0])
-        self.assertIn("<i>📍 Jaén — Cazorla</i>", messages[0])
+        self.assertIn("📍 Jaén\n<i>Cazorla</i>", messages[0])
         self.assertIn("<i>Decreciente</i>", messages[0])
         self.assertEqual(len(next_state["active"]), 2)
 
     def test_every_user_visible_field_change_is_announced_as_update(self):
         cases = [
-            ("province", "Málaga", "<i>📍 Málaga — Güéjar Sierra</i>"),
-            ("localities", ["Monachil"], "<i>📍 Granada — Monachil</i>"),
-            ("reason", "Obras", "<b>Obras</b>"),
+            ("province", "Málaga", "📍 Málaga\n<i>Güéjar Sierra</i>"),
+            ("localities", ["Monachil"], "📍 Granada\n<i>Monachil</i>"),
+            ("reason", "Obras", "<b>A-395</b>, Obras"),
             ("road", "A-92", "<b>A-92</b>"),
             ("direction", "increasing", "<i>Creciente</i>"),
             ("km_start", 32, "<i>32,000–39,000</i>"),
@@ -334,7 +334,7 @@ class ReconciliationTests(unittest.TestCase):
             ),
             EVENT_CLOSED,
         )
-        self.assertIn("Cádiz &amp; Málaga — &lt;Ronda&gt;", message)
+        self.assertIn("📍 Cádiz &amp; Málaga\n<i>&lt;Ronda&gt;</i>", message)
         self.assertIn("Obras &lt;urgentes&gt;", message)
         self.assertIn("<b>No indicada</b>", message)
         self.assertIn("<i>No indicado</i>", message)
@@ -359,11 +359,11 @@ class ReconciliationTests(unittest.TestCase):
             EVENT_REOPENED: "🟢 CARRETERA REABIERTA",
         }
         expected_body = (
-            "<i>📍 Granada — Güéjar Sierra</i>\n"
-            "<b>Desprendimiento</b>\n\n"
-            "<b>A-395</b>\n\n"
-            "<i>Doble sentido</i>\n"
+            "📍 Granada\n"
+            "<i>Güéjar Sierra</i>\n\n"
+            "<b>A-395</b>, Desprendimiento\n\n"
             "<i>31,000–39,000</i>\n"
+            "<i>Doble sentido</i>\n\n"
             "<i>Publicado: 17/08/2026 · 13:45 h</i>"
         )
         for event, title in expected_titles.items():

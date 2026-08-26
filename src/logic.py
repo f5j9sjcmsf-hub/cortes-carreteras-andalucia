@@ -285,11 +285,11 @@ def format_message(closure: Mapping[str, Any], event: str) -> str:
 
     return (
         f"<b>{EVENT_TITLES[event]}</b>\n\n"
-        f"<i>📍 {escape(province)} — {escape(locality)}</i>\n"
-        f"<b>{escape(reason)}</b>\n\n"
-        f"<b>{escape(road)}</b>\n\n"
-        f"<i>{direction}</i>\n"
+        f"📍 {escape(province)}\n"
+        f"<i>{escape(locality)}</i>\n\n"
+        f"<b>{escape(road)}</b>, {escape(reason)}\n\n"
         f"<i>{escape(kilometres)}</i>\n"
+        f"<i>{direction}</i>\n\n"
         f"<i>Publicado: {escape(published)}</i>"
     )
 

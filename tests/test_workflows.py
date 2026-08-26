@@ -105,11 +105,12 @@ class WorkflowTests(unittest.TestCase):
         relay = self.vigilancia.split("  relevo:", 1)[1]
         self.assertEqual(relay.count("sleep 900"), 1)
 
-    def test_telegram_test_is_unmistakably_for_the_new_bot(self):
-        self.assertIn("PRUEBA CORRECTA DEL BOT NUEVO", self.prueba)
-        self.assertIn("Carreteras cortadas - Andalucía", self.prueba)
-        self.assertIn("todos los motivos", self.prueba)
-        self.assertIn("Canal general de cortes completos", self.prueba)
+    def test_telegram_test_uses_the_real_production_formatter(self):
+        self.assertIn("from logic import EVENT_CLOSED, format_message", self.prueba)
+        self.assertIn("from telegram import send_message", self.prueba)
+        self.assertIn('\"province\": \"Sevilla\"', self.prueba)
+        self.assertIn('\"road\": \"A-8005\"', self.prueba)
+        self.assertIn("send_message(format_message(sample, EVENT_CLOSED))", self.prueba)
         self.assertNotRegex(self.prueba, r"(?i)INFOCA|incendios")
         self.assertIn("secrets.TELEGRAM_BOT_TOKEN", self.prueba)
         self.assertIn("secrets.TELEGRAM_CHAT_ID", self.prueba)
