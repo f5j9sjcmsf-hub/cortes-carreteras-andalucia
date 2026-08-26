@@ -1,6 +1,7 @@
 {
   "active": {
     "src-05ecbaa67e7cc5418f5f": {
+      "alternative": "",
       "cause_code": "infrastructureDamageObstruction",
       "detail_code": "damagedRoadSurface",
       "direction": "both",
@@ -8,7 +9,7 @@
       "km_end": "12.4",
       "km_start": "0",
       "last_changed_at": "2026-08-27T00:23:32+02:00",
-      "last_seen_at": "2026-08-27T00:23:32+02:00",
+      "last_seen_at": "2026-08-27T00:38:35+02:00",
       "localities": [
         "Algámitas",
         "Pruna"
@@ -28,6 +29,7 @@
       ]
     },
     "src-089ddd74f60bce696598": {
+      "alternative": "",
       "cause_code": "environmentalObstruction",
       "detail_code": "rockfalls",
       "direction": "both",
@@ -35,7 +37,7 @@
       "km_end": "42.8",
       "km_start": "42.75",
       "last_changed_at": "2026-08-27T00:23:32+02:00",
-      "last_seen_at": "2026-08-27T00:23:32+02:00",
+      "last_seen_at": "2026-08-27T00:38:35+02:00",
       "localities": [
         "Priego de Córdoba"
       ],
@@ -54,6 +56,7 @@
       ]
     },
     "src-0d7015b1577d922b4ebc": {
+      "alternative": "",
       "cause_code": "roadMaintenance",
       "detail_code": "roadworks",
       "direction": "both",
@@ -61,7 +64,7 @@
       "km_end": "13.2",
       "km_start": "12",
       "last_changed_at": "2026-08-27T00:23:32+02:00",
-      "last_seen_at": "2026-08-27T00:23:32+02:00",
+      "last_seen_at": "2026-08-27T00:38:35+02:00",
       "localities": [
         "Úbeda"
       ],
@@ -82,6 +85,7 @@
       ]
     },
     "src-0ff9d801ead6c016ed4a": {
+      "alternative": "",
       "cause_code": "infrastructureDamageObstruction",
       "detail_code": "damagedRoadSurface",
       "direction": "both",
@@ -89,7 +93,7 @@
       "km_end": "10",
       "km_start": "10",
       "last_changed_at": "2026-08-27T00:23:32+02:00",
-      "last_seen_at": "2026-08-27T00:23:32+02:00",
+      "last_seen_at": "2026-08-27T00:38:35+02:00",
       "localities": [
         "Ronda"
       ],
@@ -108,6 +112,7 @@
       ]
     },
     "src-234d87f1350b9900b240": {
+      "alternative": "",
       "cause_code": "infrastructureDamageObstruction",
       "detail_code": "damagedRoadSurface",
       "direction": "both",
@@ -115,7 +120,7 @@
       "km_end": "33.2",
       "km_start": "30",
       "last_changed_at": "2026-08-27T00:23:32+02:00",
-      "last_seen_at": "2026-08-27T00:23:32+02:00",
+      "last_seen_at": "2026-08-27T00:38:35+02:00",
       "localities": [
         "Algodonales"
       ],
@@ -134,6 +139,7 @@
       ]
     },
     "src-31cf866711b3de82037c": {
+      "alternative": "",
       "cause_code": "environmentalObstruction",
       "detail_code": "rockfalls",
       "direction": "decreasing",
@@ -141,7 +147,7 @@
       "km_end": "31",
       "km_start": "25",
       "last_changed_at": "2026-08-27T00:23:32+02:00",
-      "last_seen_at": "2026-08-27T00:23:32+02:00",
+      "last_seen_at": "2026-08-27T00:38:35+02:00",
       "localities": [
         "Medina Sidonia"
       ],
@@ -160,6 +166,7 @@
       ]
     },
     "src-34530437943095d12c30": {
+      "alternative": "",
       "cause_code": "roadMaintenance",
       "detail_code": "roadworks",
       "direction": "increasing",
@@ -167,7 +174,7 @@
       "km_end": "0.6",
       "km_start": "0",
       "last_changed_at": "2026-08-27T00:23:32+02:00",
-      "last_seen_at": "2026-08-27T00:23:32+02:00",
+      "last_seen_at": "2026-08-27T00:38:35+02:00",
       "localities": [
         "Almedinilla"
       ],
@@ -186,6 +193,7 @@
       ]
     },
     "src-4574b44eff9a78e6e9a9": {
+      "alternative": "",
       "cause_code": "roadMaintenance",
       "detail_code": "roadworks",
       "direction": "increasing",
@@ -193,7 +201,7 @@
       "km_end": "392.3",
       "km_start": "390",
       "last_changed_at": "2026-08-27T00:23:32+02:00",
-      "last_seen_at": "2026-08-27T00:23:32+02:00",
+      "last_seen_at": "2026-08-27T00:38:35+02:00",
       "localities": [
         "Pechina",
         "Viator"
@@ -213,6 +221,7 @@
       ]
     },
     "src-46356cc20cee84f068bf": {
+      "alternative": "",
       "cause_code": "roadMaintenance",
       "detail_code": "roadworks",
       "direction": "both",
@@ -220,7 +229,7 @@
       "km_end": "2.16",
       "km_start": "0",
       "last_changed_at": "2026-08-27T00:23:32+02:00",
-      "last_seen_at": "2026-08-27T00:23:32+02:00",
+      "last_seen_at": "2026-08-27T00:38:35+02:00",
       "localities": [
         "Sevilla"
       ],
@@ -239,6 +248,7 @@
       ]
     },
     "src-4e2ea6a752dd05d52934": {
+      "alternative": "",
       "cause_code": "roadMaintenance",
       "detail_code": "roadworks",
       "direction": "both",
@@ -246,7 +256,7 @@
       "km_end": "1.6",
       "km_start": "0",
       "last_changed_at": "2026-08-27T00:23:32+02:00",
-      "last_seen_at": "2026-08-27T00:23:32+02:00",
+      "last_seen_at": "2026-08-27T00:38:35+02:00",
       "localities": [
         "Vícar"
       ],
@@ -267,6 +277,7 @@
       ]
     },
     "src-54577bf6eb5459876b7f": {
+      "alternative": "",
       "cause_code": "roadMaintenance",
       "detail_code": "roadworks",
       "direction": "increasing",
@@ -274,7 +285,7 @@
       "km_end": "11",
       "km_start": "2",
       "last_changed_at": "2026-08-27T00:23:32+02:00",
-      "last_seen_at": "2026-08-27T00:23:32+02:00",
+      "last_seen_at": "2026-08-27T00:38:35+02:00",
       "localities": [
         "Carmona"
       ],
@@ -293,6 +304,7 @@
       ]
     },
     "src-62af3d785bc78795a197": {
+      "alternative": "",
       "cause_code": "roadMaintenance",
       "detail_code": "roadworks",
       "direction": "increasing",
@@ -300,7 +312,7 @@
       "km_end": "13.7",
       "km_start": "10.4",
       "last_changed_at": "2026-08-27T00:23:32+02:00",
-      "last_seen_at": "2026-08-27T00:23:32+02:00",
+      "last_seen_at": "2026-08-27T00:38:35+02:00",
       "localities": [
         "Comares",
         "Riogordo"
@@ -320,6 +332,7 @@
       ]
     },
     "src-7324f9d142faa878a801": {
+      "alternative": "",
       "cause_code": "infrastructureDamageObstruction",
       "detail_code": "damagedRoadSurface",
       "direction": "both",
@@ -327,7 +340,7 @@
       "km_end": "13.65",
       "km_start": "13.65",
       "last_changed_at": "2026-08-27T00:23:32+02:00",
-      "last_seen_at": "2026-08-27T00:23:32+02:00",
+      "last_seen_at": "2026-08-27T00:38:35+02:00",
       "localities": [
         "Palma del Río"
       ],
@@ -346,6 +359,7 @@
       ]
     },
     "src-84a723d899f840d41dca": {
+      "alternative": "",
       "cause_code": "environmentalObstruction",
       "detail_code": "rockfalls",
       "direction": "both",
@@ -353,7 +367,7 @@
       "km_end": "33",
       "km_start": "32",
       "last_changed_at": "2026-08-27T00:23:32+02:00",
-      "last_seen_at": "2026-08-27T00:23:32+02:00",
+      "last_seen_at": "2026-08-27T00:38:35+02:00",
       "localities": [
         "Montefrío"
       ],
@@ -372,14 +386,15 @@
       ]
     },
     "src-8d6e1be5229e31898288": {
+      "alternative": "Tráfico desviado por un carril reversible habilitado en la calzada contraria",
       "cause_code": "roadMaintenance",
       "detail_code": "roadworks",
       "direction": "decreasing",
       "first_seen_at": "2026-08-27T00:23:32+02:00",
       "km_end": "59.7",
       "km_start": "55.8",
-      "last_changed_at": "2026-08-27T00:23:32+02:00",
-      "last_seen_at": "2026-08-27T00:23:32+02:00",
+      "last_changed_at": "2026-08-27T00:38:35+02:00",
+      "last_seen_at": "2026-08-27T00:38:35+02:00",
       "localities": [
         "Cárcheles",
         "Pegalajar"
@@ -399,6 +414,7 @@
       ]
     },
     "src-95047396713510e914b3": {
+      "alternative": "",
       "cause_code": "environmentalObstruction",
       "detail_code": "rockfalls",
       "direction": "both",
@@ -406,7 +422,7 @@
       "km_end": "5.01",
       "km_start": "5",
       "last_changed_at": "2026-08-27T00:23:32+02:00",
-      "last_seen_at": "2026-08-27T00:23:32+02:00",
+      "last_seen_at": "2026-08-27T00:38:35+02:00",
       "localities": [
         "Cabra"
       ],
@@ -425,6 +441,7 @@
       ]
     },
     "src-9691c4839f7bcb0dda2c": {
+      "alternative": "",
       "cause_code": "roadMaintenance",
       "detail_code": "roadworks",
       "direction": "increasing",
@@ -432,7 +449,7 @@
       "km_end": "1.8",
       "km_start": "0.5",
       "last_changed_at": "2026-08-27T00:23:32+02:00",
-      "last_seen_at": "2026-08-27T00:23:32+02:00",
+      "last_seen_at": "2026-08-27T00:38:35+02:00",
       "localities": [
         "Jimena de la Frontera"
       ],
@@ -451,14 +468,15 @@
       ]
     },
     "src-979eea6c17f1665938cb": {
+      "alternative": "Paso alternativo regulado por un único carril para ambos sentidos",
       "cause_code": "roadMaintenance",
       "detail_code": "roadworks",
       "direction": "decreasing",
       "first_seen_at": "2026-08-27T00:23:32+02:00",
       "km_end": "23.7",
       "km_start": "23.7",
-      "last_changed_at": "2026-08-27T00:23:32+02:00",
-      "last_seen_at": "2026-08-27T00:23:32+02:00",
+      "last_changed_at": "2026-08-27T00:38:35+02:00",
+      "last_seen_at": "2026-08-27T00:38:35+02:00",
       "localities": [
         "Güéjar Sierra"
       ],
@@ -477,6 +495,7 @@
       ]
     },
     "src-9dca823087713b75e7ff": {
+      "alternative": "",
       "cause_code": "roadMaintenance",
       "detail_code": "roadworks",
       "direction": "increasing",
@@ -484,7 +503,7 @@
       "km_end": "64",
       "km_start": "61.8",
       "last_changed_at": "2026-08-27T00:23:32+02:00",
-      "last_seen_at": "2026-08-27T00:23:32+02:00",
+      "last_seen_at": "2026-08-27T00:38:35+02:00",
       "localities": [
         "Villacarrillo"
       ],
@@ -503,6 +522,7 @@
       ]
     },
     "src-a9d3a2c68aa4e8e1a86c": {
+      "alternative": "",
       "cause_code": "roadMaintenance",
       "detail_code": "roadworks",
       "direction": "both",
@@ -510,7 +530,7 @@
       "km_end": "1.7",
       "km_start": "1",
       "last_changed_at": "2026-08-27T00:23:32+02:00",
-      "last_seen_at": "2026-08-27T00:23:32+02:00",
+      "last_seen_at": "2026-08-27T00:38:35+02:00",
       "localities": [
         "Monachil"
       ],
@@ -531,6 +551,7 @@
       ]
     },
     "src-ac4e0b85b27c795050b5": {
+      "alternative": "",
       "cause_code": "roadMaintenance",
       "detail_code": "roadworks",
       "direction": "both",
@@ -538,7 +559,7 @@
       "km_end": "3",
       "km_start": "0",
       "last_changed_at": "2026-08-27T00:23:32+02:00",
-      "last_seen_at": "2026-08-27T00:23:32+02:00",
+      "last_seen_at": "2026-08-27T00:38:35+02:00",
       "localities": [
         "Lucainena de las Torres",
         "Turrillas"
@@ -560,6 +581,7 @@
       ]
     },
     "src-af4a422b8bbb39cb0052": {
+      "alternative": "",
       "cause_code": "environmentalObstruction",
       "detail_code": "rockfalls",
       "direction": "both",
@@ -567,7 +589,7 @@
       "km_end": "3.2",
       "km_start": "0",
       "last_changed_at": "2026-08-27T00:23:32+02:00",
-      "last_seen_at": "2026-08-27T00:23:32+02:00",
+      "last_seen_at": "2026-08-27T00:38:35+02:00",
       "localities": [
         "Lucena",
         "Rute"
@@ -587,6 +609,7 @@
       ]
     },
     "src-b08997cf6ea2b33e2553": {
+      "alternative": "",
       "cause_code": "environmentalObstruction",
       "detail_code": "rockfalls",
       "direction": "both",
@@ -594,7 +617,7 @@
       "km_end": "2.25",
       "km_start": "1.2",
       "last_changed_at": "2026-08-27T00:23:32+02:00",
-      "last_seen_at": "2026-08-27T00:23:32+02:00",
+      "last_seen_at": "2026-08-27T00:38:35+02:00",
       "localities": [
         "Casares"
       ],
@@ -613,6 +636,7 @@
       ]
     },
     "src-c8955c0efa41ddfd9f54": {
+      "alternative": "",
       "cause_code": "roadMaintenance",
       "detail_code": "roadworks",
       "direction": "increasing",
@@ -620,7 +644,7 @@
       "km_end": "6.85",
       "km_start": "6.8",
       "last_changed_at": "2026-08-27T00:23:32+02:00",
-      "last_seen_at": "2026-08-27T00:23:32+02:00",
+      "last_seen_at": "2026-08-27T00:38:35+02:00",
       "localities": [
         "La Línea de la Concepción"
       ],
@@ -639,6 +663,7 @@
       ]
     },
     "src-d412e8cfbc9289d6cf2d": {
+      "alternative": "",
       "cause_code": "roadMaintenance",
       "detail_code": "roadworks",
       "direction": "both",
@@ -646,7 +671,7 @@
       "km_end": "12.8",
       "km_start": "0",
       "last_changed_at": "2026-08-27T00:23:32+02:00",
-      "last_seen_at": "2026-08-27T00:23:32+02:00",
+      "last_seen_at": "2026-08-27T00:38:35+02:00",
       "localities": [
         "Gerena",
         "Olivares"
@@ -668,6 +693,7 @@
       ]
     },
     "src-d5acf1b9f62b42a14bb3": {
+      "alternative": "",
       "cause_code": "roadMaintenance",
       "detail_code": "roadworks",
       "direction": "increasing",
@@ -675,7 +701,7 @@
       "km_end": "520.5",
       "km_start": "520.5",
       "last_changed_at": "2026-08-27T00:23:32+02:00",
-      "last_seen_at": "2026-08-27T00:23:32+02:00",
+      "last_seen_at": "2026-08-27T00:38:35+02:00",
       "localities": [
         "Carmona"
       ],
@@ -694,6 +720,7 @@
       ]
     },
     "src-e3a78bd522b761573ffb": {
+      "alternative": "",
       "cause_code": "infrastructureDamageObstruction",
       "detail_code": "damagedRoadSurface",
       "direction": "both",
@@ -701,7 +728,7 @@
       "km_end": "14.1",
       "km_start": "12.5",
       "last_changed_at": "2026-08-27T00:23:32+02:00",
-      "last_seen_at": "2026-08-27T00:23:32+02:00",
+      "last_seen_at": "2026-08-27T00:38:35+02:00",
       "localities": [
         "Carmona",
         "Marchena"
@@ -721,6 +748,7 @@
       ]
     },
     "src-fc78a837a9379cdad745": {
+      "alternative": "",
       "cause_code": "roadMaintenance",
       "detail_code": "roadworks",
       "direction": "both",
@@ -728,7 +756,7 @@
       "km_end": "1.2",
       "km_start": "0.6",
       "last_changed_at": "2026-08-27T00:23:32+02:00",
-      "last_seen_at": "2026-08-27T00:23:32+02:00",
+      "last_seen_at": "2026-08-27T00:38:35+02:00",
       "localities": [
         "Algeciras"
       ],
@@ -751,7 +779,7 @@
   },
   "initialized": true,
   "initialized_at": "2026-08-27T00:23:32+02:00",
-  "revision": 1,
-  "updated_at": "2026-08-27T00:23:32+02:00",
+  "revision": 2,
+  "updated_at": "2026-08-27T00:38:35+02:00",
   "version": 1
 }
