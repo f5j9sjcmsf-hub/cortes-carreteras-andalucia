@@ -9,7 +9,7 @@
       "km_end": "12.4",
       "km_start": "0",
       "last_changed_at": "2026-08-27T00:52:31+02:00",
-      "last_seen_at": "2026-09-07T20:51:39+02:00",
+      "last_seen_at": "2026-09-07T21:06:40+02:00",
       "localities": [
         "Algámitas",
         "Pruna"
@@ -38,7 +38,7 @@
       "km_end": "1.7",
       "km_start": "1",
       "last_changed_at": "2026-09-01T08:00:02+02:00",
-      "last_seen_at": "2026-09-07T20:51:39+02:00",
+      "last_seen_at": "2026-09-07T21:06:40+02:00",
       "localities": [
         "Monachil"
       ],
@@ -68,7 +68,7 @@
       "km_end": "42.8",
       "km_start": "42.75",
       "last_changed_at": "2026-08-27T00:52:31+02:00",
-      "last_seen_at": "2026-09-07T20:51:39+02:00",
+      "last_seen_at": "2026-09-07T21:06:40+02:00",
       "localities": [
         "Priego de Córdoba"
       ],
@@ -96,7 +96,7 @@
       "km_end": "10",
       "km_start": "10",
       "last_changed_at": "2026-08-27T00:52:31+02:00",
-      "last_seen_at": "2026-09-07T20:51:39+02:00",
+      "last_seen_at": "2026-09-07T21:06:40+02:00",
       "localities": [
         "Ronda"
       ],
@@ -124,7 +124,7 @@
       "km_end": "9.73",
       "km_start": "0",
       "last_changed_at": "2026-09-07T20:06:04+02:00",
-      "last_seen_at": "2026-09-07T20:51:39+02:00",
+      "last_seen_at": "2026-09-07T21:06:40+02:00",
       "localities": [
         "Los Palacios y Villafranca",
         "Utrera"
@@ -153,7 +153,7 @@
       "km_end": "33.2",
       "km_start": "30",
       "last_changed_at": "2026-08-27T00:52:31+02:00",
-      "last_seen_at": "2026-09-07T20:51:39+02:00",
+      "last_seen_at": "2026-09-07T21:06:40+02:00",
       "localities": [
         "Algodonales"
       ],
@@ -181,7 +181,7 @@
       "km_end": "31",
       "km_start": "25",
       "last_changed_at": "2026-08-27T00:52:31+02:00",
-      "last_seen_at": "2026-09-07T20:51:39+02:00",
+      "last_seen_at": "2026-09-07T21:06:40+02:00",
       "localities": [
         "Medina Sidonia"
       ],
@@ -209,7 +209,7 @@
       "km_end": "0.6",
       "km_start": "0",
       "last_changed_at": "2026-08-27T00:52:31+02:00",
-      "last_seen_at": "2026-09-07T20:51:39+02:00",
+      "last_seen_at": "2026-09-07T21:06:40+02:00",
       "localities": [
         "Almedinilla"
       ],
@@ -237,7 +237,7 @@
       "km_end": "17.2",
       "km_start": "8.9",
       "last_changed_at": "2026-09-02T10:59:10+02:00",
-      "last_seen_at": "2026-09-07T20:51:39+02:00",
+      "last_seen_at": "2026-09-07T21:06:40+02:00",
       "localities": [
         "Arcos de la Frontera",
         "Espera"
@@ -257,34 +257,6 @@
       ],
       "source_updated_at": "2026-09-02T10:49:53+02:00"
     },
-    "src-3c2471de7bf6f8651d3d": {
-      "alternative": "",
-      "cause_code": "roadMaintenance",
-      "detail_code": "roadworks",
-      "direction": "decreasing",
-      "first_seen_at": "2026-09-07T08:59:52+02:00",
-      "km_end": "365",
-      "km_start": "364",
-      "last_changed_at": "2026-09-07T08:59:52+02:00",
-      "last_seen_at": "2026-09-07T20:51:39+02:00",
-      "localities": [
-        "Montoro"
-      ],
-      "province": "Córdoba",
-      "published_at": "2026-09-07T08:56:43+02:00",
-      "reason": "Obras",
-      "record_ids": [
-        "27089073"
-      ],
-      "road": "A-4",
-      "situation_ids": [
-        "22446704"
-      ],
-      "source_ids": [
-        "22446704:27089073"
-      ],
-      "source_updated_at": "2026-09-07T08:56:43+02:00"
-    },
     "src-4574b44eff9a78e6e9a9": {
       "alternative": "",
       "cause_code": "roadMaintenance",
@@ -294,7 +266,7 @@
       "km_end": "392.3",
       "km_start": "390",
       "last_changed_at": "2026-09-04T14:11:28+02:00",
-      "last_seen_at": "2026-09-07T20:51:39+02:00",
+      "last_seen_at": "2026-09-07T21:06:40+02:00",
       "localities": [
         "Pechina",
         "Viator"
@@ -323,7 +295,7 @@
       "km_end": "2.16",
       "km_start": "0",
       "last_changed_at": "2026-08-27T00:52:31+02:00",
-      "last_seen_at": "2026-09-07T20:51:39+02:00",
+      "last_seen_at": "2026-09-07T21:06:40+02:00",
       "localities": [
         "Sevilla"
       ],
@@ -351,7 +323,7 @@
       "km_end": "1.6",
       "km_start": "0",
       "last_changed_at": "2026-08-27T00:52:31+02:00",
-      "last_seen_at": "2026-09-07T20:51:39+02:00",
+      "last_seen_at": "2026-09-07T21:06:40+02:00",
       "localities": [
         "Vícar"
       ],
@@ -381,7 +353,7 @@
       "km_end": "11",
       "km_start": "2",
       "last_changed_at": "2026-08-27T00:52:31+02:00",
-      "last_seen_at": "2026-09-07T20:51:39+02:00",
+      "last_seen_at": "2026-09-07T21:06:40+02:00",
       "localities": [
         "Carmona"
       ],
@@ -400,36 +372,6 @@
       ],
       "source_updated_at": "2026-03-05T10:32:00+01:00"
     },
-    "src-66e94f77911cf2396c7a": {
-      "alternative": "",
-      "cause_code": "roadMaintenance",
-      "detail_code": "roadworks",
-      "direction": "both",
-      "first_seen_at": "2026-08-27T10:38:02+02:00",
-      "km_end": "7.5",
-      "km_start": "7",
-      "last_changed_at": "2026-08-27T10:38:02+02:00",
-      "last_seen_at": "2026-09-07T20:51:39+02:00",
-      "localities": [
-        "La Palma del Condado"
-      ],
-      "province": "Huelva",
-      "published_at": "2026-08-27T10:25:33+02:00",
-      "reason": "Obras",
-      "record_ids": [
-        "25107938",
-        "25107939"
-      ],
-      "road": "HU-4103",
-      "situation_ids": [
-        "20952460"
-      ],
-      "source_ids": [
-        "20952460:25107938",
-        "20952460:25107939"
-      ],
-      "source_updated_at": "2026-08-27T10:25:38+02:00"
-    },
     "src-7324f9d142faa878a801": {
       "alternative": "",
       "cause_code": "infrastructureDamageObstruction",
@@ -439,7 +381,7 @@
       "km_end": "13.65",
       "km_start": "13.65",
       "last_changed_at": "2026-08-27T00:52:31+02:00",
-      "last_seen_at": "2026-09-07T20:51:39+02:00",
+      "last_seen_at": "2026-09-07T21:06:40+02:00",
       "localities": [
         "Palma del Río"
       ],
@@ -467,7 +409,7 @@
       "km_end": "49.7",
       "km_start": "49.2",
       "last_changed_at": "2026-09-07T08:14:46+02:00",
-      "last_seen_at": "2026-09-07T20:51:39+02:00",
+      "last_seen_at": "2026-09-07T21:06:40+02:00",
       "localities": [
         "Montilla"
       ],
@@ -495,7 +437,7 @@
       "km_end": "33",
       "km_start": "32",
       "last_changed_at": "2026-08-27T00:52:31+02:00",
-      "last_seen_at": "2026-09-07T20:51:39+02:00",
+      "last_seen_at": "2026-09-07T21:06:40+02:00",
       "localities": [
         "Montefrío"
       ],
@@ -523,7 +465,7 @@
       "km_end": "59.7",
       "km_start": "55.8",
       "last_changed_at": "2026-08-27T00:52:31+02:00",
-      "last_seen_at": "2026-09-07T20:51:39+02:00",
+      "last_seen_at": "2026-09-07T21:06:40+02:00",
       "localities": [
         "Cárcheles",
         "Pegalajar"
@@ -552,7 +494,7 @@
       "km_end": "6.85",
       "km_start": "6.8",
       "last_changed_at": "2026-09-02T08:42:46+02:00",
-      "last_seen_at": "2026-09-07T20:51:39+02:00",
+      "last_seen_at": "2026-09-07T21:06:40+02:00",
       "localities": [
         "La Línea de la Concepción"
       ],
@@ -580,7 +522,7 @@
       "km_end": "5.01",
       "km_start": "5",
       "last_changed_at": "2026-08-27T00:52:31+02:00",
-      "last_seen_at": "2026-09-07T20:51:39+02:00",
+      "last_seen_at": "2026-09-07T21:06:40+02:00",
       "localities": [
         "Cabra"
       ],
@@ -608,7 +550,7 @@
       "km_end": "1.8",
       "km_start": "0.5",
       "last_changed_at": "2026-09-03T13:12:29+02:00",
-      "last_seen_at": "2026-09-07T20:51:39+02:00",
+      "last_seen_at": "2026-09-07T21:06:40+02:00",
       "localities": [
         "Jimena de la Frontera"
       ],
@@ -638,7 +580,7 @@
       "km_end": "64",
       "km_start": "61.8",
       "last_changed_at": "2026-08-27T00:52:31+02:00",
-      "last_seen_at": "2026-09-07T20:51:39+02:00",
+      "last_seen_at": "2026-09-07T21:06:40+02:00",
       "localities": [
         "Villacarrillo"
       ],
@@ -666,7 +608,7 @@
       "km_end": "3",
       "km_start": "0",
       "last_changed_at": "2026-08-27T00:52:31+02:00",
-      "last_seen_at": "2026-09-07T20:51:39+02:00",
+      "last_seen_at": "2026-09-07T21:06:40+02:00",
       "localities": [
         "Lucainena de las Torres",
         "Turrillas"
@@ -697,7 +639,7 @@
       "km_end": "3.2",
       "km_start": "0",
       "last_changed_at": "2026-08-27T00:52:31+02:00",
-      "last_seen_at": "2026-09-07T20:51:39+02:00",
+      "last_seen_at": "2026-09-07T21:06:40+02:00",
       "localities": [
         "Lucena",
         "Rute"
@@ -726,7 +668,7 @@
       "km_end": "2.25",
       "km_start": "1.2",
       "last_changed_at": "2026-08-27T00:52:31+02:00",
-      "last_seen_at": "2026-09-07T20:51:39+02:00",
+      "last_seen_at": "2026-09-07T21:06:40+02:00",
       "localities": [
         "Casares"
       ],
@@ -754,7 +696,7 @@
       "km_end": "17",
       "km_start": "13",
       "last_changed_at": "2026-09-01T08:45:42+02:00",
-      "last_seen_at": "2026-09-07T20:51:39+02:00",
+      "last_seen_at": "2026-09-07T21:06:40+02:00",
       "localities": [
         "El Gastor",
         "Grazalema"
@@ -783,7 +725,7 @@
       "km_end": "52",
       "km_start": "49.5",
       "last_changed_at": "2026-09-02T09:12:52+02:00",
-      "last_seen_at": "2026-09-07T20:51:39+02:00",
+      "last_seen_at": "2026-09-07T21:06:40+02:00",
       "localities": [
         "Alcalá de los Gazules"
       ],
@@ -811,7 +753,7 @@
       "km_end": "67",
       "km_start": "61",
       "last_changed_at": "2026-09-07T04:28:02+02:00",
-      "last_seen_at": "2026-09-07T20:51:39+02:00",
+      "last_seen_at": "2026-09-07T21:06:40+02:00",
       "localities": [
         "La Puebla de Cazalla",
         "Marchena"
@@ -840,7 +782,7 @@
       "km_end": "1.95",
       "km_start": "1.84",
       "last_changed_at": "2026-09-04T10:24:32+02:00",
-      "last_seen_at": "2026-09-07T20:51:39+02:00",
+      "last_seen_at": "2026-09-07T21:06:40+02:00",
       "localities": [
         "Iznatoraf"
       ],
@@ -870,7 +812,7 @@
       "km_end": "12.8",
       "km_start": "0",
       "last_changed_at": "2026-08-27T00:52:31+02:00",
-      "last_seen_at": "2026-09-07T20:51:39+02:00",
+      "last_seen_at": "2026-09-07T21:06:40+02:00",
       "localities": [
         "Gerena",
         "Olivares"
@@ -901,7 +843,7 @@
       "km_end": "520.5",
       "km_start": "520.5",
       "last_changed_at": "2026-08-27T00:52:31+02:00",
-      "last_seen_at": "2026-09-07T20:51:39+02:00",
+      "last_seen_at": "2026-09-07T21:06:40+02:00",
       "localities": [
         "Carmona"
       ],
@@ -929,7 +871,7 @@
       "km_end": "17.7",
       "km_start": "8.9",
       "last_changed_at": "2026-09-02T10:59:10+02:00",
-      "last_seen_at": "2026-09-07T20:51:39+02:00",
+      "last_seen_at": "2026-09-07T21:06:40+02:00",
       "localities": [
         "Arcos de la Frontera",
         "Espera"
@@ -958,7 +900,7 @@
       "km_end": "14.1",
       "km_start": "12.5",
       "last_changed_at": "2026-08-27T00:52:31+02:00",
-      "last_seen_at": "2026-09-07T20:51:39+02:00",
+      "last_seen_at": "2026-09-07T21:06:40+02:00",
       "localities": [
         "Carmona",
         "Marchena"
@@ -987,7 +929,7 @@
       "km_end": "28.5",
       "km_start": "27.7",
       "last_changed_at": "2026-08-27T11:23:09+02:00",
-      "last_seen_at": "2026-09-07T20:51:39+02:00",
+      "last_seen_at": "2026-09-07T21:06:40+02:00",
       "localities": [
         "La Rambla"
       ],
@@ -1017,7 +959,7 @@
       "km_end": "1.2",
       "km_start": "0.6",
       "last_changed_at": "2026-08-27T00:52:31+02:00",
-      "last_seen_at": "2026-09-07T20:51:39+02:00",
+      "last_seen_at": "2026-09-07T21:06:40+02:00",
       "localities": [
         "Algeciras"
       ],
@@ -1047,7 +989,7 @@
       "km_end": "13.7",
       "km_start": "10.4",
       "last_changed_at": "2026-08-31T08:07:57+02:00",
-      "last_seen_at": "2026-09-07T20:51:39+02:00",
+      "last_seen_at": "2026-09-07T21:06:40+02:00",
       "localities": [
         "Comares",
         "Riogordo"
@@ -1073,7 +1015,7 @@
   "forum_pending": [],
   "initialized": true,
   "initialized_at": "2026-08-27T00:52:31+02:00",
-  "revision": 1344,
-  "updated_at": "2026-09-07T20:51:39+02:00",
+  "revision": 1345,
+  "updated_at": "2026-09-07T21:06:40+02:00",
   "version": 1
 }
