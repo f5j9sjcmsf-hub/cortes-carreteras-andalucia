@@ -9,7 +9,7 @@
       "km_end": "12.4",
       "km_start": "0",
       "last_changed_at": "2026-08-27T00:52:31+02:00",
-      "last_seen_at": "2026-09-10T17:32:06+02:00",
+      "last_seen_at": "2026-09-10T17:47:08+02:00",
       "localities": [
         "Algámitas",
         "Pruna"
@@ -38,7 +38,7 @@
       "km_end": "1.7",
       "km_start": "1",
       "last_changed_at": "2026-09-01T08:00:02+02:00",
-      "last_seen_at": "2026-09-10T17:32:06+02:00",
+      "last_seen_at": "2026-09-10T17:47:08+02:00",
       "localities": [
         "Monachil"
       ],
@@ -68,7 +68,7 @@
       "km_end": "42.8",
       "km_start": "42.75",
       "last_changed_at": "2026-08-27T00:52:31+02:00",
-      "last_seen_at": "2026-09-10T17:32:06+02:00",
+      "last_seen_at": "2026-09-10T17:47:08+02:00",
       "localities": [
         "Priego de Córdoba"
       ],
@@ -96,7 +96,7 @@
       "km_end": "10",
       "km_start": "10",
       "last_changed_at": "2026-08-27T00:52:31+02:00",
-      "last_seen_at": "2026-09-10T17:32:06+02:00",
+      "last_seen_at": "2026-09-10T17:47:08+02:00",
       "localities": [
         "Ronda"
       ],
@@ -124,7 +124,7 @@
       "km_end": "33.2",
       "km_start": "30",
       "last_changed_at": "2026-08-27T00:52:31+02:00",
-      "last_seen_at": "2026-09-10T17:32:06+02:00",
+      "last_seen_at": "2026-09-10T17:47:08+02:00",
       "localities": [
         "Algodonales"
       ],
@@ -152,7 +152,7 @@
       "km_end": "31",
       "km_start": "25",
       "last_changed_at": "2026-08-27T00:52:31+02:00",
-      "last_seen_at": "2026-09-10T17:32:06+02:00",
+      "last_seen_at": "2026-09-10T17:47:08+02:00",
       "localities": [
         "Medina Sidonia"
       ],
@@ -180,7 +180,7 @@
       "km_end": "0.6",
       "km_start": "0",
       "last_changed_at": "2026-08-27T00:52:31+02:00",
-      "last_seen_at": "2026-09-10T17:32:06+02:00",
+      "last_seen_at": "2026-09-10T17:47:08+02:00",
       "localities": [
         "Almedinilla"
       ],
@@ -208,7 +208,7 @@
       "km_end": "17.2",
       "km_start": "8.9",
       "last_changed_at": "2026-09-02T10:59:10+02:00",
-      "last_seen_at": "2026-09-10T17:32:06+02:00",
+      "last_seen_at": "2026-09-10T17:47:08+02:00",
       "localities": [
         "Arcos de la Frontera",
         "Espera"
@@ -237,7 +237,7 @@
       "km_end": "392.3",
       "km_start": "390",
       "last_changed_at": "2026-09-04T14:11:28+02:00",
-      "last_seen_at": "2026-09-10T17:32:06+02:00",
+      "last_seen_at": "2026-09-10T17:47:08+02:00",
       "localities": [
         "Pechina",
         "Viator"
@@ -266,7 +266,7 @@
       "km_end": "2.16",
       "km_start": "0",
       "last_changed_at": "2026-08-27T00:52:31+02:00",
-      "last_seen_at": "2026-09-10T17:32:06+02:00",
+      "last_seen_at": "2026-09-10T17:47:08+02:00",
       "localities": [
         "Sevilla"
       ],
@@ -285,35 +285,6 @@
       ],
       "source_updated_at": "2023-11-21T18:50:51+01:00"
     },
-    "src-468240c386645d42b7b9": {
-      "alternative": "",
-      "cause_code": "roadOrCarriagewayOrLaneManagement",
-      "detail_code": "",
-      "direction": "both",
-      "first_seen_at": "2026-09-10T12:59:29+02:00",
-      "km_end": "6.45",
-      "km_start": "0",
-      "last_changed_at": "2026-09-10T12:59:29+02:00",
-      "last_seen_at": "2026-09-10T17:32:06+02:00",
-      "localities": [
-        "El Puerto de Santa María",
-        "Jerez de la Frontera"
-      ],
-      "province": "Cádiz",
-      "published_at": "2026-09-10T12:45:01+02:00",
-      "reason": "Regulación especial",
-      "record_ids": [
-        "27756801"
-      ],
-      "road": "A-2002",
-      "situation_ids": [
-        "23477748"
-      ],
-      "source_ids": [
-        "23477748:27756801"
-      ],
-      "source_updated_at": "2026-09-10T12:45:01+02:00"
-    },
     "src-4e2ea6a752dd05d52934": {
       "alternative": "",
       "cause_code": "roadMaintenance",
@@ -323,7 +294,7 @@
       "km_end": "1.6",
       "km_start": "0",
       "last_changed_at": "2026-08-27T00:52:31+02:00",
-      "last_seen_at": "2026-09-10T17:32:06+02:00",
+      "last_seen_at": "2026-09-10T17:47:08+02:00",
       "localities": [
         "Vícar"
       ],
@@ -353,7 +324,7 @@
       "km_end": "11",
       "km_start": "2",
       "last_changed_at": "2026-08-27T00:52:31+02:00",
-      "last_seen_at": "2026-09-10T17:32:06+02:00",
+      "last_seen_at": "2026-09-10T17:47:08+02:00",
       "localities": [
         "Carmona"
       ],
@@ -372,34 +343,6 @@
       ],
       "source_updated_at": "2026-03-05T10:32:00+01:00"
     },
-    "src-639a4ebe8c2142b91dc2": {
-      "alternative": "",
-      "cause_code": "roadOrCarriagewayOrLaneManagement",
-      "detail_code": "",
-      "direction": "both",
-      "first_seen_at": "2026-09-10T12:59:29+02:00",
-      "km_end": "3.26",
-      "km_start": "2.95",
-      "last_changed_at": "2026-09-10T12:59:29+02:00",
-      "last_seen_at": "2026-09-10T17:32:06+02:00",
-      "localities": [
-        "Jerez de la Frontera"
-      ],
-      "province": "Cádiz",
-      "published_at": "2026-09-10T12:45:01+02:00",
-      "reason": "Regulación especial",
-      "record_ids": [
-        "27756805"
-      ],
-      "road": "A-2003",
-      "situation_ids": [
-        "23477748"
-      ],
-      "source_ids": [
-        "23477748:27756805"
-      ],
-      "source_updated_at": "2026-09-10T12:45:01+02:00"
-    },
     "src-7324f9d142faa878a801": {
       "alternative": "",
       "cause_code": "infrastructureDamageObstruction",
@@ -409,7 +352,7 @@
       "km_end": "13.65",
       "km_start": "13.65",
       "last_changed_at": "2026-08-27T00:52:31+02:00",
-      "last_seen_at": "2026-09-10T17:32:06+02:00",
+      "last_seen_at": "2026-09-10T17:47:08+02:00",
       "localities": [
         "Palma del Río"
       ],
@@ -437,7 +380,7 @@
       "km_end": "49.7",
       "km_start": "49.2",
       "last_changed_at": "2026-09-07T08:14:46+02:00",
-      "last_seen_at": "2026-09-10T17:32:06+02:00",
+      "last_seen_at": "2026-09-10T17:47:08+02:00",
       "localities": [
         "Montilla"
       ],
@@ -465,7 +408,7 @@
       "km_end": "33",
       "km_start": "32",
       "last_changed_at": "2026-08-27T00:52:31+02:00",
-      "last_seen_at": "2026-09-10T17:32:06+02:00",
+      "last_seen_at": "2026-09-10T17:47:08+02:00",
       "localities": [
         "Montefrío"
       ],
@@ -493,7 +436,7 @@
       "km_end": "59.7",
       "km_start": "55.8",
       "last_changed_at": "2026-08-27T00:52:31+02:00",
-      "last_seen_at": "2026-09-10T17:32:06+02:00",
+      "last_seen_at": "2026-09-10T17:47:08+02:00",
       "localities": [
         "Cárcheles",
         "Pegalajar"
@@ -522,7 +465,7 @@
       "km_end": "6.85",
       "km_start": "6.8",
       "last_changed_at": "2026-09-02T08:42:46+02:00",
-      "last_seen_at": "2026-09-10T17:32:06+02:00",
+      "last_seen_at": "2026-09-10T17:47:08+02:00",
       "localities": [
         "La Línea de la Concepción"
       ],
@@ -550,7 +493,7 @@
       "km_end": "5.01",
       "km_start": "5",
       "last_changed_at": "2026-08-27T00:52:31+02:00",
-      "last_seen_at": "2026-09-10T17:32:06+02:00",
+      "last_seen_at": "2026-09-10T17:47:08+02:00",
       "localities": [
         "Cabra"
       ],
@@ -578,7 +521,7 @@
       "km_end": "1.8",
       "km_start": "0.5",
       "last_changed_at": "2026-09-03T13:12:29+02:00",
-      "last_seen_at": "2026-09-10T17:32:06+02:00",
+      "last_seen_at": "2026-09-10T17:47:08+02:00",
       "localities": [
         "Jimena de la Frontera"
       ],
@@ -608,7 +551,7 @@
       "km_end": "64",
       "km_start": "61.8",
       "last_changed_at": "2026-08-27T00:52:31+02:00",
-      "last_seen_at": "2026-09-10T17:32:06+02:00",
+      "last_seen_at": "2026-09-10T17:47:08+02:00",
       "localities": [
         "Villacarrillo"
       ],
@@ -627,34 +570,6 @@
       ],
       "source_updated_at": "2026-02-06T19:20:27+01:00"
     },
-    "src-aa5cc515c2633f0d743e": {
-      "alternative": "",
-      "cause_code": "roadOrCarriagewayOrLaneManagement",
-      "detail_code": "",
-      "direction": "both",
-      "first_seen_at": "2026-09-10T12:59:29+02:00",
-      "km_end": "5.1",
-      "km_start": "0",
-      "last_changed_at": "2026-09-10T12:59:29+02:00",
-      "last_seen_at": "2026-09-10T17:32:06+02:00",
-      "localities": [
-        "Jerez de la Frontera"
-      ],
-      "province": "Cádiz",
-      "published_at": "2026-09-10T12:45:01+02:00",
-      "reason": "Regulación especial",
-      "record_ids": [
-        "27756804"
-      ],
-      "road": "CA-3108",
-      "situation_ids": [
-        "23477748"
-      ],
-      "source_ids": [
-        "23477748:27756804"
-      ],
-      "source_updated_at": "2026-09-10T12:45:01+02:00"
-    },
     "src-ac4e0b85b27c795050b5": {
       "alternative": "",
       "cause_code": "roadMaintenance",
@@ -664,7 +579,7 @@
       "km_end": "3",
       "km_start": "0",
       "last_changed_at": "2026-08-27T00:52:31+02:00",
-      "last_seen_at": "2026-09-10T17:32:06+02:00",
+      "last_seen_at": "2026-09-10T17:47:08+02:00",
       "localities": [
         "Lucainena de las Torres",
         "Turrillas"
@@ -695,7 +610,7 @@
       "km_end": "3.2",
       "km_start": "0",
       "last_changed_at": "2026-08-27T00:52:31+02:00",
-      "last_seen_at": "2026-09-10T17:32:06+02:00",
+      "last_seen_at": "2026-09-10T17:47:08+02:00",
       "localities": [
         "Lucena",
         "Rute"
@@ -724,7 +639,7 @@
       "km_end": "2.25",
       "km_start": "1.2",
       "last_changed_at": "2026-08-27T00:52:31+02:00",
-      "last_seen_at": "2026-09-10T17:32:06+02:00",
+      "last_seen_at": "2026-09-10T17:47:08+02:00",
       "localities": [
         "Casares"
       ],
@@ -752,7 +667,7 @@
       "km_end": "17",
       "km_start": "13",
       "last_changed_at": "2026-09-01T08:45:42+02:00",
-      "last_seen_at": "2026-09-10T17:32:06+02:00",
+      "last_seen_at": "2026-09-10T17:47:08+02:00",
       "localities": [
         "El Gastor",
         "Grazalema"
@@ -781,7 +696,7 @@
       "km_end": "67",
       "km_start": "61",
       "last_changed_at": "2026-09-07T04:28:02+02:00",
-      "last_seen_at": "2026-09-10T17:32:06+02:00",
+      "last_seen_at": "2026-09-10T17:47:08+02:00",
       "localities": [
         "La Puebla de Cazalla",
         "Marchena"
@@ -801,34 +716,6 @@
       ],
       "source_updated_at": "2026-09-07T04:16:40+02:00"
     },
-    "src-ca5503f92d4f56c2e64b": {
-      "alternative": "",
-      "cause_code": "roadOrCarriagewayOrLaneManagement",
-      "detail_code": "",
-      "direction": "both",
-      "first_seen_at": "2026-09-10T12:59:29+02:00",
-      "km_end": "0.85",
-      "km_start": "0",
-      "last_changed_at": "2026-09-10T12:59:29+02:00",
-      "last_seen_at": "2026-09-10T17:32:06+02:00",
-      "localities": [
-        "Jerez de la Frontera"
-      ],
-      "province": "Cádiz",
-      "published_at": "2026-09-10T12:45:01+02:00",
-      "reason": "Regulación especial",
-      "record_ids": [
-        "27756807"
-      ],
-      "road": "A-4R1",
-      "situation_ids": [
-        "23477748"
-      ],
-      "source_ids": [
-        "23477748:27756807"
-      ],
-      "source_updated_at": "2026-09-10T12:45:01+02:00"
-    },
     "src-d08e6f476ba76c98395d": {
       "alternative": "",
       "cause_code": "roadMaintenance",
@@ -838,7 +725,7 @@
       "km_end": "1.95",
       "km_start": "1.84",
       "last_changed_at": "2026-09-04T10:24:32+02:00",
-      "last_seen_at": "2026-09-10T17:32:06+02:00",
+      "last_seen_at": "2026-09-10T17:47:08+02:00",
       "localities": [
         "Iznatoraf"
       ],
@@ -868,7 +755,7 @@
       "km_end": "12.8",
       "km_start": "0",
       "last_changed_at": "2026-08-27T00:52:31+02:00",
-      "last_seen_at": "2026-09-10T17:32:06+02:00",
+      "last_seen_at": "2026-09-10T17:47:08+02:00",
       "localities": [
         "Gerena",
         "Olivares"
@@ -899,7 +786,7 @@
       "km_end": "520.5",
       "km_start": "520.5",
       "last_changed_at": "2026-08-27T00:52:31+02:00",
-      "last_seen_at": "2026-09-10T17:32:06+02:00",
+      "last_seen_at": "2026-09-10T17:47:08+02:00",
       "localities": [
         "Carmona"
       ],
@@ -927,7 +814,7 @@
       "km_end": "17.7",
       "km_start": "8.9",
       "last_changed_at": "2026-09-02T10:59:10+02:00",
-      "last_seen_at": "2026-09-10T17:32:06+02:00",
+      "last_seen_at": "2026-09-10T17:47:08+02:00",
       "localities": [
         "Arcos de la Frontera",
         "Espera"
@@ -947,34 +834,6 @@
       ],
       "source_updated_at": "2026-09-02T10:50:02+02:00"
     },
-    "src-dd938496948ff82c7d64": {
-      "alternative": "",
-      "cause_code": "roadOrCarriagewayOrLaneManagement",
-      "detail_code": "",
-      "direction": "both",
-      "first_seen_at": "2026-09-10T13:14:49+02:00",
-      "km_end": "2",
-      "km_start": "1.1",
-      "last_changed_at": "2026-09-10T13:14:49+02:00",
-      "last_seen_at": "2026-09-10T17:32:06+02:00",
-      "localities": [
-        "Jerez de la Frontera"
-      ],
-      "province": "Cádiz",
-      "published_at": "2026-09-10T12:59:50+02:00",
-      "reason": "Regulación especial",
-      "record_ids": [
-        "27761116"
-      ],
-      "road": "A-2005",
-      "situation_ids": [
-        "23477748"
-      ],
-      "source_ids": [
-        "23477748:27761116"
-      ],
-      "source_updated_at": "2026-09-10T12:59:50+02:00"
-    },
     "src-e327a00620d00f8d7ddc": {
       "alternative": "Tráfico desviado por un carril reversible habilitado en la calzada contraria",
       "cause_code": "roadMaintenance",
@@ -984,7 +843,7 @@
       "km_end": "369.5",
       "km_start": "364.5",
       "last_changed_at": "2026-09-10T13:59:57+02:00",
-      "last_seen_at": "2026-09-10T17:32:06+02:00",
+      "last_seen_at": "2026-09-10T17:47:08+02:00",
       "localities": [
         "Montoro",
         "Pedro Abad"
@@ -1013,7 +872,7 @@
       "km_end": "14.1",
       "km_start": "12.5",
       "last_changed_at": "2026-08-27T00:52:31+02:00",
-      "last_seen_at": "2026-09-10T17:32:06+02:00",
+      "last_seen_at": "2026-09-10T17:47:08+02:00",
       "localities": [
         "Carmona",
         "Marchena"
@@ -1042,7 +901,7 @@
       "km_end": "28.5",
       "km_start": "27.7",
       "last_changed_at": "2026-08-27T11:23:09+02:00",
-      "last_seen_at": "2026-09-10T17:32:06+02:00",
+      "last_seen_at": "2026-09-10T17:47:08+02:00",
       "localities": [
         "La Rambla"
       ],
@@ -1063,34 +922,6 @@
       ],
       "source_updated_at": "2026-08-27T11:15:07+02:00"
     },
-    "src-f42acf936df64760491a": {
-      "alternative": "",
-      "cause_code": "roadOrCarriagewayOrLaneManagement",
-      "detail_code": "",
-      "direction": "both",
-      "first_seen_at": "2026-09-10T12:59:29+02:00",
-      "km_end": "1.7",
-      "km_start": "0",
-      "last_changed_at": "2026-09-10T12:59:29+02:00",
-      "last_seen_at": "2026-09-10T17:32:06+02:00",
-      "localities": [
-        "Jerez de la Frontera"
-      ],
-      "province": "Cádiz",
-      "published_at": "2026-09-10T12:45:01+02:00",
-      "reason": "Regulación especial",
-      "record_ids": [
-        "27756806"
-      ],
-      "road": "CA-3107",
-      "situation_ids": [
-        "23477748"
-      ],
-      "source_ids": [
-        "23477748:27756806"
-      ],
-      "source_updated_at": "2026-09-10T12:45:01+02:00"
-    },
     "src-f744a7b380a402261f54": {
       "alternative": "Tráfico desviado por un carril reversible habilitado en la calzada contraria",
       "cause_code": "roadMaintenance",
@@ -1100,7 +931,7 @@
       "km_end": "22.7",
       "km_start": "18.5",
       "last_changed_at": "2026-09-08T09:57:48+02:00",
-      "last_seen_at": "2026-09-10T17:32:06+02:00",
+      "last_seen_at": "2026-09-10T17:47:08+02:00",
       "localities": [
         "Medina Sidonia",
         "Puerto Real"
@@ -1129,7 +960,7 @@
       "km_end": "1.2",
       "km_start": "0.6",
       "last_changed_at": "2026-08-27T00:52:31+02:00",
-      "last_seen_at": "2026-09-10T17:32:06+02:00",
+      "last_seen_at": "2026-09-10T17:47:08+02:00",
       "localities": [
         "Algeciras"
       ],
@@ -1159,7 +990,7 @@
       "km_end": "13.7",
       "km_start": "10.4",
       "last_changed_at": "2026-08-31T08:07:57+02:00",
-      "last_seen_at": "2026-09-10T17:32:06+02:00",
+      "last_seen_at": "2026-09-10T17:47:08+02:00",
       "localities": [
         "Comares",
         "Riogordo"
@@ -1185,7 +1016,7 @@
   "forum_pending": [],
   "initialized": true,
   "initialized_at": "2026-08-27T00:52:31+02:00",
-  "revision": 1668,
-  "updated_at": "2026-09-10T17:32:06+02:00",
+  "revision": 1669,
+  "updated_at": "2026-09-10T17:47:08+02:00",
   "version": 1
 }
