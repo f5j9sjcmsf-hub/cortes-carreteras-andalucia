@@ -13,6 +13,7 @@ from src.logic import (
     plan_changes,
     plan_initial,
     reconcile,
+    reconcile_events,
 )
 
 
@@ -487,6 +488,23 @@ class ReconciliationTests(unittest.TestCase):
         later_messages, _ = reconcile(state, [closure()], NOW_2)
         self.assertEqual(len(initial_messages), 1)
         self.assertEqual(later_messages, [])
+
+    def test_structured_events_keep_the_same_key_through_update_and_reopening(self):
+        initial_events, state = reconcile_events({}, [closure()], NOW_1)
+        key = initial_events[0]["key"]
+        update_events, updated_state = reconcile_events(
+            state,
+            [closure(alternative="Carril reversible")],
+            NOW_2,
+        )
+        reopened_events, _ = reconcile_events(updated_state, [], NOW_3)
+
+        self.assertEqual(initial_events[0]["event"], EVENT_CLOSED)
+        self.assertEqual(update_events[0]["event"], EVENT_UPDATED)
+        self.assertEqual(reopened_events[0]["event"], EVENT_REOPENED)
+        self.assertEqual(update_events[0]["key"], key)
+        self.assertEqual(reopened_events[0]["key"], key)
+        self.assertIn("CORTE ACTUALIZADO", update_events[0]["message"])
 
     def test_unsupported_state_version_is_rejected_without_mutation(self):
         state = {"version": 999, "initialized": True, "active": {}}

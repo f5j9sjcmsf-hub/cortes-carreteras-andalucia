@@ -15,7 +15,10 @@ import telegram
 def telegram_response(status=200, payload=None):
     response = Mock()
     response.status_code = status
-    response.json.return_value = payload or {"ok": True}
+    response.json.return_value = payload or {
+        "ok": True,
+        "result": {"message_id": 123},
+    }
     return response
 
 
@@ -47,6 +50,25 @@ def test_message_can_be_routed_to_a_forum_topic(configured_telegram):
     data = post.call_args.kwargs["data"]
     assert data["chat_id"] == "-1001234567890"
     assert data["message_thread_id"] == "42"
+
+
+def test_update_can_reply_to_the_tracked_primary_message(configured_telegram):
+    with patch("telegram.requests.post", return_value=telegram_response()) as post:
+        telegram.send_message("actualización", reply_to_message_id=77)
+
+    assert post.call_args.kwargs["data"]["reply_parameters"] == '{"message_id":77}'
+
+
+def test_edit_and_delete_use_the_original_message_identifier(configured_telegram):
+    edited = telegram_response(payload={"ok": True, "result": {"message_id": 55}})
+    deleted = telegram_response(payload={"ok": True, "result": True})
+    with patch("telegram.requests.post", side_effect=[edited, deleted]) as post:
+        telegram.edit_message("@canal_nuevo", 55, "resumen")
+        telegram.delete_message("@canal_nuevo", 55)
+
+    assert post.call_args_list[0].kwargs["data"]["message_id"] == "55"
+    assert "editMessageText" in post.call_args_list[0].args[0]
+    assert "deleteMessage" in post.call_args_list[1].args[0]
 
 
 def test_forum_pending_extracts_the_province_and_deduplicates():

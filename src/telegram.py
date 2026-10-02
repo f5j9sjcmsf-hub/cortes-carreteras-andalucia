@@ -1,5 +1,6 @@
 import math
 import hashlib
+import json
 import re
 import time
 
@@ -149,18 +150,124 @@ def _send_chunk(endpoint, chunk, chat_id, message_thread_id=None):
             )
         if payload.get("ok") is not True:
             raise _telegram_error(status, payload) from None
-        return
+        result = payload.get("result")
+        if not isinstance(result, dict):
+            raise RuntimeError("Telegram no devolvió el mensaje enviado.")
+        return result
 
 
-def send_message(text, *, chat_id=None, message_thread_id=None):
+def send_message(
+    text,
+    *,
+    chat_id=None,
+    message_thread_id=None,
+    reply_to_message_id=None,
+):
     validate_configuration()
     endpoint = f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/sendMessage"
     destination = TELEGRAM_CHAT_ID if chat_id is None else chat_id
 
+    results = []
     for index, chunk in enumerate(_split_message(text)):
         if index:
             time.sleep(MESSAGE_INTERVAL_SECONDS)
-        _send_chunk(endpoint, chunk, destination, message_thread_id)
+        rate_limit_retries = 0
+        while True:
+            try:
+                data = {
+                    "chat_id": destination,
+                    "text": chunk,
+                    "parse_mode": "HTML",
+                    "disable_web_page_preview": "true",
+                }
+                if message_thread_id is not None:
+                    data["message_thread_id"] = str(message_thread_id)
+                if reply_to_message_id is not None and index == 0:
+                    data["reply_parameters"] = json.dumps(
+                        {"message_id": int(reply_to_message_id)},
+                        separators=(",", ":"),
+                    )
+                response = requests.post(
+                    endpoint,
+                    data=data,
+                    timeout=TELEGRAM_TIMEOUT_SECONDS,
+                )
+            except requests.RequestException:
+                raise RuntimeError(
+                    "No se pudo conectar con Telegram para enviar el mensaje."
+                ) from None
+            status = _status_code(response)
+            payload = _json_payload(response)
+            error_code = _api_error_code(payload)
+            if status == 429 or error_code == 429:
+                if rate_limit_retries >= MAX_RATE_LIMIT_RETRIES:
+                    raise RuntimeError(
+                        "Telegram mantuvo el límite de frecuencia (HTTP 429) "
+                        f"tras {MAX_RATE_LIMIT_RETRIES} reintentos."
+                    )
+                rate_limit_retries += 1
+                time.sleep(_retry_after(payload))
+                continue
+            if 400 <= status < 600 or not payload or payload.get("ok") is not True:
+                raise _telegram_error(status, payload) from None
+            result = payload.get("result")
+            if not isinstance(result, dict) or not isinstance(result.get("message_id"), int):
+                raise RuntimeError("Telegram no devolvió el identificador del mensaje.")
+            results.append(result)
+            break
+    return results[0] if len(results) == 1 else results
+
+
+def edit_message(chat_id, message_id, text):
+    validate_configuration()
+    endpoint = f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/editMessageText"
+    return _simple_message_call(
+        endpoint,
+        {
+            "chat_id": chat_id,
+            "message_id": str(message_id),
+            "text": text,
+            "parse_mode": "HTML",
+            "disable_web_page_preview": "true",
+        },
+    )
+
+
+def delete_message(chat_id, message_id):
+    validate_configuration()
+    endpoint = f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/deleteMessage"
+    return _simple_message_call(
+        endpoint,
+        {"chat_id": chat_id, "message_id": str(message_id)},
+    )
+
+
+def _simple_message_call(endpoint, data):
+    rate_limit_retries = 0
+    while True:
+        try:
+            response = requests.post(
+                endpoint,
+                data=data,
+                timeout=TELEGRAM_TIMEOUT_SECONDS,
+            )
+        except requests.RequestException:
+            raise RuntimeError("No se pudo conectar con Telegram.") from None
+        status = _status_code(response)
+        payload = _json_payload(response)
+        error_code = _api_error_code(payload)
+        if status == 429 or error_code == 429:
+            if rate_limit_retries >= MAX_RATE_LIMIT_RETRIES:
+                raise RuntimeError(
+                    "Telegram mantuvo el límite de frecuencia (HTTP 429) "
+                    f"tras {MAX_RATE_LIMIT_RETRIES} reintentos."
+                )
+            rate_limit_retries += 1
+            time.sleep(_retry_after(payload))
+            continue
+        if 400 <= status < 600 or not payload or payload.get("ok") is not True:
+            raise _telegram_error(status, payload) from None
+        return payload.get("result")
 
 
 def send_messages(messages):
@@ -168,6 +275,22 @@ def send_messages(messages):
         if index:
             time.sleep(MESSAGE_INTERVAL_SECONDS)
         send_message(message)
+
+
+def forum_destination(province):
+    config = load_forum_config(
+        TELEGRAM_FORUM_CONFIG_FILE,
+        TELEGRAM_BOT_TOKEN,
+    )
+    if config is None:
+        return None
+    thread_id = config["topics"].get(province)
+    if thread_id is None:
+        return None
+    return {
+        "chat_id": config["group_chat_id"],
+        "message_thread_id": thread_id,
+    }
 
 
 _PROVINCE_LINE = re.compile(r"(?m)^📍\s+([^<\n]+)\s*$")

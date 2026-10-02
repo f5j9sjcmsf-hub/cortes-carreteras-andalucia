@@ -2,16 +2,10 @@ from datetime import datetime
 
 from config import DGT_TIMEOUT_SECONDS, DGT_URL, TIMEZONE
 from dgt import fetch_closures
-from logic import reconcile
+from incident_delivery import process_incident_events
+from logic import reconcile_events
 from storage import load_state, save_state
-from telegram import (
-    build_forum_pending,
-    deliver_forum_pending,
-    forum_is_configured,
-    merge_forum_pending,
-    send_messages,
-    validate_configuration,
-)
+from telegram import send_message, validate_configuration
 
 
 def _now_iso():
@@ -38,35 +32,27 @@ def main():
         timeout=DGT_TIMEOUT_SECONDS,
     )
     was_initialized = bool(previous_state.get("initialized"))
-    messages, next_state = reconcile(
+    now_iso = _now_iso()
+    events, next_state = reconcile_events(
         previous_state,
         closures,
-        _now_iso(),
+        now_iso,
     )
-
-    outgoing = list(messages)
     if not was_initialized:
-        outgoing.insert(0, _initial_summary(len(closures)))
+        send_message(_initial_summary(len(closures)))
 
-    # State becomes durable only after Telegram confirms every message.  If
-    # an intermediate send fails, GitHub Actions exits and the prior state is
-    # retried during the next run.
-    send_messages(outgoing)
-    if forum_is_configured():
-        pending = merge_forum_pending(
-            previous_state.get("forum_pending", []),
-            build_forum_pending(outgoing),
-        )
-        next_state["forum_pending"] = deliver_forum_pending(pending)
+    next_state = process_incident_events(
+        previous_state,
+        next_state,
+        events,
+        now_iso,
+    )
     save_state(next_state)
 
     print(f"Cierres completos activos: {len(closures)}")
-    print(f"Mensajes enviados: {len(outgoing)}")
-    if forum_is_configured():
-        print(
-            "Envíos provinciales pendientes: "
-            f"{len(next_state.get('forum_pending', []))}"
-        )
+    print(f"Eventos detectados: {len(events)}")
+    print(f"Incidencias gestionadas: {len(next_state.get('telegram_incidents', {}))}")
+    print(f"Avisos temporales pendientes: {len(next_state.get('telegram_cleanup', []))}")
     print("Estado guardado correctamente.")
 
 

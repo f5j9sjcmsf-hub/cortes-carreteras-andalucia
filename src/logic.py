@@ -120,13 +120,24 @@ def plan_initial(
     restart cannot republish the full snapshot.
     """
 
+    events, next_state = plan_initial_events(state, current, now_iso)
+    return [event["message"] for event in events], next_state
+
+
+def plan_initial_events(
+    state: Mapping[str, Any] | None,
+    current: Iterable[Mapping[str, Any]],
+    now_iso: str,
+) -> tuple[list[dict[str, Any]], dict[str, Any]]:
+    """Return the initial snapshot with stable incident metadata."""
+
     _validate_state(state)
     if state and state.get("initialized"):
-        return plan_changes(state, current, now_iso)
+        return plan_changes_events(state, current, now_iso)
 
     closures = _deduplicate_current(current)
     active: dict[str, dict[str, Any]] = {}
-    messages: list[str] = []
+    events: list[dict[str, Any]] = []
 
     for closure in closures:
         key = _unique_key(_new_active_key(closure), active)
@@ -136,7 +147,7 @@ def plan_initial(
             last_seen_at=now_iso,
             last_changed_at=now_iso,
         )
-        messages.append(format_message(closure, EVENT_CLOSED))
+        events.append(_event_payload(EVENT_CLOSED, key, closure, now_iso))
 
     previous_revision = _safe_revision(state)
     next_state = {
@@ -147,7 +158,7 @@ def plan_initial(
         "updated_at": now_iso,
         "active": _sorted_mapping(active),
     }
-    return messages, next_state
+    return events, next_state
 
 
 def plan_changes(
@@ -162,9 +173,20 @@ def plan_changes(
     province and kilometre range) is the final fallback.
     """
 
+    events, next_state = plan_changes_events(state, current, now_iso)
+    return [event["message"] for event in events], next_state
+
+
+def plan_changes_events(
+    state: Mapping[str, Any] | None,
+    current: Iterable[Mapping[str, Any]],
+    now_iso: str,
+) -> tuple[list[dict[str, Any]], dict[str, Any]]:
+    """Return incremental events together with their stable incident keys."""
+
     _validate_state(state)
     if not state or not state.get("initialized"):
-        return plan_initial(state, current, now_iso)
+        return plan_initial_events(state, current, now_iso)
 
     old_active_raw = state.get("active", {})
     if not isinstance(old_active_raw, Mapping):
@@ -184,7 +206,7 @@ def plan_changes(
     matches = _match_closures(old_closures, closures)
 
     next_active: dict[str, dict[str, Any]] = {}
-    events: list[tuple[str, dict[str, Any], str]] = []
+    events: list[tuple[str, str, dict[str, Any], str]] = []
     matched_old = set(matches.values())
 
     for current_index, closure in enumerate(closures):
@@ -197,7 +219,7 @@ def plan_changes(
                 last_seen_at=now_iso,
                 last_changed_at=now_iso,
             )
-            events.append((EVENT_CLOSED, closure, now_iso))
+            events.append((EVENT_CLOSED, key, closure, now_iso))
             continue
 
         old_closure = old_closures[old_key]
@@ -207,12 +229,14 @@ def plan_changes(
             if _is_partial_reopening(old_closure, closure):
                 events.append((
                     EVENT_PARTIAL_REOPEN,
+                    old_key,
                     closure,
                     closure["source_updated_at"] or now_iso,
                 ))
             else:
                 events.append((
                     EVENT_UPDATED,
+                    old_key,
                     closure,
                     closure["source_updated_at"] or now_iso,
                 ))
@@ -230,12 +254,12 @@ def plan_changes(
 
     for old_key, old_closure in old_closures.items():
         if old_key not in matched_old:
-            events.append((EVENT_REOPENED, old_closure, now_iso))
+            events.append((EVENT_REOPENED, old_key, old_closure, now_iso))
 
-    events.sort(key=lambda item: (_closure_sort_key(item[1]), _event_rank(item[0])))
-    messages = [
-        format_message(closure, event, event_at=event_at)
-        for event, closure, event_at in events
+    events.sort(key=lambda item: (_closure_sort_key(item[2]), _event_rank(item[0])))
+    event_payloads = [
+        _event_payload(event, key, closure, event_at)
+        for event, key, closure, event_at in events
     ]
 
     next_state = {
@@ -246,7 +270,7 @@ def plan_changes(
         "updated_at": now_iso,
         "active": _sorted_mapping(next_active),
     }
-    return messages, next_state
+    return event_payloads, next_state
 
 
 def reconcile(
@@ -259,6 +283,34 @@ def reconcile(
     if state and state.get("initialized"):
         return plan_changes(state, current, now_iso)
     return plan_initial(state, current, now_iso)
+
+
+def reconcile_events(
+    state: Mapping[str, Any] | None,
+    current: Iterable[Mapping[str, Any]],
+    now_iso: str,
+) -> tuple[list[dict[str, Any]], dict[str, Any]]:
+    """Reconcile while retaining event type, key, closure and timestamp."""
+
+    if state and state.get("initialized"):
+        return plan_changes_events(state, current, now_iso)
+    return plan_initial_events(state, current, now_iso)
+
+
+def _event_payload(
+    event: str,
+    key: str,
+    closure: Mapping[str, Any],
+    event_at: str,
+) -> dict[str, Any]:
+    item = normalize_closure(closure)
+    return {
+        "event": event,
+        "key": key,
+        "closure": item,
+        "event_at": event_at,
+        "message": format_message(item, event, event_at=event_at),
+    }
 
 
 def normalize_closure(raw: Mapping[str, Any]) -> dict[str, Any]:

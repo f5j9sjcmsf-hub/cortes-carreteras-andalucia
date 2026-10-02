@@ -8,6 +8,7 @@ WORKFLOWS = ROOT / ".github" / "workflows"
 VIGILANCIA = WORKFLOWS / "vigilancia.yml"
 PRUEBA_TELEGRAM = WORKFLOWS / "prueba_telegram.yml"
 REGISTRAR_TEMAS = WORKFLOWS / "registrar_temas.yml"
+PRUEBA_HISTORIAL = WORKFLOWS / "prueba_historial.yml"
 
 CHECKOUT_SHA = "3d3c42e5aac5ba805825da76410c181273ba90b1"
 SETUP_PYTHON_SHA = "5fda3b95a4ea91299a34e894583c3862153e4b97"
@@ -23,14 +24,15 @@ class WorkflowTests(unittest.TestCase):
         cls.vigilancia = read(VIGILANCIA)
         cls.prueba = read(PRUEBA_TELEGRAM)
         cls.registrar = read(REGISTRAR_TEMAS)
+        cls.historial = read(PRUEBA_HISTORIAL)
 
     def test_both_workflows_are_manual_only(self):
-        for text in (self.vigilancia, self.prueba, self.registrar):
+        for text in (self.vigilancia, self.prueba, self.registrar, self.historial):
             self.assertRegex(text, r"(?m)^\s{2}workflow_dispatch:\s*$")
             self.assertNotRegex(text, r"(?mi)^\s*(schedule|cron)\s*:")
 
     def test_official_actions_are_pinned_to_full_known_shas(self):
-        for text in (self.vigilancia, self.prueba, self.registrar):
+        for text in (self.vigilancia, self.prueba, self.registrar, self.historial):
             self.assertIn(f"actions/checkout@{CHECKOUT_SHA}", text)
             self.assertIn(f"actions/setup-python@{SETUP_PYTHON_SHA}", text)
             for action, revision in re.findall(
@@ -122,6 +124,13 @@ class WorkflowTests(unittest.TestCase):
         self.assertNotRegex(self.prueba, r"(?i)INFOCA|incendios")
         self.assertIn("secrets.TELEGRAM_BOT_TOKEN", self.prueba)
         self.assertIn("secrets.TELEGRAM_CHAT_ID", self.prueba)
+
+    def test_history_demo_is_isolated_and_runs_the_full_suite_first(self):
+        self.assertIn("python -m pytest -q", self.historial)
+        self.assertIn("python src/demo_history.py", self.historial)
+        self.assertIn("origin/estado", self.historial)
+        self.assertIn("tema de Granada", self.historial)
+        self.assertNotIn("src/main.py", self.historial)
 
 
 if __name__ == "__main__":

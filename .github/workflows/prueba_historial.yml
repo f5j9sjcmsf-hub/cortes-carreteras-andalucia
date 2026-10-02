@@ -1,0 +1,51 @@
+name: Prueba visual del historial de cortes
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: carreteras-cortadas-andalucia-prueba-historial
+  cancel-in-progress: false
+
+jobs:
+  probar:
+    name: Simular cierre, actualización y reapertura
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+      TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+      TELEGRAM_FORUM_CONFIG_FILE: data/telegram_forum.enc
+
+    steps:
+      - name: Descargar el código
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          fetch-depth: 0
+
+      - name: Preparar Python
+        uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Instalar dependencias y ejecutar todas las pruebas
+        run: |
+          python -m pip install --disable-pip-version-check -r requirements.txt
+          python -m pytest -q
+
+      - name: Cargar la configuración cifrada de los temas
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+          git fetch --no-tags origin refs/heads/estado:refs/remotes/origin/estado
+          mkdir -p "$(dirname "${TELEGRAM_FORUM_CONFIG_FILE}")"
+          git show "origin/estado:${TELEGRAM_FORUM_CONFIG_FILE}" \
+            > "${TELEGRAM_FORUM_CONFIG_FILE}"
+
+      - name: Ejecutar la demostración acelerada en el tema de Granada
+        run: python src/demo_history.py
+

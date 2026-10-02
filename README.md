@@ -4,6 +4,9 @@ Bot independiente de Telegram que vigila todos los cortes completos de
 carreteras publicados por la Dirección General de Tráfico en Andalucía, sin
 limitarse a una causa concreta.
 
+Este proyecto no comparte bot, canal, repositorio, secretos ni estado con el
+bot de incendios forestales. El funcionamiento del bot anterior no se modifica.
+
 ## Fuente y alcance
 
 La fuente oficial es la publicación de incidencias
@@ -53,6 +56,22 @@ se envían mensajes cuando ocurre alguno de estos cambios:
 - reapertura total;
 - cierre posterior de una carretera que ya había sido reabierta.
 
+Los cierres nuevos utilizan un aviso principal con historial:
+
+- cada actualización importante se publica como respuesta independiente para
+  generar una notificación;
+- simultáneamente, el cambio se incorpora al historial del aviso principal;
+- el aviso independiente se retira a las 36 horas, pero la información
+  permanece en el principal y en el estado operativo;
+- al reabrirse, los avisos de actualización restantes se retiran y queda un
+  resumen final con horas, cambios y duración total;
+- si Telegram ya no permite borrar el principal por tener más de 48 horas, se
+  transforma en el resumen final y se publica una reapertura temporal.
+
+El bot guarda por separado los identificadores del mensaje del canal y del
+tema provincial. Los errores de edición, publicación o limpieza se conservan
+para reintento sin descartar el historial.
+
 El aviso no añade etiquetas delante de la vía, el sentido ni los kilómetros.
 La ubicación, el sentido, el tramo y la fecha de publicación aparecen en
 cursiva; la causa y la vía, en negrita. Por ejemplo:
@@ -80,6 +99,10 @@ dos **Repository secrets**:
 
 El token nunca debe guardarse en un archivo, commit, variable normal ni mensaje
 de soporte.
+
+El mismo aviso se publica también en el tema de la provincia correspondiente
+del supergrupo. La asociación cifrada entre las ocho provincias y sus temas se
+conserva en la rama `estado`; no se publican los identificadores del grupo.
 
 ## Puesta en marcha
 
