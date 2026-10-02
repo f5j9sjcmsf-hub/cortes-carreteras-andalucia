@@ -2,11 +2,6 @@ name: Prueba visual del historial de cortes
 
 on:
   workflow_dispatch:
-  push:
-    branches:
-      - main
-    paths:
-      - ".github/workflows/prueba_historial.yml"
 
 permissions:
   contents: read
