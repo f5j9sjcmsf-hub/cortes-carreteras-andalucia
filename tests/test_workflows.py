@@ -26,10 +26,14 @@ class WorkflowTests(unittest.TestCase):
         cls.registrar = read(REGISTRAR_TEMAS)
         cls.historial = read(PRUEBA_HISTORIAL)
 
-    def test_both_workflows_are_manual_only(self):
-        for text in (self.vigilancia, self.prueba, self.registrar, self.historial):
+    def test_auxiliary_workflows_are_manual_only(self):
+        for text in (self.prueba, self.registrar, self.historial):
             self.assertRegex(text, r"(?m)^\s{2}workflow_dispatch:\s*$")
             self.assertNotRegex(text, r"(?mi)^\s*(schedule|cron)\s*:")
+
+    def test_vigilance_is_manual_and_scheduled_every_fifteen_minutes(self):
+        self.assertRegex(self.vigilancia, r"(?m)^\s{2}workflow_dispatch:\s*$")
+        self.assertRegex(self.vigilancia, r'(?m)^\s+- cron: "\*/15 \* \* \* \*"$')
 
     def test_official_actions_are_pinned_to_full_known_shas(self):
         for text in (self.vigilancia, self.prueba, self.registrar, self.historial):
@@ -65,22 +69,21 @@ class WorkflowTests(unittest.TestCase):
         self.assertIn("cancel-in-progress: true", self.registrar)
         self.assertNotRegex(self.registrar, r"(?i)echo.*(chat|thread|topic).*(id|ident)")
 
-    def test_tests_run_before_the_six_checks(self):
+    def test_tests_run_before_the_single_check(self):
         tests = "python -m pytest -q"
         monitor = "python src/main.py"
         self.assertIn(tests, self.vigilancia)
         self.assertIn(monitor, self.vigilancia)
         self.assertLess(self.vigilancia.index(tests), self.vigilancia.index(monitor))
-        self.assertRegex(
-            self.vigilancia,
-            r"for comprobacion in 1 2 3 4 5 6; do",
-        )
-        self.assertIn("sleep 900", self.vigilancia)
+        self.assertNotIn("for comprobacion", self.vigilancia)
+        self.assertNotIn("sleep 900", self.vigilancia)
+        self.assertEqual(self.vigilancia.count("python src/main.py"), 1)
         timeout = re.search(
             r"(?s)vigilar:.*?timeout-minutes:\s*(\d+)", self.vigilancia
         )
         self.assertIsNotNone(timeout)
-        self.assertGreaterEqual(int(timeout.group(1)), 90)
+        self.assertGreaterEqual(int(timeout.group(1)), 10)
+        self.assertLessEqual(int(timeout.group(1)), 20)
 
     def test_state_is_loaded_from_and_saved_to_separate_branch(self):
         self.assertIn("STATE_BRANCH: estado", self.vigilancia)
@@ -104,16 +107,10 @@ class WorkflowTests(unittest.TestCase):
         self.assertLess(diff, commit)
         self.assertLess(commit, push)
 
-    def test_relay_always_runs_except_after_cancellation(self):
-        self.assertIn("needs: vigilar", self.vigilancia)
-        self.assertIn("if: ${{ always() && !cancelled() }}", self.vigilancia)
-        self.assertIn(
-            "if: ${{ needs.vigilar.result == 'failure' }}",
-            self.vigilancia,
-        )
-        self.assertIn("gh workflow run vigilancia.yml", self.vigilancia)
-        relay = self.vigilancia.split("  relevo:", 1)[1]
-        self.assertEqual(relay.count("sleep 900"), 1)
+    def test_vigilance_does_not_depend_on_a_self_relay(self):
+        self.assertNotIn("  relevo:", self.vigilancia)
+        self.assertNotIn("gh workflow run vigilancia.yml", self.vigilancia)
+        self.assertNotIn("actions: write", self.vigilancia)
 
     def test_telegram_test_uses_the_real_production_formatter(self):
         self.assertIn("from logic import EVENT_CLOSED, format_message", self.prueba)
