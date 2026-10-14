@@ -112,8 +112,9 @@ conserva en la rama `estado`; no se publican los identificadores del grupo.
 4. Ejecutar manualmente `Vigilancia de carreteras cortadas - Andalucía`.
 5. Verificar la lista inicial de cortes publicada en el canal.
 
-Cada ejecución consulta DGT seis veces, con quince minutos entre comprobaciones,
-y después lanza automáticamente su relevo. El estado operativo se conserva en
+GitHub programa una ejecución independiente cada quince minutos. Cada ejecución
+consulta la DGT una vez, por lo que un fallo o una cancelación aislados no
+interrumpen las comprobaciones posteriores. El estado operativo se conserva en
 la rama `estado`, separada del código de `main`.
 
 ## Desarrollo local
