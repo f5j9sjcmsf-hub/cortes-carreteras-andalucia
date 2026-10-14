@@ -2,9 +2,10 @@ name: Vigilancia de carreteras cortadas - Andalucía
 
 on:
   workflow_dispatch:
+  schedule:
+    - cron: "*/15 * * * *"
 
 permissions:
-  actions: write
   contents: write
 
 concurrency:
@@ -13,9 +14,9 @@ concurrency:
 
 jobs:
   vigilar:
-    name: Seis comprobaciones de la DGT
+    name: Comprobar la DGT
     runs-on: ubuntu-latest
-    timeout-minutes: 100
+    timeout-minutes: 15
     env:
       STATE_BRANCH: estado
       STATE_FILE: data/state.json
@@ -94,54 +95,23 @@ jobs:
               "${TELEGRAM_FORUM_CONFIG_FILE}"
           fi
 
-      - name: Vigilar y guardar cada cambio de estado
+      - name: Vigilar y guardar el cambio de estado
         shell: bash
         run: |
           set -Eeuo pipefail
 
-          for comprobacion in 1 2 3 4 5 6; do
-            echo "Comprobacion ${comprobacion} de 6"
-            python src/main.py
+          python src/main.py
 
-            python -m json.tool "${STATE_FILE}" >/dev/null
-            mkdir -p "${STATE_WORKTREE}/$(dirname "${STATE_FILE}")"
-            cp "${STATE_FILE}" "${STATE_WORKTREE}/${STATE_FILE}.tmp"
-            mv "${STATE_WORKTREE}/${STATE_FILE}.tmp" \
-              "${STATE_WORKTREE}/${STATE_FILE}"
+          python -m json.tool "${STATE_FILE}" >/dev/null
+          mkdir -p "${STATE_WORKTREE}/$(dirname "${STATE_FILE}")"
+          cp "${STATE_FILE}" "${STATE_WORKTREE}/${STATE_FILE}.tmp"
+          mv "${STATE_WORKTREE}/${STATE_FILE}.tmp" \
+            "${STATE_WORKTREE}/${STATE_FILE}"
 
-            git -C "${STATE_WORKTREE}" add -f -- "${STATE_FILE}"
-            if ! git -C "${STATE_WORKTREE}" diff --cached --quiet -- "${STATE_FILE}"; then
-              git -C "${STATE_WORKTREE}" commit \
-                -m "Actualiza estado tras comprobacion ${comprobacion}"
-              git -C "${STATE_WORKTREE}" push origin "HEAD:${STATE_BRANCH}"
-            fi
-
-            if [[ "${comprobacion}" -lt 6 ]]; then
-              sleep 900
-            fi
-          done
-
-  relevo:
-    name: Lanzar la siguiente ejecucion
-    needs: vigilar
-    if: ${{ always() && !cancelled() }}
-    runs-on: ubuntu-latest
-    timeout-minutes: 20
-    permissions:
-      actions: write
-      contents: read
-
-    steps:
-      - name: Esperar antes del relevo si fallo la vigilancia
-        if: ${{ needs.vigilar.result == 'failure' }}
-        run: sleep 900
-
-      - name: Despachar el relevo
-        env:
-          GH_TOKEN: ${{ github.token }}
-          DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}
-        run: >-
-          gh workflow run vigilancia.yml
-          --repo "${GITHUB_REPOSITORY}"
-          --ref "${DEFAULT_BRANCH}"
+          git -C "${STATE_WORKTREE}" add -f -- "${STATE_FILE}"
+          if ! git -C "${STATE_WORKTREE}" diff --cached --quiet -- "${STATE_FILE}"; then
+            git -C "${STATE_WORKTREE}" commit \
+              -m "Actualiza estado tras comprobacion programada"
+            git -C "${STATE_WORKTREE}" push origin "HEAD:${STATE_BRANCH}"
+          fi
 
