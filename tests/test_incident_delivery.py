@@ -24,6 +24,7 @@ def closure(**overrides):
         "province": "Jaén",
         "localities": ["Cárcheles", "Pegalajar"],
         "road": "A-44",
+        "singularity": "",
         "km_start": 55.8,
         "km_end": 59.7,
         "direction": "decreasing",
@@ -63,6 +64,39 @@ def test_history_is_added_to_the_primary_and_final_summary():
     assert "CORTE FINALIZADO" in final
     assert "Carretera reabierta" in final
     assert "Duración total: 1 hora" in final
+
+
+def test_exit_scope_is_retained_in_history_and_final_summary():
+    exit_closure = closure(
+        province="Almería",
+        localities=["El Ejido"],
+        road="A-7",
+        singularity="exit",
+        km_start=818,
+        km_end=818,
+        reason="Inundación",
+    )
+    incident = new_incident("exit-key", exit_closure, T0)
+    active = format_active_incident(incident)
+    incident = append_event(incident, EVENT_REOPENED, exit_closure, T1)
+    final = format_final_summary(incident, T1)
+
+    assert "<b>Solo salida</b>" in active
+    assert "Cierre de salida comunicado por Inundación" in final
+    assert "Salida reabierta" in final
+    assert "<b>Solo salida</b>" in final
+
+
+def test_access_scope_uses_access_wording_through_reopening():
+    access_closure = closure(singularity="entry")
+    incident = new_incident("access-key", access_closure, T0)
+    active = format_active_incident(incident)
+    incident = append_event(incident, EVENT_REOPENED, access_closure, T1)
+    final = format_final_summary(incident, T1)
+
+    assert "<b>Solo acceso</b>" in active
+    assert "Cierre de acceso comunicado por Obras" in final
+    assert "Acceso reabierto" in final
 
 
 @patch.object(incident_delivery, "TELEGRAM_CHAT_ID", "@canal")
