@@ -159,6 +159,37 @@ def test_update_notice_expires_but_information_remains_in_primary(
 @patch("incident_delivery.edit_message")
 @patch("incident_delivery.delete_message")
 @patch("incident_delivery.send_message")
+def test_existing_alert_deadline_is_migrated_to_current_retention(
+    send, _delete, _edit, _forum
+):
+    send.side_effect = [result(101), result(201)]
+    events, state = reconcile_events({}, [closure()], T0)
+    state = incident_delivery.process_incident_events({}, state, events, T0)
+    send.side_effect = [result(102), result(202)]
+    updated = closure(alternative="Carril reversible", source_updated_at=T1)
+    events, next_state = reconcile_events(state, [updated], T1)
+    state = incident_delivery.process_incident_events(state, next_state, events, T1)
+
+    incident = next(iter(state["telegram_incidents"].values()))
+    incident["alerts"][0]["delete_after"] = "2026-10-04T02:25:00+02:00"
+    poll_time = "2026-10-03T14:25:00+02:00"
+    events, next_state = reconcile_events(state, [updated], poll_time)
+    state = incident_delivery.process_incident_events(
+        state,
+        next_state,
+        events,
+        poll_time,
+    )
+
+    incident = next(iter(state["telegram_incidents"].values()))
+    assert incident["alerts"][0]["delete_after"] == "2026-10-04T13:25:00+02:00"
+
+
+@patch.object(incident_delivery, "TELEGRAM_CHAT_ID", "@canal")
+@patch("incident_delivery.forum_destination", side_effect=forum)
+@patch("incident_delivery.edit_message")
+@patch("incident_delivery.delete_message")
+@patch("incident_delivery.send_message")
 def test_short_incident_edits_primary_and_sends_temporary_reopen_reply(
     send, delete, edit, _forum
 ):
