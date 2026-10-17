@@ -21,6 +21,7 @@ def _record(
     validity: str = "active",
     management_type: str = "roadClosed",
     lane_usage: str | None = "allLanesCompleteCarriageway",
+    singularity: str | None = None,
     vehicle_type: str | None = "anyVehicle",
     creation_time: str | None = "2026-08-01T10:15:30.000+02:00",
     version_time: str | None = "2026-08-02T12:00:00.000+02:00",
@@ -36,6 +37,13 @@ def _record(
     lane_xml = (
         f"<loc:lane><loc:laneUsage>{lane_usage}</loc:laneUsage></loc:lane>"
         if lane_usage is not None
+        else ""
+    )
+    singularity_xml = (
+        "<loc:carriageway>"
+        f"<loc:carriageway>{singularity}</loc:carriageway>"
+        "</loc:carriageway>"
+        if singularity is not None
         else ""
     )
     vehicle_xml = (
@@ -76,7 +84,11 @@ def _record(
           <sit:locationReference>
             <loc:supplementaryPositionalDescription>
               <loc:roadInformation><loc:roadName>{road}</loc:roadName></loc:roadInformation>
-              <loc:carriageway>{lane_xml}</loc:carriageway>
+              {singularity_xml}
+              <loc:carriageway>
+                <loc:carriageway>unspecifiedCarriageway</loc:carriageway>
+                {lane_xml}
+              </loc:carriageway>
             </loc:supplementaryPositionalDescription>
             <loc:tpegLinearLocation>
               <loc:tpegDirection>unrelatedFallback</loc:tpegDirection>
@@ -122,6 +134,7 @@ def test_extracts_normalised_fields_from_namespaced_xml():
             "province": "Málaga",
             "localities": ["Casares"],
             "road": "A-7150",
+            "singularity": "",
             "km_start": 1.2,
             "km_end": 2.25,
             "direction": "both",
@@ -146,6 +159,49 @@ def test_extracts_normalised_fields_from_namespaced_xml():
 def test_dgt_direction_mapping(source: str, expected: str):
     closure = dgt.parse_closures(_xml(_record(direction=source)))[0]
     assert closure["direction"] == expected
+
+
+@pytest.mark.parametrize(
+    ("datex_value", "expected"),
+    [
+        ("exitSlipRoad", "exit"),
+        ("entrySlipRoad", "entry"),
+        ("serviceRoad", "service_road"),
+        ("mainCarriageway", ""),
+        ("unspecifiedCarriageway", ""),
+    ],
+)
+def test_preserves_special_carriageway_scope(datex_value: str, expected: str):
+    closure = dgt.parse_closures(
+        _xml(_record(singularity=datex_value))
+    )[0]
+    assert closure["singularity"] == expected
+
+
+def test_a7_el_ejido_exit_closure_regression():
+    closure = dgt.parse_closures(
+        _xml(
+            _record(
+                situation_id="24789107",
+                record_id="29147064",
+                province="ALMERÍA",
+                municipalities=("EL EJIDO",),
+                road="A-7",
+                kilometres=("818.0",),
+                direction="both",
+                singularity="exitSlipRoad",
+                cause="environmentalObstruction",
+                detail_tag="environmentalObstructionType",
+                detail="flooding",
+                creation_time="2026-10-17T16:04:29.000+02:00",
+            )
+        )
+    )[0]
+
+    assert closure["road"] == "A-7"
+    assert closure["singularity"] == "exit"
+    assert closure["direction"] == "both"
+    assert closure["reason"] == "Inundación"
 
 
 def test_exact_opposite_directions_are_grouped_and_ids_combined():
@@ -186,6 +242,7 @@ def test_exact_opposite_directions_are_grouped_and_ids_combined():
         {"province": "CÁDIZ"},
         {"municipalities": ("ESTEPONA",)},
         {"kilometres": ("1.2", "2.3")},
+        {"singularity": "exitSlipRoad"},
         {
             "cause": "infrastructureDamageObstruction",
             "detail_tag": "infrastructureDamageType",
