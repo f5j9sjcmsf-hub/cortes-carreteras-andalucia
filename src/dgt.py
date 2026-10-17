@@ -69,6 +69,17 @@ ALTERNATIVE_LANE_LABELS = {
 }
 
 
+# DATEX scopes lane information to a particular carriageway.  eTraffic shows
+# these values under ``Singularidad``.  They are essential for records such as
+# ``exitSlipRoad``: ``allLanesCompleteCarriageway`` then means every lane of
+# the exit ramp, not every lane of the motorway itself.
+SPECIAL_CARRIAGEWAY_SCOPES = {
+    "exitsliproad": "exit",
+    "entrysliproad": "entry",
+    "serviceroad": "service_road",
+}
+
+
 GENERIC_REASON_MAP = {
     "abnormalTraffic": "Tráfico anormal",
     "accident": "Accidente",
@@ -519,6 +530,16 @@ def _direction(record: ET.Element) -> str:
     return DIRECTION_MAP.get(source_value.casefold(), "unknown")
 
 
+def _singularity(record: ET.Element) -> str:
+    carriageways = {
+        value.casefold() for value in _texts(record, "carriageway")
+    }
+    for source_value, singularity in SPECIAL_CARRIAGEWAY_SCOPES.items():
+        if source_value in carriageways:
+            return singularity
+    return ""
+
+
 def _source_id(situation_id: str, record_id: str) -> str:
     if situation_id and record_id:
         return f"{situation_id}:{record_id}"
@@ -581,6 +602,7 @@ def _record_to_closure(
         "province": _canonical_province(province_values),
         "localities": localities,
         "road": _first_text(record, "roadName", "roadNumber", "roadIdentifier"),
+        "singularity": _singularity(record),
         "km_start": km_start,
         "km_end": km_end,
         "direction": _direction(record),
@@ -693,6 +715,7 @@ def _identity(closure: dict[str, Any]) -> tuple[Any, ...]:
         _fold(closure["road"]),
         closure["km_start"],
         closure["km_end"],
+        closure["singularity"],
         closure["cause_code"].casefold(),
         closure["detail_code"].casefold(),
     )
