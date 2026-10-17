@@ -24,8 +24,7 @@ from telegram import (
 )
 
 
-ALERT_RETENTION_HOURS = 36
-SAFE_DELETE_HOURS = 47
+ALERT_RETENTION_HOURS = 47
 MAX_CLEANUP_AGE_DAYS = 7
 MAX_ARCHIVE_ITEMS = 200
 
@@ -89,6 +88,7 @@ def process_incident_events(
             _finalize_incident(incident, cleanup, now_iso)
         else:
             _ensure_active_delivery(incident, now_iso)
+            _remove_previous_alerts(incident, cleanup, now_iso)
             _add_alert(incident, event, now_iso)
             _deliver_alerts(incident)
 
@@ -167,6 +167,21 @@ def _add_alert(incident, event, now_iso):
     )
 
 
+def _remove_previous_alerts(incident, cleanup, now_iso):
+    """Keep at most one temporary notification for each active incident."""
+
+    destinations = incident.get("destinations", {})
+    for name, destination in destinations.items():
+        _delete_incident_alerts(
+            incident,
+            name,
+            destination,
+            cleanup,
+            now_iso,
+        )
+    incident["alerts"] = []
+
+
 def _deliver_alerts(incident):
     destinations = incident.get("destinations", {})
     for alert in incident.get("alerts", []):
@@ -229,23 +244,14 @@ def _finalize_incident(incident, cleanup, now_iso):
 
         _delete_incident_alerts(incident, name, destination, cleanup, now_iso)
         primary_id = destination.get("primary_id")
-        primary_sent_at = str(destination.get("primary_sent_at") or "")
-        young_enough = _age_hours(primary_sent_at, now_iso) < SAFE_DELETE_HOURS
         try:
-            if isinstance(primary_id, int) and young_enough:
-                try:
-                    delete_message(destination["chat_id"], primary_id)
-                    destination["primary_id"] = None
-                except RuntimeError:
-                    young_enough = False
-
-            if isinstance(destination.get("primary_id"), int):
-                edit_message(destination["chat_id"], destination["primary_id"], summary)
+            if isinstance(primary_id, int):
+                edit_message(destination["chat_id"], primary_id, summary)
                 result = send_message(
                     notice,
                     chat_id=destination["chat_id"],
                     message_thread_id=destination.get("message_thread_id"),
-                    reply_to_message_id=destination["primary_id"],
+                    reply_to_message_id=primary_id,
                 )
                 cleanup.append(
                     _cleanup_item(
@@ -255,7 +261,7 @@ def _finalize_incident(incident, cleanup, now_iso):
                         now_iso,
                     )
                 )
-                destination["final_message_id"] = destination["primary_id"]
+                destination["final_message_id"] = primary_id
             else:
                 result = send_message(
                     summary,
@@ -374,14 +380,6 @@ def _hash(value):
 def _add_hours(value, hours):
     parsed = _parse_time(value) or datetime.now(TIMEZONE)
     return (parsed + timedelta(hours=hours)).isoformat(timespec="seconds")
-
-
-def _age_hours(value, now_iso):
-    started = _parse_time(value)
-    now = _parse_time(now_iso)
-    if not started or not now:
-        return float("inf")
-    return max(0.0, (now - started).total_seconds() / 3600)
 
 
 def _parse_time(value):
