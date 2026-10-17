@@ -47,6 +47,7 @@ _CLOSURE_FIELDS = (
     "province",
     "localities",
     "road",
+    "singularity",
     "km_start",
     "km_end",
     "direction",
@@ -65,6 +66,7 @@ _VISIBLE_FIELDS = (
     "localities",
     "reason",
     "road",
+    "singularity",
     "direction",
     "km_start",
     "km_end",
@@ -101,6 +103,35 @@ _DIRECTION_ALIASES = {
     "ambos sentidos": "both",
     "unknown": "unknown",
     "": "unknown",
+}
+
+_SINGULARITY_LABELS = {
+    "exit": "Solo salida",
+    "entry": "Solo acceso",
+    "service_road": "Solo vía de servicio",
+}
+
+_SINGULARITY_ALIASES = {
+    "exit": "exit",
+    "exit slip road": "exit",
+    "exitsliproad": "exit",
+    "salida": "exit",
+    "solo salida": "exit",
+    "entry": "entry",
+    "entry slip road": "entry",
+    "entrysliproad": "entry",
+    "entrada": "entry",
+    "solo entrada": "entry",
+    "acceso": "entry",
+    "solo acceso": "entry",
+    "service road": "service_road",
+    "serviceroad": "service_road",
+    "service_road": "service_road",
+    "via de servicio": "service_road",
+    "vía de servicio": "service_road",
+    "solo via de servicio": "service_road",
+    "solo vía de servicio": "service_road",
+    "": "",
 }
 
 
@@ -332,6 +363,7 @@ def normalize_closure(raw: Mapping[str, Any]) -> dict[str, Any]:
         "province": _clean_text(raw.get("province")),
         "localities": _normalise_localities(raw.get("localities")),
         "road": _clean_text(raw.get("road")).upper(),
+        "singularity": _normalise_singularity(raw.get("singularity")),
         "km_start": km_start,
         "km_end": km_end,
         "direction": _normalise_direction(raw.get("direction")),
@@ -372,6 +404,7 @@ def format_message(
         timestamp = fallback_event_at
     formatted_timestamp = _format_published_at(timestamp)
     alternative = item["alternative"]
+    singularity = _SINGULARITY_LABELS.get(item["singularity"], "")
 
     alternative_line = ""
     if alternative and event != EVENT_REOPENED:
@@ -380,11 +413,16 @@ def format_message(
             f"{escape(alternative)}"
         )
 
+    singularity_line = (
+        f"<b>{escape(singularity)}</b>\n" if singularity else ""
+    )
+
     return (
         f"<b>{EVENT_TITLES[event]}</b>\n\n"
         f"📍 {escape(province)}\n"
         f"<i>{escape(locality)}</i>\n\n"
         f"<b>{escape(road)}</b>, {escape(reason)}\n"
+        f"{singularity_line}"
         f"<i>{escape(kilometres)}</i>\n"
         f"<i>{direction}</i>{alternative_line}\n\n"
         f"<i>{EVENT_DATE_LABELS[event]}: {escape(formatted_timestamp)}</i>"
@@ -549,6 +587,7 @@ def _similarity_score(old: Mapping[str, Any], new: Mapping[str, Any]) -> int:
         "km_start": 40,
         "km_end": 40,
         "direction": 20,
+        "singularity": 30,
         "localities": 10,
         "reason": 5,
     }
@@ -571,6 +610,7 @@ def _same_physical_segment(old: Mapping[str, Any], new: Mapping[str, Any]) -> bo
         and old["province"].casefold() == new["province"].casefold()
         and old["km_start"] == new["km_start"]
         and old["km_end"] == new["km_end"]
+        and old["singularity"] == new["singularity"]
     )
 
 
@@ -639,6 +679,7 @@ def _closure_sort_key(closure: Mapping[str, Any]) -> tuple[Any, ...]:
         _natural_road_key(closure["road"]),
         _km_sort_key(closure["km_start"]),
         _km_sort_key(closure["km_end"]),
+        closure["singularity"],
         direction_rank[closure["direction"]],
         closure["reason"].casefold(),
         tuple(closure["source_ids"]),
@@ -685,6 +726,11 @@ def _normalise_localities(value: Any) -> list[str]:
 def _normalise_direction(value: Any) -> str:
     cleaned = _clean_text(value).casefold()
     return _DIRECTION_ALIASES.get(cleaned, "unknown")
+
+
+def _normalise_singularity(value: Any) -> str:
+    cleaned = _clean_text(value).casefold()
+    return _SINGULARITY_ALIASES.get(cleaned, "")
 
 
 def _clean_text(value: Any) -> str:
