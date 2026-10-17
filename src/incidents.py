@@ -20,6 +20,18 @@ from logic import (
 MAX_VISIBLE_HISTORY = 12
 MAX_DESCRIPTION_LENGTH = 180
 
+_SINGULARITY_LABELS = {
+    "exit": "Solo salida",
+    "entry": "Solo acceso",
+    "service_road": "Solo vía de servicio",
+}
+
+_REOPENED_LABELS = {
+    "exit": "Salida reabierta",
+    "entry": "Acceso reabierto",
+    "service_road": "Vía de servicio reabierta",
+}
+
 
 def history_entry(
     event: str,
@@ -30,9 +42,19 @@ def history_entry(
     item = normalize_closure(current)
     before = normalize_closure(previous) if previous else None
     if event == EVENT_CLOSED:
-        description = f"Corte comunicado por {item['reason'] or 'motivo no indicado'}"
+        subject = {
+            "exit": "Cierre de salida",
+            "entry": "Cierre de acceso",
+            "service_road": "Cierre de vía de servicio",
+        }.get(item["singularity"], "Corte")
+        description = (
+            f"{subject} comunicado por "
+            f"{item['reason'] or 'motivo no indicado'}"
+        )
     elif event == EVENT_REOPENED:
-        description = "Carretera reabierta"
+        description = _REOPENED_LABELS.get(
+            item["singularity"], "Carretera reabierta"
+        )
     elif event == EVENT_PARTIAL_REOPEN:
         description = (
             "Reapertura parcial; permanece cortado el sentido "
@@ -98,6 +120,7 @@ def format_final_summary(incident: Mapping[str, Any], reopened_at: str) -> str:
     reason = incident.get("initial_closure", {}).get("reason") or item["reason"] or "Motivo no indicado"
     kilometres = _kilometres(item.get("km_start", ""), item.get("km_end", ""))
     direction = _direction(item["direction"])
+    singularity = _SINGULARITY_LABELS.get(item["singularity"], "")
     history = list(incident.get("history", []))
     if not history or history[-1].get("event") != EVENT_REOPENED:
         history.append(history_entry(EVENT_REOPENED, item, item, reopened_at))
@@ -109,10 +132,13 @@ def format_final_summary(incident: Mapping[str, Any], reopened_at: str) -> str:
         f"📍 {escape(province)}\n"
         f"<i>{escape(locality)}</i>\n\n"
         f"<b>{escape(road)}</b>, {escape(reason)}\n"
+        + (f"<b>{escape(singularity)}</b>\n" if singularity else "")
+        + (
         f"<i>{escape(kilometres)}</i>\n"
         f"<i>{escape(direction)}</i>\n\n"
         "<b>Historial de la incidencia</b>\n"
         + "\n".join(lines)
+        )
     )
     if duration:
         result += f"\n\n<i>Duración total: {escape(duration)}</i>"
@@ -123,8 +149,11 @@ def format_reopen_notice(incident: Mapping[str, Any], reopened_at: str) -> str:
     item = normalize_closure(incident["latest_closure"])
     road = item["road"] or "Carretera"
     locality = " / ".join(item["localities"]) or item["province"]
+    reopened_title = _REOPENED_LABELS.get(
+        item["singularity"], "Carretera reabierta"
+    ).upper()
     return (
-        "<b>🟢 CARRETERA REABIERTA</b>\n\n"
+        f"<b>🟢 {escape(reopened_title)}</b>\n\n"
         f"<b>{escape(road)}</b> · {escape(locality)}\n"
         f"<i>{escape(_display_time(reopened_at))}</i>\n\n"
         "El aviso principal contiene el resumen completo de la incidencia."
@@ -140,6 +169,7 @@ def _describe_changes(previous: Mapping[str, Any] | None, current: Mapping[str, 
         ("km_start", "PK inicial"),
         ("km_end", "PK final"),
         ("direction", "Sentido"),
+        ("singularity", "Ámbito"),
         ("alternative", "Alternativa"),
         ("localities", "Municipio"),
     )
@@ -150,6 +180,9 @@ def _describe_changes(previous: Mapping[str, Any] | None, current: Mapping[str, 
             continue
         if field == "direction":
             before, after = _direction(str(before)), _direction(str(after))
+        elif field == "singularity":
+            before = _SINGULARITY_LABELS.get(str(before), str(before or ""))
+            after = _SINGULARITY_LABELS.get(str(after), str(after or ""))
         elif field == "localities":
             before = " / ".join(before or [])
             after = " / ".join(after or [])
