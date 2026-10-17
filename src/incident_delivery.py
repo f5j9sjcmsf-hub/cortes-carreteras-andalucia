@@ -101,6 +101,7 @@ def process_incident_events(
 
 def _retry_existing(incidents, cleanup, archive, now_iso):
     for incident in list(incidents.values()):
+        _refresh_alert_deadlines(incident)
         if incident.get("status") == "closing":
             _finalize_incident(incident, cleanup, now_iso)
         else:
@@ -108,6 +109,18 @@ def _retry_existing(incidents, cleanup, archive, now_iso):
             _ensure_active_delivery(incident, now_iso)
             _deliver_alerts(incident)
     _collect_finalized(incidents, archive)
+
+
+def _refresh_alert_deadlines(incident):
+    """Migrate existing alerts whenever the retention policy changes."""
+
+    for alert in incident.get("alerts", []):
+        created_at = _parse_time(str(alert.get("created_at") or ""))
+        if created_at is None:
+            continue
+        alert["delete_after"] = (
+            created_at + timedelta(hours=ALERT_RETENTION_HOURS)
+        ).isoformat(timespec="seconds")
 
 
 def _destination_specs(province):
