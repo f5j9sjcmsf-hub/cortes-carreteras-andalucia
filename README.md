@@ -61,12 +61,16 @@ Los cierres nuevos utilizan un aviso principal con historial:
 - cada actualización importante se publica como respuesta independiente para
   generar una notificación;
 - simultáneamente, el cambio se incorpora al historial del aviso principal;
-- el aviso independiente se retira a las 36 horas, pero la información
-  permanece en el principal y en el estado operativo;
-- al reabrirse, los avisos de actualización restantes se retiran y queda un
-  resumen final con horas, cambios y duración total;
-- si Telegram ya no permite borrar el principal por tener más de 48 horas, se
-  transforma en el resumen final y se publica una reapertura temporal.
+- solo se conserva la respuesta temporal más reciente de cada incidencia; una
+  actualización posterior sustituye a la anterior;
+- la respuesta independiente se retira a las 47 horas, antes del límite de
+  borrado de Telegram, pero la información permanece en el principal y en el
+  estado operativo;
+- al reabrirse, el aviso de actualización restante se retira, el mensaje
+  principal se transforma en un resumen final con horas, cambios y duración
+  total, y se publica como respuesta una reapertura temporal;
+- la respuesta de reapertura se retira a las 47 horas y el resumen del mensaje
+  principal permanece siempre, con independencia de la duración del corte.
 
 El bot guarda por separado los identificadores del mensaje del canal y del
 tema provincial. Los errores de edición, publicación o limpieza se conservan
