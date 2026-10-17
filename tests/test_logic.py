@@ -30,6 +30,7 @@ def closure(**overrides):
         "province": "Granada",
         "localities": ["Güéjar Sierra"],
         "road": "A-395",
+        "singularity": "",
         "km_start": 31,
         "km_end": 39,
         "direction": "both",
@@ -419,6 +420,79 @@ class ReconciliationTests(unittest.TestCase):
             "<b>A-395</b>, Desprendimiento\n\n<i>31,000–39,000</i>",
             message,
         )
+
+    def test_exit_closure_is_explicitly_limited_to_the_exit(self):
+        message = format_message(
+            closure(
+                province="Almería",
+                localities=["El Ejido"],
+                road="A-7",
+                singularity="exit",
+                km_start=818,
+                km_end=818,
+                reason="Inundación",
+            ),
+            EVENT_CLOSED,
+        )
+
+        self.assertIn(
+            "<b>A-7</b>, Inundación\n"
+            "<b>Solo salida</b>\n"
+            "<i>818,000</i>",
+            message,
+        )
+
+    def test_entry_closure_is_explicitly_limited_to_the_access(self):
+        message = format_message(
+            closure(
+                road="A-7",
+                singularity="entry",
+                km_start=818,
+                km_end=818,
+                reason="Inundación",
+            ),
+            EVENT_CLOSED,
+        )
+
+        self.assertIn("<b>Solo acceso</b>", message)
+
+    def test_scope_change_is_a_visible_update(self):
+        state = baseline(closure(road="A-7", km_start=818, km_end=818))
+        messages, next_state = plan_changes(
+            state,
+            [closure(road="A-7", km_start=818, km_end=818, singularity="exit")],
+            NOW_2,
+        )
+
+        self.assertEqual(len(messages), 1)
+        self.assertIn("<b>Solo salida</b>", messages[0])
+        self.assertEqual(only_active(next_state)["singularity"], "exit")
+
+    def test_geographic_fallback_does_not_confuse_exit_with_main_road(self):
+        main_road = closure(
+            source_ids=[],
+            situation_ids=[],
+            record_ids=[],
+            road="A-7",
+            km_start=818,
+            km_end=818,
+        )
+        exit_ramp = closure(
+            source_ids=[],
+            situation_ids=[],
+            record_ids=[],
+            road="A-7",
+            singularity="exit",
+            km_start=818,
+            km_end=818,
+        )
+        state = baseline(main_road)
+
+        messages, _ = plan_changes(state, [exit_ramp], NOW_2)
+
+        self.assertEqual(len(messages), 2)
+        self.assertTrue(any("<b>Solo salida</b>" in message for message in messages))
+        self.assertTrue(any("CARRETERA REABIERTA" in message for message in messages))
 
     def test_event_dates_follow_the_event_semantics(self):
         state = baseline()
