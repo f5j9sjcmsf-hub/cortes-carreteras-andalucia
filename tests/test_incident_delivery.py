@@ -118,6 +118,8 @@ def test_update_is_published_as_a_reply_and_retained_in_primary(
     next_state = incident_delivery.process_incident_events(state, next_state, events, T1)
 
     assert edit.call_count == 2
+    assert all("Carril reversible" in call.args[2] for call in edit.call_args_list)
+    assert all("Historial de la incidencia" in call.args[2] for call in edit.call_args_list)
     assert send.call_count == 2
     assert {call.kwargs["reply_to_message_id"] for call in send.call_args_list} == {101, 201}
     incident = next(iter(next_state["telegram_incidents"].values()))
@@ -142,7 +144,7 @@ def test_update_notice_expires_but_information_remains_in_primary(
     events, next_state = reconcile_events(state, [updated], T1)
     state = incident_delivery.process_incident_events(state, next_state, events, T1)
 
-    later = "2026-10-04T03:00:00+02:00"
+    later = "2026-10-04T14:00:00+02:00"
     events, next_state = reconcile_events(state, [updated], later)
     state = incident_delivery.process_incident_events(state, next_state, events, later)
 
@@ -157,8 +159,8 @@ def test_update_notice_expires_but_information_remains_in_primary(
 @patch("incident_delivery.edit_message")
 @patch("incident_delivery.delete_message")
 @patch("incident_delivery.send_message")
-def test_short_incident_replaces_live_messages_with_one_final_summary_each(
-    send, delete, _edit, _forum
+def test_short_incident_edits_primary_and_sends_temporary_reopen_reply(
+    send, delete, edit, _forum
 ):
     send.side_effect = [result(101), result(201)]
     events, state = reconcile_events({}, [closure()], T0)
@@ -169,10 +171,53 @@ def test_short_incident_replaces_live_messages_with_one_final_summary_each(
     events, next_state = reconcile_events(state, [], T2)
     final_state = incident_delivery.process_incident_events(state, next_state, events, T2)
 
-    assert {call.args[1] for call in delete.call_args_list} == {101, 201}
+    delete.assert_not_called()
+    assert edit.call_count == 2
+    assert {call.args[1] for call in edit.call_args_list} == {101, 201}
+    assert all("CORTE FINALIZADO" in call.args[2] for call in edit.call_args_list)
     assert send.call_count == 2
-    assert all("CORTE FINALIZADO" in call.args[0] for call in send.call_args_list)
+    assert all("CARRETERA REABIERTA" in call.args[0] for call in send.call_args_list)
+    assert {call.kwargs["reply_to_message_id"] for call in send.call_args_list} == {101, 201}
     assert final_state["telegram_incidents"] == {}
     assert len(final_state["telegram_archive"]) == 1
+    assert len(final_state["telegram_cleanup"]) == 2
     assert "Duración total: 1 hora" in final_state["telegram_archive"][0]["final_summary"]
+
+
+@patch.object(incident_delivery, "TELEGRAM_CHAT_ID", "@canal")
+@patch("incident_delivery.forum_destination", side_effect=forum)
+@patch("incident_delivery.edit_message")
+@patch("incident_delivery.delete_message")
+@patch("incident_delivery.send_message")
+def test_new_update_replaces_previous_temporary_alert(
+    send, delete, _edit, _forum
+):
+    send.side_effect = [result(101), result(201)]
+    events, state = reconcile_events({}, [closure()], T0)
+    state = incident_delivery.process_incident_events({}, state, events, T0)
+
+    send.side_effect = [result(102), result(202)]
+    first = closure(alternative="Carril reversible", source_updated_at=T1)
+    events, next_state = reconcile_events(state, [first], T1)
+    state = incident_delivery.process_incident_events(state, next_state, events, T1)
+
+    send.side_effect = [result(103), result(203)]
+    second_time = "2026-10-02T14:40:00+02:00"
+    second = closure(
+        alternative="Desvío señalizado",
+        source_updated_at=second_time,
+    )
+    events, next_state = reconcile_events(state, [second], second_time)
+    state = incident_delivery.process_incident_events(
+        state,
+        next_state,
+        events,
+        second_time,
+    )
+
+    assert {call.args[1] for call in delete.call_args_list} == {102, 202}
+    incident = next(iter(state["telegram_incidents"].values()))
+    assert len(incident["alerts"]) == 1
+    assert set(incident["alerts"][0]["sent"].values()) == {103, 203}
+    assert incident["alerts"][0]["delete_after"] == "2026-10-04T13:40:00+02:00"
 
