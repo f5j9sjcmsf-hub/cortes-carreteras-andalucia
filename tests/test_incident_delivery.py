@@ -81,10 +81,10 @@ def test_exit_scope_is_retained_in_history_and_final_summary():
     incident = append_event(incident, EVENT_REOPENED, exit_closure, T1)
     final = format_final_summary(incident, T1)
 
-    assert "<b>Solo salida</b>" in active
+    assert "<b>Singularidad: Salida</b>" in active
     assert "Cierre de salida comunicado por Inundación" in final
     assert "Salida reabierta" in final
-    assert "<b>Solo salida</b>" in final
+    assert "<b>Singularidad: Salida</b>" in final
 
 
 def test_access_scope_uses_access_wording_through_reopening():
@@ -94,9 +94,9 @@ def test_access_scope_uses_access_wording_through_reopening():
     incident = append_event(incident, EVENT_REOPENED, access_closure, T1)
     final = format_final_summary(incident, T1)
 
-    assert "<b>Solo acceso</b>" in active
-    assert "Cierre de acceso comunicado por Obras" in final
-    assert "Acceso reabierto" in final
+    assert "<b>Singularidad: Entrada</b>" in active
+    assert "Cierre de entrada comunicado por Obras" in final
+    assert "Entrada reabierta" in final
 
 
 @patch.object(incident_delivery, "TELEGRAM_CHAT_ID", "@canal")
