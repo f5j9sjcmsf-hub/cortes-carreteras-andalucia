@@ -21,14 +21,14 @@ MAX_VISIBLE_HISTORY = 12
 MAX_DESCRIPTION_LENGTH = 180
 
 _SINGULARITY_LABELS = {
-    "exit": "Solo salida",
-    "entry": "Solo acceso",
-    "service_road": "Solo vía de servicio",
+    "exit": "Salida",
+    "entry": "Entrada",
+    "service_road": "Vía de servicio",
 }
 
 _REOPENED_LABELS = {
     "exit": "Salida reabierta",
-    "entry": "Acceso reabierto",
+    "entry": "Entrada reabierta",
     "service_road": "Vía de servicio reabierta",
 }
 
@@ -44,7 +44,7 @@ def history_entry(
     if event == EVENT_CLOSED:
         subject = {
             "exit": "Cierre de salida",
-            "entry": "Cierre de acceso",
+            "entry": "Cierre de entrada",
             "service_road": "Cierre de vía de servicio",
         }.get(item["singularity"], "Corte")
         description = (
@@ -132,9 +132,13 @@ def format_final_summary(incident: Mapping[str, Any], reopened_at: str) -> str:
         f"📍 {escape(province)}\n"
         f"<i>{escape(locality)}</i>\n\n"
         f"<b>{escape(road)}</b>, {escape(reason)}\n"
-        + (f"<b>{escape(singularity)}</b>\n" if singularity else "")
-        + (
         f"<i>{escape(kilometres)}</i>\n"
+        + (
+            f"<b>Singularidad: {escape(singularity)}</b>\n"
+            if singularity
+            else ""
+        )
+        + (
         f"<i>{escape(direction)}</i>\n\n"
         "<b>Historial de la incidencia</b>\n"
         + "\n".join(lines)
@@ -169,7 +173,7 @@ def _describe_changes(previous: Mapping[str, Any] | None, current: Mapping[str, 
         ("km_start", "PK inicial"),
         ("km_end", "PK final"),
         ("direction", "Sentido"),
-        ("singularity", "Ámbito"),
+        ("singularity", "Singularidad"),
         ("alternative", "Alternativa"),
         ("localities", "Municipio"),
     )
