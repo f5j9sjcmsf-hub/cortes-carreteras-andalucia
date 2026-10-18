@@ -9,7 +9,7 @@
       "km_end": "374.7",
       "km_start": "372.3",
       "last_changed_at": "2026-10-15T01:40:10+02:00",
-      "last_seen_at": "2026-10-18T03:03:13+02:00",
+      "last_seen_at": "2026-10-18T07:55:17+02:00",
       "localities": [
         "El Carpio"
       ],
@@ -38,7 +38,7 @@
       "km_end": "1.7",
       "km_start": "1",
       "last_changed_at": "2026-09-01T08:00:02+02:00",
-      "last_seen_at": "2026-10-18T03:03:13+02:00",
+      "last_seen_at": "2026-10-18T07:55:17+02:00",
       "localities": [
         "Monachil"
       ],
@@ -69,7 +69,7 @@
       "km_end": "10.9",
       "km_start": "9.2",
       "last_changed_at": "2026-09-14T00:14:26+02:00",
-      "last_seen_at": "2026-10-18T03:03:13+02:00",
+      "last_seen_at": "2026-10-18T07:55:17+02:00",
       "localities": [
         "Badolatosa"
       ],
@@ -100,7 +100,7 @@
       "km_end": "10",
       "km_start": "10",
       "last_changed_at": "2026-08-27T00:52:31+02:00",
-      "last_seen_at": "2026-10-18T03:03:13+02:00",
+      "last_seen_at": "2026-10-18T07:55:17+02:00",
       "localities": [
         "Ronda"
       ],
@@ -120,6 +120,40 @@
       ],
       "source_updated_at": "2026-02-04T20:02:58+01:00"
     },
+    "src-17ea8e5cad2f15bf596b": {
+      "alternative": "",
+      "cause_code": "publicEvent",
+      "detail_code": "majorEvent",
+      "direction": "both",
+      "first_seen_at": "2026-10-18T07:55:17+02:00",
+      "km_end": "5.79",
+      "km_start": "0",
+      "last_changed_at": "2026-10-18T07:55:17+02:00",
+      "last_seen_at": "2026-10-18T07:55:17+02:00",
+      "localities": [
+        "Dos Hermanas",
+        "Sevilla"
+      ],
+      "province": "Sevilla",
+      "published_at": "2026-10-18T07:49:31+02:00",
+      "reason": "Evento multitudinario",
+      "record_ids": [
+        "28849442",
+        "28849443",
+        "29157049"
+      ],
+      "road": "A-8032",
+      "singularity": "",
+      "situation_ids": [
+        "24508968"
+      ],
+      "source_ids": [
+        "24508968:28849442",
+        "24508968:28849443",
+        "24508968:29157049"
+      ],
+      "source_updated_at": "2026-10-18T07:50:04+02:00"
+    },
     "src-202873b8497c71c0a149": {
       "alternative": "",
       "cause_code": "roadMaintenance",
@@ -129,7 +163,7 @@
       "km_end": "14.14",
       "km_start": "13.64",
       "last_changed_at": "2026-09-29T19:22:44+02:00",
-      "last_seen_at": "2026-10-18T03:03:13+02:00",
+      "last_seen_at": "2026-10-18T07:55:17+02:00",
       "localities": [
         "Marchena"
       ],
@@ -158,7 +192,7 @@
       "km_end": "33.2",
       "km_start": "30",
       "last_changed_at": "2026-08-27T00:52:31+02:00",
-      "last_seen_at": "2026-10-18T03:03:13+02:00",
+      "last_seen_at": "2026-10-18T07:55:17+02:00",
       "localities": [
         "Algodonales"
       ],
@@ -187,7 +221,7 @@
       "km_end": "18",
       "km_start": "9",
       "last_changed_at": "2026-09-28T08:04:05+02:00",
-      "last_seen_at": "2026-10-18T03:03:13+02:00",
+      "last_seen_at": "2026-10-18T07:55:17+02:00",
       "localities": [
         "Arcos de la Frontera",
         "Espera"
@@ -217,7 +251,7 @@
       "km_end": "15.7",
       "km_start": "7.8",
       "last_changed_at": "2026-10-15T01:40:10+02:00",
-      "last_seen_at": "2026-10-18T03:03:13+02:00",
+      "last_seen_at": "2026-10-18T07:55:17+02:00",
       "localities": [
         "Cantillana",
         "Villanueva del Río y Minas"
@@ -249,7 +283,7 @@
       "km_end": "31",
       "km_start": "25",
       "last_changed_at": "2026-08-27T00:52:31+02:00",
-      "last_seen_at": "2026-10-18T03:03:13+02:00",
+      "last_seen_at": "2026-10-18T07:55:17+02:00",
       "localities": [
         "Medina Sidonia"
       ],
@@ -278,7 +312,7 @@
       "km_end": "0.6",
       "km_start": "0",
       "last_changed_at": "2026-08-27T00:52:31+02:00",
-      "last_seen_at": "2026-10-18T03:03:13+02:00",
+      "last_seen_at": "2026-10-18T07:55:17+02:00",
       "localities": [
         "Almedinilla"
       ],
@@ -298,6 +332,35 @@
       ],
       "source_updated_at": "2026-05-27T07:34:13+02:00"
     },
+    "src-354b8e2d8ce7e04d3507": {
+      "alternative": "",
+      "cause_code": "publicEvent",
+      "detail_code": "sportsMeeting",
+      "direction": "decreasing",
+      "first_seen_at": "2026-10-18T07:55:17+02:00",
+      "km_end": "4.5",
+      "km_start": "2",
+      "last_changed_at": "2026-10-18T07:55:17+02:00",
+      "last_seen_at": "2026-10-18T07:55:17+02:00",
+      "localities": [
+        "Málaga"
+      ],
+      "province": "Málaga",
+      "published_at": "2026-10-18T07:02:07+02:00",
+      "reason": "Otro motivo: sports meeting",
+      "record_ids": [
+        "29156799"
+      ],
+      "road": "MA-24",
+      "singularity": "",
+      "situation_ids": [
+        "24798711"
+      ],
+      "source_ids": [
+        "24798711:29156799"
+      ],
+      "source_updated_at": "2026-10-18T07:02:07+02:00"
+    },
     "src-35f88753a1898e45742f": {
       "alternative": "",
       "cause_code": "roadMaintenance",
@@ -307,7 +370,7 @@
       "km_end": "12.1",
       "km_start": "0",
       "last_changed_at": "2026-09-15T09:01:07+02:00",
-      "last_seen_at": "2026-10-18T03:03:13+02:00",
+      "last_seen_at": "2026-10-18T07:55:17+02:00",
       "localities": [
         "Écija"
       ],
@@ -338,7 +401,7 @@
       "km_end": "2.16",
       "km_start": "0",
       "last_changed_at": "2026-08-27T00:52:31+02:00",
-      "last_seen_at": "2026-10-18T03:03:13+02:00",
+      "last_seen_at": "2026-10-18T07:55:17+02:00",
       "localities": [
         "Sevilla"
       ],
@@ -367,7 +430,7 @@
       "km_end": "6.85",
       "km_start": "6.8",
       "last_changed_at": "2026-10-16T08:15:34+02:00",
-      "last_seen_at": "2026-10-18T03:03:13+02:00",
+      "last_seen_at": "2026-10-18T07:55:17+02:00",
       "localities": [
         "La Línea de la Concepción"
       ],
@@ -396,7 +459,7 @@
       "km_end": "11",
       "km_start": "2",
       "last_changed_at": "2026-08-27T00:52:31+02:00",
-      "last_seen_at": "2026-10-18T03:03:13+02:00",
+      "last_seen_at": "2026-10-18T07:55:17+02:00",
       "localities": [
         "Carmona"
       ],
@@ -425,7 +488,7 @@
       "km_end": "18",
       "km_start": "9.2",
       "last_changed_at": "2026-09-28T08:04:05+02:00",
-      "last_seen_at": "2026-10-18T03:03:13+02:00",
+      "last_seen_at": "2026-10-18T07:55:17+02:00",
       "localities": [
         "Arcos de la Frontera",
         "Espera"
@@ -455,7 +518,7 @@
       "km_end": "49.7",
       "km_start": "49.2",
       "last_changed_at": "2026-09-23T10:13:13+02:00",
-      "last_seen_at": "2026-10-18T03:03:13+02:00",
+      "last_seen_at": "2026-10-18T07:55:17+02:00",
       "localities": [
         "Montilla"
       ],
@@ -484,7 +547,7 @@
       "km_end": "33",
       "km_start": "32",
       "last_changed_at": "2026-08-27T00:52:31+02:00",
-      "last_seen_at": "2026-10-18T03:03:13+02:00",
+      "last_seen_at": "2026-10-18T07:55:17+02:00",
       "localities": [
         "Montefrío"
       ],
@@ -513,7 +576,7 @@
       "km_end": "157.6",
       "km_start": "154",
       "last_changed_at": "2026-10-16T18:13:04+02:00",
-      "last_seen_at": "2026-10-18T03:03:13+02:00",
+      "last_seen_at": "2026-10-18T07:55:17+02:00",
       "localities": [
         "Antequera"
       ],
@@ -542,7 +605,7 @@
       "km_end": "59.7",
       "km_start": "55.8",
       "last_changed_at": "2026-08-27T00:52:31+02:00",
-      "last_seen_at": "2026-10-18T03:03:13+02:00",
+      "last_seen_at": "2026-10-18T07:55:17+02:00",
       "localities": [
         "Cárcheles",
         "Pegalajar"
@@ -572,7 +635,7 @@
       "km_end": "64",
       "km_start": "61.8",
       "last_changed_at": "2026-08-27T00:52:31+02:00",
-      "last_seen_at": "2026-10-18T03:03:13+02:00",
+      "last_seen_at": "2026-10-18T07:55:17+02:00",
       "localities": [
         "Villacarrillo"
       ],
@@ -601,7 +664,7 @@
       "km_end": "10.39",
       "km_start": "5.33",
       "last_changed_at": "2026-10-15T01:40:10+02:00",
-      "last_seen_at": "2026-10-18T03:03:13+02:00",
+      "last_seen_at": "2026-10-18T07:55:17+02:00",
       "localities": [
         "Úbeda"
       ],
@@ -621,6 +684,35 @@
       ],
       "source_updated_at": "2026-10-14T11:36:30+02:00"
     },
+    "src-ab5caf6cafa092a44ea1": {
+      "alternative": "",
+      "cause_code": "publicEvent",
+      "detail_code": "sportsMeeting",
+      "direction": "increasing",
+      "first_seen_at": "2026-10-18T07:55:17+02:00",
+      "km_end": "2.32",
+      "km_start": "2.32",
+      "last_changed_at": "2026-10-18T07:55:17+02:00",
+      "last_seen_at": "2026-10-18T07:55:17+02:00",
+      "localities": [
+        "Málaga"
+      ],
+      "province": "Málaga",
+      "published_at": "2026-10-18T07:02:15+02:00",
+      "reason": "Otro motivo: sports meeting",
+      "record_ids": [
+        "29156801"
+      ],
+      "road": "MA-24",
+      "singularity": "exit",
+      "situation_ids": [
+        "24798711"
+      ],
+      "source_ids": [
+        "24798711:29156801"
+      ],
+      "source_updated_at": "2026-10-18T07:02:15+02:00"
+    },
     "src-ac4e0b85b27c795050b5": {
       "alternative": "",
       "cause_code": "roadMaintenance",
@@ -630,7 +722,7 @@
       "km_end": "3",
       "km_start": "0",
       "last_changed_at": "2026-08-27T00:52:31+02:00",
-      "last_seen_at": "2026-10-18T03:03:13+02:00",
+      "last_seen_at": "2026-10-18T07:55:17+02:00",
       "localities": [
         "Lucainena de las Torres",
         "Turrillas"
@@ -662,7 +754,7 @@
       "km_end": "2.25",
       "km_start": "1.2",
       "last_changed_at": "2026-08-27T00:52:31+02:00",
-      "last_seen_at": "2026-10-18T03:03:13+02:00",
+      "last_seen_at": "2026-10-18T07:55:17+02:00",
       "localities": [
         "Casares"
       ],
@@ -691,7 +783,7 @@
       "km_end": "17",
       "km_start": "13",
       "last_changed_at": "2026-09-01T08:45:42+02:00",
-      "last_seen_at": "2026-10-18T03:03:13+02:00",
+      "last_seen_at": "2026-10-18T07:55:17+02:00",
       "localities": [
         "El Gastor",
         "Grazalema"
@@ -721,7 +813,7 @@
       "km_end": "1.95",
       "km_start": "1.84",
       "last_changed_at": "2026-09-04T10:24:32+02:00",
-      "last_seen_at": "2026-10-18T03:03:13+02:00",
+      "last_seen_at": "2026-10-18T07:55:17+02:00",
       "localities": [
         "Iznatoraf"
       ],
@@ -752,7 +844,7 @@
       "km_end": "12.8",
       "km_start": "0",
       "last_changed_at": "2026-08-27T00:52:31+02:00",
-      "last_seen_at": "2026-10-18T03:03:13+02:00",
+      "last_seen_at": "2026-10-18T07:55:17+02:00",
       "localities": [
         "Gerena",
         "Olivares"
@@ -784,7 +876,7 @@
       "km_end": "25",
       "km_start": "25",
       "last_changed_at": "2026-10-18T03:03:13+02:00",
-      "last_seen_at": "2026-10-18T03:03:13+02:00",
+      "last_seen_at": "2026-10-18T07:55:17+02:00",
       "localities": [
         "Casabermeja"
       ],
@@ -813,7 +905,7 @@
       "km_end": "3.38",
       "km_start": "3.28",
       "last_changed_at": "2026-10-16T13:46:45+02:00",
-      "last_seen_at": "2026-10-18T03:03:13+02:00",
+      "last_seen_at": "2026-10-18T07:55:17+02:00",
       "localities": [
         "Manzanilla"
       ],
@@ -835,6 +927,35 @@
       ],
       "source_updated_at": "2026-10-16T10:05:10+02:00"
     },
+    "src-dcb90bcc6ada7ba5d137": {
+      "alternative": "",
+      "cause_code": "publicEvent",
+      "detail_code": "sportsMeeting",
+      "direction": "both",
+      "first_seen_at": "2026-10-18T07:55:17+02:00",
+      "km_end": "967",
+      "km_start": "967",
+      "last_changed_at": "2026-10-18T07:55:17+02:00",
+      "last_seen_at": "2026-10-18T07:55:17+02:00",
+      "localities": [
+        "Rincón de la Victoria"
+      ],
+      "province": "Málaga",
+      "published_at": "2026-10-18T07:36:13+02:00",
+      "reason": "Otro motivo: sports meeting",
+      "record_ids": [
+        "29156800"
+      ],
+      "road": "A-7",
+      "singularity": "exit",
+      "situation_ids": [
+        "24798711"
+      ],
+      "source_ids": [
+        "24798711:29156800"
+      ],
+      "source_updated_at": "2026-10-18T07:36:13+02:00"
+    },
     "src-e2776c2e7be2b6c8226e": {
       "alternative": "",
       "cause_code": "roadMaintenance",
@@ -844,7 +965,7 @@
       "km_end": "357.6",
       "km_start": "356.9",
       "last_changed_at": "2026-10-15T01:40:10+02:00",
-      "last_seen_at": "2026-10-18T03:03:13+02:00",
+      "last_seen_at": "2026-10-18T07:55:17+02:00",
       "localities": [
         "Rubite"
       ],
@@ -875,7 +996,7 @@
       "km_end": "28.5",
       "km_start": "27.7",
       "last_changed_at": "2026-08-27T11:23:09+02:00",
-      "last_seen_at": "2026-10-18T03:03:13+02:00",
+      "last_seen_at": "2026-10-18T07:55:17+02:00",
       "localities": [
         "La Rambla"
       ],
@@ -906,7 +1027,7 @@
       "km_end": "8.1",
       "km_start": "0",
       "last_changed_at": "2026-09-16T14:31:25+02:00",
-      "last_seen_at": "2026-10-18T03:03:13+02:00",
+      "last_seen_at": "2026-10-18T07:55:17+02:00",
       "localities": [
         "Las Cabezas de San Juan",
         "Lebrija"
@@ -938,7 +1059,7 @@
       "km_end": "1.2",
       "km_start": "0.6",
       "last_changed_at": "2026-08-27T00:52:31+02:00",
-      "last_seen_at": "2026-10-18T03:03:13+02:00",
+      "last_seen_at": "2026-10-18T07:55:17+02:00",
       "localities": [
         "Algeciras"
       ],
@@ -963,7 +1084,7 @@
   },
   "initialized": true,
   "initialized_at": "2026-08-27T00:52:31+02:00",
-  "revision": 4566,
+  "revision": 4567,
   "telegram_archive": [
     {
       "final_summary": "<b>🟢 CORTE FINALIZADO</b>\n\n📍 Granada\n<i>Polopos</i>\n\n<b>GR-6204</b>, Otro motivo: sports meeting\n<i>7,000–13,000</i>\n<i>Creciente</i>\n\n<b>Historial de la incidencia</b>\n• 03/10/2026 · 10:03 h — Corte comunicado por Otro motivo: sports meeting\n• 03/10/2026 · 15:53 h — Carretera reabierta\n\n<i>Duración total: 5 horas y 50 minutos</i>",
@@ -2491,6 +2612,95 @@
       },
       "started_at": "2026-10-13T10:00:22+02:00"
     },
+    "src-17ea8e5cad2f15bf596b": {
+      "destinations": {
+        "channel": {
+          "chat_id": "@carreterascortadas_andalucia",
+          "content_hash": "8733e2172a3c0dba6965cca214e5f6a4b13369e5ccfe04a021e1ce9c6975840d",
+          "message_thread_id": null,
+          "primary_id": 718,
+          "primary_sent_at": "2026-10-18T07:55:17+02:00"
+        },
+        "forum": {
+          "chat_id": "-1001337700771",
+          "content_hash": "8733e2172a3c0dba6965cca214e5f6a4b13369e5ccfe04a021e1ce9c6975840d",
+          "message_thread_id": 1359,
+          "primary_id": 12375,
+          "primary_sent_at": "2026-10-18T07:55:17+02:00"
+        }
+      },
+      "history": [
+        {
+          "at": "2026-10-18T07:49:31+02:00",
+          "description": "Corte comunicado por Evento multitudinario",
+          "event": "closed"
+        }
+      ],
+      "initial_closure": {
+        "alternative": "",
+        "cause_code": "publicEvent",
+        "detail_code": "majorEvent",
+        "direction": "both",
+        "km_end": "5.79",
+        "km_start": "0",
+        "localities": [
+          "Dos Hermanas",
+          "Sevilla"
+        ],
+        "province": "Sevilla",
+        "published_at": "2026-10-18T07:49:31+02:00",
+        "reason": "Evento multitudinario",
+        "record_ids": [
+          "28849442",
+          "28849443",
+          "29157049"
+        ],
+        "road": "A-8032",
+        "singularity": "",
+        "situation_ids": [
+          "24508968"
+        ],
+        "source_ids": [
+          "24508968:28849442",
+          "24508968:28849443",
+          "24508968:29157049"
+        ],
+        "source_updated_at": "2026-10-18T07:50:04+02:00"
+      },
+      "key": "src-17ea8e5cad2f15bf596b",
+      "latest_closure": {
+        "alternative": "",
+        "cause_code": "publicEvent",
+        "detail_code": "majorEvent",
+        "direction": "both",
+        "km_end": "5.79",
+        "km_start": "0",
+        "localities": [
+          "Dos Hermanas",
+          "Sevilla"
+        ],
+        "province": "Sevilla",
+        "published_at": "2026-10-18T07:49:31+02:00",
+        "reason": "Evento multitudinario",
+        "record_ids": [
+          "28849442",
+          "28849443",
+          "29157049"
+        ],
+        "road": "A-8032",
+        "singularity": "",
+        "situation_ids": [
+          "24508968"
+        ],
+        "source_ids": [
+          "24508968:28849442",
+          "24508968:28849443",
+          "24508968:29157049"
+        ],
+        "source_updated_at": "2026-10-18T07:50:04+02:00"
+      },
+      "started_at": "2026-10-18T07:49:31+02:00"
+    },
     "src-29400ce920f3daf860d9": {
       "alerts": [],
       "destinations": {
@@ -2577,6 +2787,85 @@
         "source_updated_at": "2026-10-06T08:24:12+02:00"
       },
       "started_at": "2026-10-05T13:48:32+02:00"
+    },
+    "src-354b8e2d8ce7e04d3507": {
+      "destinations": {
+        "channel": {
+          "chat_id": "@carreterascortadas_andalucia",
+          "content_hash": "131685a35d2650c4f0d9d772225a9ea09f4245c9fdcbe57a65babb0063f8e2b4",
+          "message_thread_id": null,
+          "primary_id": 715,
+          "primary_sent_at": "2026-10-18T07:55:17+02:00"
+        },
+        "forum": {
+          "chat_id": "-1001337700771",
+          "content_hash": "131685a35d2650c4f0d9d772225a9ea09f4245c9fdcbe57a65babb0063f8e2b4",
+          "message_thread_id": 1358,
+          "primary_id": 12372,
+          "primary_sent_at": "2026-10-18T07:55:17+02:00"
+        }
+      },
+      "history": [
+        {
+          "at": "2026-10-18T07:02:07+02:00",
+          "description": "Corte comunicado por Otro motivo: sports meeting",
+          "event": "closed"
+        }
+      ],
+      "initial_closure": {
+        "alternative": "",
+        "cause_code": "publicEvent",
+        "detail_code": "sportsMeeting",
+        "direction": "decreasing",
+        "km_end": "4.5",
+        "km_start": "2",
+        "localities": [
+          "Málaga"
+        ],
+        "province": "Málaga",
+        "published_at": "2026-10-18T07:02:07+02:00",
+        "reason": "Otro motivo: sports meeting",
+        "record_ids": [
+          "29156799"
+        ],
+        "road": "MA-24",
+        "singularity": "",
+        "situation_ids": [
+          "24798711"
+        ],
+        "source_ids": [
+          "24798711:29156799"
+        ],
+        "source_updated_at": "2026-10-18T07:02:07+02:00"
+      },
+      "key": "src-354b8e2d8ce7e04d3507",
+      "latest_closure": {
+        "alternative": "",
+        "cause_code": "publicEvent",
+        "detail_code": "sportsMeeting",
+        "direction": "decreasing",
+        "km_end": "4.5",
+        "km_start": "2",
+        "localities": [
+          "Málaga"
+        ],
+        "province": "Málaga",
+        "published_at": "2026-10-18T07:02:07+02:00",
+        "reason": "Otro motivo: sports meeting",
+        "record_ids": [
+          "29156799"
+        ],
+        "road": "MA-24",
+        "singularity": "",
+        "situation_ids": [
+          "24798711"
+        ],
+        "source_ids": [
+          "24798711:29156799"
+        ],
+        "source_updated_at": "2026-10-18T07:02:07+02:00"
+      },
+      "started_at": "2026-10-18T07:02:07+02:00"
     },
     "src-4d1d0ddbc1d3c451c4e7": {
       "alerts": [],
@@ -2812,6 +3101,85 @@
       },
       "started_at": "2026-10-14T11:36:30+02:00"
     },
+    "src-ab5caf6cafa092a44ea1": {
+      "destinations": {
+        "channel": {
+          "chat_id": "@carreterascortadas_andalucia",
+          "content_hash": "27439caa657c07c59746b14275d768f4763237aebd1644f0e2e7e897615f977a",
+          "message_thread_id": null,
+          "primary_id": 716,
+          "primary_sent_at": "2026-10-18T07:55:17+02:00"
+        },
+        "forum": {
+          "chat_id": "-1001337700771",
+          "content_hash": "27439caa657c07c59746b14275d768f4763237aebd1644f0e2e7e897615f977a",
+          "message_thread_id": 1358,
+          "primary_id": 12373,
+          "primary_sent_at": "2026-10-18T07:55:17+02:00"
+        }
+      },
+      "history": [
+        {
+          "at": "2026-10-18T07:02:15+02:00",
+          "description": "Cierre de salida comunicado por Otro motivo: sports meeting",
+          "event": "closed"
+        }
+      ],
+      "initial_closure": {
+        "alternative": "",
+        "cause_code": "publicEvent",
+        "detail_code": "sportsMeeting",
+        "direction": "increasing",
+        "km_end": "2.32",
+        "km_start": "2.32",
+        "localities": [
+          "Málaga"
+        ],
+        "province": "Málaga",
+        "published_at": "2026-10-18T07:02:15+02:00",
+        "reason": "Otro motivo: sports meeting",
+        "record_ids": [
+          "29156801"
+        ],
+        "road": "MA-24",
+        "singularity": "exit",
+        "situation_ids": [
+          "24798711"
+        ],
+        "source_ids": [
+          "24798711:29156801"
+        ],
+        "source_updated_at": "2026-10-18T07:02:15+02:00"
+      },
+      "key": "src-ab5caf6cafa092a44ea1",
+      "latest_closure": {
+        "alternative": "",
+        "cause_code": "publicEvent",
+        "detail_code": "sportsMeeting",
+        "direction": "increasing",
+        "km_end": "2.32",
+        "km_start": "2.32",
+        "localities": [
+          "Málaga"
+        ],
+        "province": "Málaga",
+        "published_at": "2026-10-18T07:02:15+02:00",
+        "reason": "Otro motivo: sports meeting",
+        "record_ids": [
+          "29156801"
+        ],
+        "road": "MA-24",
+        "singularity": "exit",
+        "situation_ids": [
+          "24798711"
+        ],
+        "source_ids": [
+          "24798711:29156801"
+        ],
+        "source_updated_at": "2026-10-18T07:02:15+02:00"
+      },
+      "started_at": "2026-10-18T07:02:15+02:00"
+    },
     "src-daa7123acf4da4aa8239": {
       "alerts": [
         {
@@ -2989,8 +3357,87 @@
         "source_updated_at": "2026-10-16T10:05:10+02:00"
       },
       "started_at": "2026-10-16T10:04:16+02:00"
+    },
+    "src-dcb90bcc6ada7ba5d137": {
+      "destinations": {
+        "channel": {
+          "chat_id": "@carreterascortadas_andalucia",
+          "content_hash": "18a9268f77c3d7459a5dac74d38038be6826e0e1c6e736296d3e9cbb656fa0cf",
+          "message_thread_id": null,
+          "primary_id": 717,
+          "primary_sent_at": "2026-10-18T07:55:17+02:00"
+        },
+        "forum": {
+          "chat_id": "-1001337700771",
+          "content_hash": "18a9268f77c3d7459a5dac74d38038be6826e0e1c6e736296d3e9cbb656fa0cf",
+          "message_thread_id": 1358,
+          "primary_id": 12374,
+          "primary_sent_at": "2026-10-18T07:55:17+02:00"
+        }
+      },
+      "history": [
+        {
+          "at": "2026-10-18T07:36:13+02:00",
+          "description": "Cierre de salida comunicado por Otro motivo: sports meeting",
+          "event": "closed"
+        }
+      ],
+      "initial_closure": {
+        "alternative": "",
+        "cause_code": "publicEvent",
+        "detail_code": "sportsMeeting",
+        "direction": "both",
+        "km_end": "967",
+        "km_start": "967",
+        "localities": [
+          "Rincón de la Victoria"
+        ],
+        "province": "Málaga",
+        "published_at": "2026-10-18T07:36:13+02:00",
+        "reason": "Otro motivo: sports meeting",
+        "record_ids": [
+          "29156800"
+        ],
+        "road": "A-7",
+        "singularity": "exit",
+        "situation_ids": [
+          "24798711"
+        ],
+        "source_ids": [
+          "24798711:29156800"
+        ],
+        "source_updated_at": "2026-10-18T07:36:13+02:00"
+      },
+      "key": "src-dcb90bcc6ada7ba5d137",
+      "latest_closure": {
+        "alternative": "",
+        "cause_code": "publicEvent",
+        "detail_code": "sportsMeeting",
+        "direction": "both",
+        "km_end": "967",
+        "km_start": "967",
+        "localities": [
+          "Rincón de la Victoria"
+        ],
+        "province": "Málaga",
+        "published_at": "2026-10-18T07:36:13+02:00",
+        "reason": "Otro motivo: sports meeting",
+        "record_ids": [
+          "29156800"
+        ],
+        "road": "A-7",
+        "singularity": "exit",
+        "situation_ids": [
+          "24798711"
+        ],
+        "source_ids": [
+          "24798711:29156800"
+        ],
+        "source_updated_at": "2026-10-18T07:36:13+02:00"
+      },
+      "started_at": "2026-10-18T07:36:13+02:00"
     }
   },
-  "updated_at": "2026-10-18T03:03:13+02:00",
+  "updated_at": "2026-10-18T07:55:17+02:00",
   "version": 1
 }
