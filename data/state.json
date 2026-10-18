@@ -9,7 +9,7 @@
       "km_end": "374.7",
       "km_start": "372.3",
       "last_changed_at": "2026-10-15T01:40:10+02:00",
-      "last_seen_at": "2026-10-18T19:23:40+02:00",
+      "last_seen_at": "2026-10-18T21:32:45+02:00",
       "localities": [
         "El Carpio"
       ],
@@ -38,7 +38,7 @@
       "km_end": "1.7",
       "km_start": "1",
       "last_changed_at": "2026-09-01T08:00:02+02:00",
-      "last_seen_at": "2026-10-18T19:23:40+02:00",
+      "last_seen_at": "2026-10-18T21:32:45+02:00",
       "localities": [
         "Monachil"
       ],
@@ -69,7 +69,7 @@
       "km_end": "10.9",
       "km_start": "9.2",
       "last_changed_at": "2026-09-14T00:14:26+02:00",
-      "last_seen_at": "2026-10-18T19:23:40+02:00",
+      "last_seen_at": "2026-10-18T21:32:45+02:00",
       "localities": [
         "Badolatosa"
       ],
@@ -100,7 +100,7 @@
       "km_end": "10",
       "km_start": "10",
       "last_changed_at": "2026-08-27T00:52:31+02:00",
-      "last_seen_at": "2026-10-18T19:23:40+02:00",
+      "last_seen_at": "2026-10-18T21:32:45+02:00",
       "localities": [
         "Ronda"
       ],
@@ -129,7 +129,7 @@
       "km_end": "5.79",
       "km_start": "0",
       "last_changed_at": "2026-10-18T16:10:00+02:00",
-      "last_seen_at": "2026-10-18T19:23:40+02:00",
+      "last_seen_at": "2026-10-18T21:32:45+02:00",
       "localities": [
         "Dos Hermanas",
         "Sevilla"
@@ -161,7 +161,7 @@
       "km_end": "14.14",
       "km_start": "13.64",
       "last_changed_at": "2026-09-29T19:22:44+02:00",
-      "last_seen_at": "2026-10-18T19:23:40+02:00",
+      "last_seen_at": "2026-10-18T21:32:45+02:00",
       "localities": [
         "Marchena"
       ],
@@ -190,7 +190,7 @@
       "km_end": "33.2",
       "km_start": "30",
       "last_changed_at": "2026-08-27T00:52:31+02:00",
-      "last_seen_at": "2026-10-18T19:23:40+02:00",
+      "last_seen_at": "2026-10-18T21:32:45+02:00",
       "localities": [
         "Algodonales"
       ],
@@ -219,7 +219,7 @@
       "km_end": "18",
       "km_start": "9",
       "last_changed_at": "2026-09-28T08:04:05+02:00",
-      "last_seen_at": "2026-10-18T19:23:40+02:00",
+      "last_seen_at": "2026-10-18T21:32:45+02:00",
       "localities": [
         "Arcos de la Frontera",
         "Espera"
@@ -249,7 +249,7 @@
       "km_end": "15.7",
       "km_start": "7.8",
       "last_changed_at": "2026-10-15T01:40:10+02:00",
-      "last_seen_at": "2026-10-18T19:23:40+02:00",
+      "last_seen_at": "2026-10-18T21:32:45+02:00",
       "localities": [
         "Cantillana",
         "Villanueva del Río y Minas"
@@ -281,7 +281,7 @@
       "km_end": "31",
       "km_start": "25",
       "last_changed_at": "2026-08-27T00:52:31+02:00",
-      "last_seen_at": "2026-10-18T19:23:40+02:00",
+      "last_seen_at": "2026-10-18T21:32:45+02:00",
       "localities": [
         "Medina Sidonia"
       ],
@@ -310,7 +310,7 @@
       "km_end": "0.6",
       "km_start": "0",
       "last_changed_at": "2026-08-27T00:52:31+02:00",
-      "last_seen_at": "2026-10-18T19:23:40+02:00",
+      "last_seen_at": "2026-10-18T21:32:45+02:00",
       "localities": [
         "Almedinilla"
       ],
@@ -339,7 +339,7 @@
       "km_end": "12.1",
       "km_start": "0",
       "last_changed_at": "2026-09-15T09:01:07+02:00",
-      "last_seen_at": "2026-10-18T19:23:40+02:00",
+      "last_seen_at": "2026-10-18T21:32:45+02:00",
       "localities": [
         "Écija"
       ],
@@ -361,65 +361,6 @@
       ],
       "source_updated_at": "2026-09-15T08:53:36+02:00"
     },
-    "src-38532101cb5f92f94215": {
-      "alternative": "",
-      "cause_code": "environmentalObstruction",
-      "detail_code": "flooding",
-      "direction": "both",
-      "first_seen_at": "2026-10-18T19:23:40+02:00",
-      "km_end": "1",
-      "km_start": "0",
-      "last_changed_at": "2026-10-18T19:23:40+02:00",
-      "last_seen_at": "2026-10-18T19:23:40+02:00",
-      "localities": [
-        "Jerez de la Frontera"
-      ],
-      "province": "Cádiz",
-      "published_at": "2026-10-18T19:21:30+02:00",
-      "reason": "Inundación",
-      "record_ids": [
-        "29170525"
-      ],
-      "road": "CA-4103",
-      "singularity": "",
-      "situation_ids": [
-        "24812210"
-      ],
-      "source_ids": [
-        "24812210:29170525"
-      ],
-      "source_updated_at": "2026-10-18T19:21:30+02:00"
-    },
-    "src-3bda4d33acef4256717f": {
-      "alternative": "",
-      "cause_code": "environmentalObstruction",
-      "detail_code": "rockfalls",
-      "direction": "increasing",
-      "first_seen_at": "2026-10-18T19:23:40+02:00",
-      "km_end": "8.6",
-      "km_start": "0",
-      "last_changed_at": "2026-10-18T19:23:40+02:00",
-      "last_seen_at": "2026-10-18T19:23:40+02:00",
-      "localities": [
-        "Setenil de las Bodegas",
-        "Torre Alháquime"
-      ],
-      "province": "Cádiz",
-      "published_at": "2026-10-18T17:31:28+02:00",
-      "reason": "Desprendimientos",
-      "record_ids": [
-        "29167820"
-      ],
-      "road": "CA-9120",
-      "singularity": "",
-      "situation_ids": [
-        "24809539"
-      ],
-      "source_ids": [
-        "24809539:29167820"
-      ],
-      "source_updated_at": "2026-10-18T17:31:28+02:00"
-    },
     "src-46356cc20cee84f068bf": {
       "alternative": "",
       "cause_code": "roadMaintenance",
@@ -429,7 +370,7 @@
       "km_end": "2.16",
       "km_start": "0",
       "last_changed_at": "2026-08-27T00:52:31+02:00",
-      "last_seen_at": "2026-10-18T19:23:40+02:00",
+      "last_seen_at": "2026-10-18T21:32:45+02:00",
       "localities": [
         "Sevilla"
       ],
@@ -458,7 +399,7 @@
       "km_end": "6.85",
       "km_start": "6.8",
       "last_changed_at": "2026-10-16T08:15:34+02:00",
-      "last_seen_at": "2026-10-18T19:23:40+02:00",
+      "last_seen_at": "2026-10-18T21:32:45+02:00",
       "localities": [
         "La Línea de la Concepción"
       ],
@@ -487,7 +428,7 @@
       "km_end": "11",
       "km_start": "2",
       "last_changed_at": "2026-08-27T00:52:31+02:00",
-      "last_seen_at": "2026-10-18T19:23:40+02:00",
+      "last_seen_at": "2026-10-18T21:32:45+02:00",
       "localities": [
         "Carmona"
       ],
@@ -516,7 +457,7 @@
       "km_end": "18",
       "km_start": "9.2",
       "last_changed_at": "2026-09-28T08:04:05+02:00",
-      "last_seen_at": "2026-10-18T19:23:40+02:00",
+      "last_seen_at": "2026-10-18T21:32:45+02:00",
       "localities": [
         "Arcos de la Frontera",
         "Espera"
@@ -543,10 +484,10 @@
       "detail_code": "flooding",
       "direction": "both",
       "first_seen_at": "2026-10-18T19:23:40+02:00",
-      "km_end": "4",
-      "km_start": "3",
-      "last_changed_at": "2026-10-18T19:23:40+02:00",
-      "last_seen_at": "2026-10-18T19:23:40+02:00",
+      "km_end": "6",
+      "km_start": "0",
+      "last_changed_at": "2026-10-18T21:32:45+02:00",
+      "last_seen_at": "2026-10-18T21:32:45+02:00",
       "localities": [
         "Lebrija"
       ],
@@ -564,7 +505,7 @@
       "source_ids": [
         "24811830:29170137"
       ],
-      "source_updated_at": "2026-10-18T19:05:22+02:00"
+      "source_updated_at": "2026-10-18T21:08:28+02:00"
     },
     "src-811dbfa4062ee8ee8b62": {
       "alternative": "",
@@ -575,7 +516,7 @@
       "km_end": "49.7",
       "km_start": "49.2",
       "last_changed_at": "2026-09-23T10:13:13+02:00",
-      "last_seen_at": "2026-10-18T19:23:40+02:00",
+      "last_seen_at": "2026-10-18T21:32:45+02:00",
       "localities": [
         "Montilla"
       ],
@@ -604,7 +545,7 @@
       "km_end": "33",
       "km_start": "32",
       "last_changed_at": "2026-08-27T00:52:31+02:00",
-      "last_seen_at": "2026-10-18T19:23:40+02:00",
+      "last_seen_at": "2026-10-18T21:32:45+02:00",
       "localities": [
         "Montefrío"
       ],
@@ -633,7 +574,7 @@
       "km_end": "157.6",
       "km_start": "154",
       "last_changed_at": "2026-10-16T18:13:04+02:00",
-      "last_seen_at": "2026-10-18T19:23:40+02:00",
+      "last_seen_at": "2026-10-18T21:32:45+02:00",
       "localities": [
         "Antequera"
       ],
@@ -662,7 +603,7 @@
       "km_end": "59.7",
       "km_start": "55.8",
       "last_changed_at": "2026-08-27T00:52:31+02:00",
-      "last_seen_at": "2026-10-18T19:23:40+02:00",
+      "last_seen_at": "2026-10-18T21:32:45+02:00",
       "localities": [
         "Cárcheles",
         "Pegalajar"
@@ -683,6 +624,35 @@
       ],
       "source_updated_at": "2026-08-21T11:45:36+02:00"
     },
+    "src-903c7b9199502ebb4ed7": {
+      "alternative": "",
+      "cause_code": "environmentalObstruction",
+      "detail_code": "flooding",
+      "direction": "both",
+      "first_seen_at": "2026-10-18T21:32:45+02:00",
+      "km_end": "6",
+      "km_start": "5",
+      "last_changed_at": "2026-10-18T21:32:45+02:00",
+      "last_seen_at": "2026-10-18T21:32:45+02:00",
+      "localities": [
+        "Montilla"
+      ],
+      "province": "Córdoba",
+      "published_at": "2026-10-18T21:22:28+02:00",
+      "reason": "Inundación",
+      "record_ids": [
+        "29173170"
+      ],
+      "road": "CO-4207",
+      "singularity": "",
+      "situation_ids": [
+        "24814843"
+      ],
+      "source_ids": [
+        "24814843:29173170"
+      ],
+      "source_updated_at": "2026-10-18T21:22:28+02:00"
+    },
     "src-9dca823087713b75e7ff": {
       "alternative": "",
       "cause_code": "roadMaintenance",
@@ -692,7 +662,7 @@
       "km_end": "64",
       "km_start": "61.8",
       "last_changed_at": "2026-08-27T00:52:31+02:00",
-      "last_seen_at": "2026-10-18T19:23:40+02:00",
+      "last_seen_at": "2026-10-18T21:32:45+02:00",
       "localities": [
         "Villacarrillo"
       ],
@@ -721,7 +691,7 @@
       "km_end": "10.39",
       "km_start": "5.33",
       "last_changed_at": "2026-10-15T01:40:10+02:00",
-      "last_seen_at": "2026-10-18T19:23:40+02:00",
+      "last_seen_at": "2026-10-18T21:32:45+02:00",
       "localities": [
         "Úbeda"
       ],
@@ -750,7 +720,7 @@
       "km_end": "3",
       "km_start": "0",
       "last_changed_at": "2026-08-27T00:52:31+02:00",
-      "last_seen_at": "2026-10-18T19:23:40+02:00",
+      "last_seen_at": "2026-10-18T21:32:45+02:00",
       "localities": [
         "Lucainena de las Torres",
         "Turrillas"
@@ -782,7 +752,7 @@
       "km_end": "2.25",
       "km_start": "1.2",
       "last_changed_at": "2026-08-27T00:52:31+02:00",
-      "last_seen_at": "2026-10-18T19:23:40+02:00",
+      "last_seen_at": "2026-10-18T21:32:45+02:00",
       "localities": [
         "Casares"
       ],
@@ -811,7 +781,7 @@
       "km_end": "17",
       "km_start": "13",
       "last_changed_at": "2026-09-01T08:45:42+02:00",
-      "last_seen_at": "2026-10-18T19:23:40+02:00",
+      "last_seen_at": "2026-10-18T21:32:45+02:00",
       "localities": [
         "El Gastor",
         "Grazalema"
@@ -841,7 +811,7 @@
       "km_end": "1.95",
       "km_start": "1.84",
       "last_changed_at": "2026-09-04T10:24:32+02:00",
-      "last_seen_at": "2026-10-18T19:23:40+02:00",
+      "last_seen_at": "2026-10-18T21:32:45+02:00",
       "localities": [
         "Iznatoraf"
       ],
@@ -872,7 +842,7 @@
       "km_end": "12.8",
       "km_start": "0",
       "last_changed_at": "2026-08-27T00:52:31+02:00",
-      "last_seen_at": "2026-10-18T19:23:40+02:00",
+      "last_seen_at": "2026-10-18T21:32:45+02:00",
       "localities": [
         "Gerena",
         "Olivares"
@@ -895,6 +865,36 @@
       ],
       "source_updated_at": "2026-08-26T11:47:46+02:00"
     },
+    "src-d5fb9dccc8708c3d3a27": {
+      "alternative": "",
+      "cause_code": "environmentalObstruction",
+      "detail_code": "flooding",
+      "direction": "both",
+      "first_seen_at": "2026-10-18T21:32:45+02:00",
+      "km_end": "9.1",
+      "km_start": "0",
+      "last_changed_at": "2026-10-18T21:32:45+02:00",
+      "last_seen_at": "2026-10-18T21:32:45+02:00",
+      "localities": [
+        "Montalbán de Córdoba",
+        "Montilla"
+      ],
+      "province": "Córdoba",
+      "published_at": "2026-10-18T21:15:03+02:00",
+      "reason": "Inundación",
+      "record_ids": [
+        "29173022"
+      ],
+      "road": "CO-4207",
+      "singularity": "",
+      "situation_ids": [
+        "24814695"
+      ],
+      "source_ids": [
+        "24814695:29173022"
+      ],
+      "source_updated_at": "2026-10-18T21:15:03+02:00"
+    },
     "src-db76da5ba5353206dfd1": {
       "alternative": "",
       "cause_code": "roadMaintenance",
@@ -904,7 +904,7 @@
       "km_end": "3.38",
       "km_start": "3.28",
       "last_changed_at": "2026-10-16T13:46:45+02:00",
-      "last_seen_at": "2026-10-18T19:23:40+02:00",
+      "last_seen_at": "2026-10-18T21:32:45+02:00",
       "localities": [
         "Manzanilla"
       ],
@@ -935,7 +935,7 @@
       "km_end": "357.6",
       "km_start": "356.9",
       "last_changed_at": "2026-10-15T01:40:10+02:00",
-      "last_seen_at": "2026-10-18T19:23:40+02:00",
+      "last_seen_at": "2026-10-18T21:32:45+02:00",
       "localities": [
         "Rubite"
       ],
@@ -966,7 +966,7 @@
       "km_end": "28.5",
       "km_start": "27.7",
       "last_changed_at": "2026-08-27T11:23:09+02:00",
-      "last_seen_at": "2026-10-18T19:23:40+02:00",
+      "last_seen_at": "2026-10-18T21:32:45+02:00",
       "localities": [
         "La Rambla"
       ],
@@ -997,7 +997,7 @@
       "km_end": "8.1",
       "km_start": "0",
       "last_changed_at": "2026-09-16T14:31:25+02:00",
-      "last_seen_at": "2026-10-18T19:23:40+02:00",
+      "last_seen_at": "2026-10-18T21:32:45+02:00",
       "localities": [
         "Las Cabezas de San Juan",
         "Lebrija"
@@ -1029,7 +1029,7 @@
       "km_end": "13",
       "km_start": "0",
       "last_changed_at": "2026-10-18T12:31:36+02:00",
-      "last_seen_at": "2026-10-18T19:23:40+02:00",
+      "last_seen_at": "2026-10-18T21:32:45+02:00",
       "localities": [
         "Bujalance",
         "Villa del Río"
@@ -1059,7 +1059,7 @@
       "km_end": "1.2",
       "km_start": "0.6",
       "last_changed_at": "2026-08-27T00:52:31+02:00",
-      "last_seen_at": "2026-10-18T19:23:40+02:00",
+      "last_seen_at": "2026-10-18T21:32:45+02:00",
       "localities": [
         "Algeciras"
       ],
@@ -1084,7 +1084,7 @@
   },
   "initialized": true,
   "initialized_at": "2026-08-27T00:52:31+02:00",
-  "revision": 4571,
+  "revision": 4572,
   "telegram_archive": [
     {
       "final_summary": "<b>🟢 CORTE FINALIZADO</b>\n\n📍 Granada\n<i>Polopos</i>\n\n<b>GR-6204</b>, Otro motivo: sports meeting\n<i>7,000–13,000</i>\n<i>Creciente</i>\n\n<b>Historial de la incidencia</b>\n• 03/10/2026 · 10:03 h — Corte comunicado por Otro motivo: sports meeting\n• 03/10/2026 · 15:53 h — Carretera reabierta\n\n<i>Duración total: 5 horas y 50 minutos</i>",
@@ -2772,6 +2772,148 @@
         "source_updated_at": "2026-10-18T01:37:08+02:00"
       },
       "started_at": "2026-10-18T00:15:19+02:00"
+    },
+    {
+      "final_summary": "<b>🟢 CORTE FINALIZADO</b>\n\n📍 Cádiz\n<i>Jerez de la Frontera</i>\n\n<b>CA-4103</b>, Inundación\n<i>0,000–1,000</i>\n<i>Doble sentido</i>\n\n<b>Historial de la incidencia</b>\n• 18/10/2026 · 19:21 h — Corte comunicado por Inundación\n• 18/10/2026 · 21:32 h — Carretera reabierta\n\n<i>Duración total: 2 horas y 11 minutos</i>",
+      "finalized_at": "2026-10-18T21:32:45+02:00",
+      "history": [
+        {
+          "at": "2026-10-18T19:21:30+02:00",
+          "description": "Corte comunicado por Inundación",
+          "event": "closed"
+        },
+        {
+          "at": "2026-10-18T21:32:45+02:00",
+          "description": "Carretera reabierta",
+          "event": "reopened"
+        }
+      ],
+      "initial_closure": {
+        "alternative": "",
+        "cause_code": "environmentalObstruction",
+        "detail_code": "flooding",
+        "direction": "both",
+        "km_end": "1",
+        "km_start": "0",
+        "localities": [
+          "Jerez de la Frontera"
+        ],
+        "province": "Cádiz",
+        "published_at": "2026-10-18T19:21:30+02:00",
+        "reason": "Inundación",
+        "record_ids": [
+          "29170525"
+        ],
+        "road": "CA-4103",
+        "singularity": "",
+        "situation_ids": [
+          "24812210"
+        ],
+        "source_ids": [
+          "24812210:29170525"
+        ],
+        "source_updated_at": "2026-10-18T19:21:30+02:00"
+      },
+      "key": "src-38532101cb5f92f94215",
+      "latest_closure": {
+        "alternative": "",
+        "cause_code": "environmentalObstruction",
+        "detail_code": "flooding",
+        "direction": "both",
+        "km_end": "1",
+        "km_start": "0",
+        "localities": [
+          "Jerez de la Frontera"
+        ],
+        "province": "Cádiz",
+        "published_at": "2026-10-18T19:21:30+02:00",
+        "reason": "Inundación",
+        "record_ids": [
+          "29170525"
+        ],
+        "road": "CA-4103",
+        "singularity": "",
+        "situation_ids": [
+          "24812210"
+        ],
+        "source_ids": [
+          "24812210:29170525"
+        ],
+        "source_updated_at": "2026-10-18T19:21:30+02:00"
+      },
+      "started_at": "2026-10-18T19:21:30+02:00"
+    },
+    {
+      "final_summary": "<b>🟢 CORTE FINALIZADO</b>\n\n📍 Cádiz\n<i>Setenil de las Bodegas / Torre Alháquime</i>\n\n<b>CA-9120</b>, Desprendimientos\n<i>0,000–8,600</i>\n<i>Creciente</i>\n\n<b>Historial de la incidencia</b>\n• 18/10/2026 · 17:31 h — Corte comunicado por Desprendimientos\n• 18/10/2026 · 21:32 h — Carretera reabierta\n\n<i>Duración total: 4 horas y 1 minuto</i>",
+      "finalized_at": "2026-10-18T21:32:45+02:00",
+      "history": [
+        {
+          "at": "2026-10-18T17:31:28+02:00",
+          "description": "Corte comunicado por Desprendimientos",
+          "event": "closed"
+        },
+        {
+          "at": "2026-10-18T21:32:45+02:00",
+          "description": "Carretera reabierta",
+          "event": "reopened"
+        }
+      ],
+      "initial_closure": {
+        "alternative": "",
+        "cause_code": "environmentalObstruction",
+        "detail_code": "rockfalls",
+        "direction": "increasing",
+        "km_end": "8.6",
+        "km_start": "0",
+        "localities": [
+          "Setenil de las Bodegas",
+          "Torre Alháquime"
+        ],
+        "province": "Cádiz",
+        "published_at": "2026-10-18T17:31:28+02:00",
+        "reason": "Desprendimientos",
+        "record_ids": [
+          "29167820"
+        ],
+        "road": "CA-9120",
+        "singularity": "",
+        "situation_ids": [
+          "24809539"
+        ],
+        "source_ids": [
+          "24809539:29167820"
+        ],
+        "source_updated_at": "2026-10-18T17:31:28+02:00"
+      },
+      "key": "src-3bda4d33acef4256717f",
+      "latest_closure": {
+        "alternative": "",
+        "cause_code": "environmentalObstruction",
+        "detail_code": "rockfalls",
+        "direction": "increasing",
+        "km_end": "8.6",
+        "km_start": "0",
+        "localities": [
+          "Setenil de las Bodegas",
+          "Torre Alháquime"
+        ],
+        "province": "Cádiz",
+        "published_at": "2026-10-18T17:31:28+02:00",
+        "reason": "Desprendimientos",
+        "record_ids": [
+          "29167820"
+        ],
+        "road": "CA-9120",
+        "singularity": "",
+        "situation_ids": [
+          "24809539"
+        ],
+        "source_ids": [
+          "24809539:29167820"
+        ],
+        "source_updated_at": "2026-10-18T17:31:28+02:00"
+      },
+      "started_at": "2026-10-18T17:31:28+02:00"
     }
   ],
   "telegram_cleanup": [
@@ -2872,6 +3014,34 @@
       "delete_after": "2026-10-20T18:23:40+02:00",
       "destination": "forum",
       "message_id": 12403
+    },
+    {
+      "chat_id": "@carreterascortadas_andalucia",
+      "created_at": "2026-10-18T21:32:45+02:00",
+      "delete_after": "2026-10-20T20:32:45+02:00",
+      "destination": "channel",
+      "message_id": 728
+    },
+    {
+      "chat_id": "-1001337700771",
+      "created_at": "2026-10-18T21:32:45+02:00",
+      "delete_after": "2026-10-20T20:32:45+02:00",
+      "destination": "forum",
+      "message_id": 12413
+    },
+    {
+      "chat_id": "@carreterascortadas_andalucia",
+      "created_at": "2026-10-18T21:32:45+02:00",
+      "delete_after": "2026-10-20T20:32:45+02:00",
+      "destination": "channel",
+      "message_id": 729
+    },
+    {
+      "chat_id": "-1001337700771",
+      "created_at": "2026-10-18T21:32:45+02:00",
+      "delete_after": "2026-10-20T20:32:45+02:00",
+      "destination": "forum",
+      "message_id": 12414
     }
   ],
   "telegram_incidents": {
@@ -3144,166 +3314,6 @@
       },
       "started_at": "2026-10-05T13:48:32+02:00"
     },
-    "src-38532101cb5f92f94215": {
-      "destinations": {
-        "channel": {
-          "chat_id": "@carreterascortadas_andalucia",
-          "content_hash": "aa622bc8a0166ecaf3b4e8c83d10982d8c4f27d57d220024e6c795e6198e5fb2",
-          "message_thread_id": null,
-          "primary_id": 724,
-          "primary_sent_at": "2026-10-18T19:23:40+02:00"
-        },
-        "forum": {
-          "chat_id": "-1001337700771",
-          "content_hash": "aa622bc8a0166ecaf3b4e8c83d10982d8c4f27d57d220024e6c795e6198e5fb2",
-          "message_thread_id": 1469,
-          "primary_id": 12401,
-          "primary_sent_at": "2026-10-18T19:23:40+02:00"
-        }
-      },
-      "history": [
-        {
-          "at": "2026-10-18T19:21:30+02:00",
-          "description": "Corte comunicado por Inundación",
-          "event": "closed"
-        }
-      ],
-      "initial_closure": {
-        "alternative": "",
-        "cause_code": "environmentalObstruction",
-        "detail_code": "flooding",
-        "direction": "both",
-        "km_end": "1",
-        "km_start": "0",
-        "localities": [
-          "Jerez de la Frontera"
-        ],
-        "province": "Cádiz",
-        "published_at": "2026-10-18T19:21:30+02:00",
-        "reason": "Inundación",
-        "record_ids": [
-          "29170525"
-        ],
-        "road": "CA-4103",
-        "singularity": "",
-        "situation_ids": [
-          "24812210"
-        ],
-        "source_ids": [
-          "24812210:29170525"
-        ],
-        "source_updated_at": "2026-10-18T19:21:30+02:00"
-      },
-      "key": "src-38532101cb5f92f94215",
-      "latest_closure": {
-        "alternative": "",
-        "cause_code": "environmentalObstruction",
-        "detail_code": "flooding",
-        "direction": "both",
-        "km_end": "1",
-        "km_start": "0",
-        "localities": [
-          "Jerez de la Frontera"
-        ],
-        "province": "Cádiz",
-        "published_at": "2026-10-18T19:21:30+02:00",
-        "reason": "Inundación",
-        "record_ids": [
-          "29170525"
-        ],
-        "road": "CA-4103",
-        "singularity": "",
-        "situation_ids": [
-          "24812210"
-        ],
-        "source_ids": [
-          "24812210:29170525"
-        ],
-        "source_updated_at": "2026-10-18T19:21:30+02:00"
-      },
-      "started_at": "2026-10-18T19:21:30+02:00"
-    },
-    "src-3bda4d33acef4256717f": {
-      "destinations": {
-        "channel": {
-          "chat_id": "@carreterascortadas_andalucia",
-          "content_hash": "24250cef9d5f4e5493704fd370885c1cfcf6e64cf68ee42c1e1e11311ddfd3b0",
-          "message_thread_id": null,
-          "primary_id": 725,
-          "primary_sent_at": "2026-10-18T19:23:40+02:00"
-        },
-        "forum": {
-          "chat_id": "-1001337700771",
-          "content_hash": "24250cef9d5f4e5493704fd370885c1cfcf6e64cf68ee42c1e1e11311ddfd3b0",
-          "message_thread_id": 1469,
-          "primary_id": 12402,
-          "primary_sent_at": "2026-10-18T19:23:40+02:00"
-        }
-      },
-      "history": [
-        {
-          "at": "2026-10-18T17:31:28+02:00",
-          "description": "Corte comunicado por Desprendimientos",
-          "event": "closed"
-        }
-      ],
-      "initial_closure": {
-        "alternative": "",
-        "cause_code": "environmentalObstruction",
-        "detail_code": "rockfalls",
-        "direction": "increasing",
-        "km_end": "8.6",
-        "km_start": "0",
-        "localities": [
-          "Setenil de las Bodegas",
-          "Torre Alháquime"
-        ],
-        "province": "Cádiz",
-        "published_at": "2026-10-18T17:31:28+02:00",
-        "reason": "Desprendimientos",
-        "record_ids": [
-          "29167820"
-        ],
-        "road": "CA-9120",
-        "singularity": "",
-        "situation_ids": [
-          "24809539"
-        ],
-        "source_ids": [
-          "24809539:29167820"
-        ],
-        "source_updated_at": "2026-10-18T17:31:28+02:00"
-      },
-      "key": "src-3bda4d33acef4256717f",
-      "latest_closure": {
-        "alternative": "",
-        "cause_code": "environmentalObstruction",
-        "detail_code": "rockfalls",
-        "direction": "increasing",
-        "km_end": "8.6",
-        "km_start": "0",
-        "localities": [
-          "Setenil de las Bodegas",
-          "Torre Alháquime"
-        ],
-        "province": "Cádiz",
-        "published_at": "2026-10-18T17:31:28+02:00",
-        "reason": "Desprendimientos",
-        "record_ids": [
-          "29167820"
-        ],
-        "road": "CA-9120",
-        "singularity": "",
-        "situation_ids": [
-          "24809539"
-        ],
-        "source_ids": [
-          "24809539:29167820"
-        ],
-        "source_updated_at": "2026-10-18T17:31:28+02:00"
-      },
-      "started_at": "2026-10-18T17:31:28+02:00"
-    },
     "src-4d1d0ddbc1d3c451c4e7": {
       "alerts": [],
       "destinations": {
@@ -3383,17 +3393,29 @@
       "started_at": "2026-10-16T07:16:39+02:00"
     },
     "src-77a929f0d95ed7220b57": {
+      "alerts": [
+        {
+          "created_at": "2026-10-18T21:32:45+02:00",
+          "delete_after": "2026-10-20T20:32:45+02:00",
+          "id": "598b7d2490fb7ec13547df0f",
+          "message": "<b>🟠 CORTE ACTUALIZADO</b>\n\n📍 Sevilla\n<i>Lebrija</i>\n\n<b>SE-6300</b>, Inundación\n<i>0,000–6,000</i>\n<i>Doble sentido</i>\n\n<i>Actualizado: 18/10/2026 · 21:08 h</i>",
+          "sent": {
+            "channel": 732,
+            "forum": 12417
+          }
+        }
+      ],
       "destinations": {
         "channel": {
           "chat_id": "@carreterascortadas_andalucia",
-          "content_hash": "b1851971eca0cd716e7f3850e5b6b7bf6d971e3bfb525fe6ed9cffe49742f4f6",
+          "content_hash": "57716c11c4dec7e92ed42414d385a8887ea301bc12b064631da06112dcc0bc7a",
           "message_thread_id": null,
           "primary_id": 727,
           "primary_sent_at": "2026-10-18T19:23:40+02:00"
         },
         "forum": {
           "chat_id": "-1001337700771",
-          "content_hash": "b1851971eca0cd716e7f3850e5b6b7bf6d971e3bfb525fe6ed9cffe49742f4f6",
+          "content_hash": "57716c11c4dec7e92ed42414d385a8887ea301bc12b064631da06112dcc0bc7a",
           "message_thread_id": 1359,
           "primary_id": 12404,
           "primary_sent_at": "2026-10-18T19:23:40+02:00"
@@ -3404,6 +3426,11 @@
           "at": "2026-10-18T19:05:22+02:00",
           "description": "Corte comunicado por Inundación",
           "event": "closed"
+        },
+        {
+          "at": "2026-10-18T21:08:28+02:00",
+          "description": "PK inicial: 3 → 0; PK final: 4 → 6",
+          "event": "updated"
         }
       ],
       "initial_closure": {
@@ -3438,8 +3465,8 @@
         "cause_code": "environmentalObstruction",
         "detail_code": "flooding",
         "direction": "both",
-        "km_end": "4",
-        "km_start": "3",
+        "km_end": "6",
+        "km_start": "0",
         "localities": [
           "Lebrija"
         ],
@@ -3457,7 +3484,7 @@
         "source_ids": [
           "24811830:29170137"
         ],
-        "source_updated_at": "2026-10-18T19:05:22+02:00"
+        "source_updated_at": "2026-10-18T21:08:28+02:00"
       },
       "started_at": "2026-10-18T19:05:22+02:00"
     },
@@ -3539,6 +3566,85 @@
       },
       "started_at": "2026-10-16T14:49:03+02:00"
     },
+    "src-903c7b9199502ebb4ed7": {
+      "destinations": {
+        "channel": {
+          "chat_id": "@carreterascortadas_andalucia",
+          "content_hash": "1c5f8557c28436debf60b6a0236ffb902fd748c1df669d4eedeabdb5d2e5244e",
+          "message_thread_id": null,
+          "primary_id": 731,
+          "primary_sent_at": "2026-10-18T21:32:45+02:00"
+        },
+        "forum": {
+          "chat_id": "-1001337700771",
+          "content_hash": "1c5f8557c28436debf60b6a0236ffb902fd748c1df669d4eedeabdb5d2e5244e",
+          "message_thread_id": 1597,
+          "primary_id": 12416,
+          "primary_sent_at": "2026-10-18T21:32:45+02:00"
+        }
+      },
+      "history": [
+        {
+          "at": "2026-10-18T21:22:28+02:00",
+          "description": "Corte comunicado por Inundación",
+          "event": "closed"
+        }
+      ],
+      "initial_closure": {
+        "alternative": "",
+        "cause_code": "environmentalObstruction",
+        "detail_code": "flooding",
+        "direction": "both",
+        "km_end": "6",
+        "km_start": "5",
+        "localities": [
+          "Montilla"
+        ],
+        "province": "Córdoba",
+        "published_at": "2026-10-18T21:22:28+02:00",
+        "reason": "Inundación",
+        "record_ids": [
+          "29173170"
+        ],
+        "road": "CO-4207",
+        "singularity": "",
+        "situation_ids": [
+          "24814843"
+        ],
+        "source_ids": [
+          "24814843:29173170"
+        ],
+        "source_updated_at": "2026-10-18T21:22:28+02:00"
+      },
+      "key": "src-903c7b9199502ebb4ed7",
+      "latest_closure": {
+        "alternative": "",
+        "cause_code": "environmentalObstruction",
+        "detail_code": "flooding",
+        "direction": "both",
+        "km_end": "6",
+        "km_start": "5",
+        "localities": [
+          "Montilla"
+        ],
+        "province": "Córdoba",
+        "published_at": "2026-10-18T21:22:28+02:00",
+        "reason": "Inundación",
+        "record_ids": [
+          "29173170"
+        ],
+        "road": "CO-4207",
+        "singularity": "",
+        "situation_ids": [
+          "24814843"
+        ],
+        "source_ids": [
+          "24814843:29173170"
+        ],
+        "source_updated_at": "2026-10-18T21:22:28+02:00"
+      },
+      "started_at": "2026-10-18T21:22:28+02:00"
+    },
     "src-a8f3bc16db559e5a8971": {
       "alerts": [],
       "destinations": {
@@ -3616,6 +3722,87 @@
         "source_updated_at": "2026-10-14T11:36:30+02:00"
       },
       "started_at": "2026-10-14T11:36:30+02:00"
+    },
+    "src-d5fb9dccc8708c3d3a27": {
+      "destinations": {
+        "channel": {
+          "chat_id": "@carreterascortadas_andalucia",
+          "content_hash": "7ca3ac2a333fe444adfed87e0dcbe34afb2ff7a8ed111fc3b31c00ad35da91f4",
+          "message_thread_id": null,
+          "primary_id": 730,
+          "primary_sent_at": "2026-10-18T21:32:45+02:00"
+        },
+        "forum": {
+          "chat_id": "-1001337700771",
+          "content_hash": "7ca3ac2a333fe444adfed87e0dcbe34afb2ff7a8ed111fc3b31c00ad35da91f4",
+          "message_thread_id": 1597,
+          "primary_id": 12415,
+          "primary_sent_at": "2026-10-18T21:32:45+02:00"
+        }
+      },
+      "history": [
+        {
+          "at": "2026-10-18T21:15:03+02:00",
+          "description": "Corte comunicado por Inundación",
+          "event": "closed"
+        }
+      ],
+      "initial_closure": {
+        "alternative": "",
+        "cause_code": "environmentalObstruction",
+        "detail_code": "flooding",
+        "direction": "both",
+        "km_end": "9.1",
+        "km_start": "0",
+        "localities": [
+          "Montalbán de Córdoba",
+          "Montilla"
+        ],
+        "province": "Córdoba",
+        "published_at": "2026-10-18T21:15:03+02:00",
+        "reason": "Inundación",
+        "record_ids": [
+          "29173022"
+        ],
+        "road": "CO-4207",
+        "singularity": "",
+        "situation_ids": [
+          "24814695"
+        ],
+        "source_ids": [
+          "24814695:29173022"
+        ],
+        "source_updated_at": "2026-10-18T21:15:03+02:00"
+      },
+      "key": "src-d5fb9dccc8708c3d3a27",
+      "latest_closure": {
+        "alternative": "",
+        "cause_code": "environmentalObstruction",
+        "detail_code": "flooding",
+        "direction": "both",
+        "km_end": "9.1",
+        "km_start": "0",
+        "localities": [
+          "Montalbán de Córdoba",
+          "Montilla"
+        ],
+        "province": "Córdoba",
+        "published_at": "2026-10-18T21:15:03+02:00",
+        "reason": "Inundación",
+        "record_ids": [
+          "29173022"
+        ],
+        "road": "CO-4207",
+        "singularity": "",
+        "situation_ids": [
+          "24814695"
+        ],
+        "source_ids": [
+          "24814695:29173022"
+        ],
+        "source_updated_at": "2026-10-18T21:15:03+02:00"
+      },
+      "started_at": "2026-10-18T21:15:03+02:00"
     },
     "src-db76da5ba5353206dfd1": {
       "alerts": [],
@@ -3782,6 +3969,6 @@
       "started_at": "2026-10-18T12:28:51+02:00"
     }
   },
-  "updated_at": "2026-10-18T19:23:40+02:00",
+  "updated_at": "2026-10-18T21:32:45+02:00",
   "version": 1
 }
