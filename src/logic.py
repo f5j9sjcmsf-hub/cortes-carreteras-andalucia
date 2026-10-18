@@ -106,9 +106,9 @@ _DIRECTION_ALIASES = {
 }
 
 _SINGULARITY_LABELS = {
-    "exit": "Solo salida",
-    "entry": "Solo acceso",
-    "service_road": "Solo vía de servicio",
+    "exit": "Salida",
+    "entry": "Entrada",
+    "service_road": "Vía de servicio",
 }
 
 _SINGULARITY_ALIASES = {
@@ -414,7 +414,9 @@ def format_message(
         )
 
     singularity_line = (
-        f"<b>{escape(singularity)}</b>\n" if singularity else ""
+        f"<b>Singularidad: {escape(singularity)}</b>\n"
+        if singularity
+        else ""
     )
 
     return (
@@ -422,8 +424,8 @@ def format_message(
         f"📍 {escape(province)}\n"
         f"<i>{escape(locality)}</i>\n\n"
         f"<b>{escape(road)}</b>, {escape(reason)}\n"
-        f"{singularity_line}"
         f"<i>{escape(kilometres)}</i>\n"
+        f"{singularity_line}"
         f"<i>{direction}</i>{alternative_line}\n\n"
         f"<i>{EVENT_DATE_LABELS[event]}: {escape(formatted_timestamp)}</i>"
     )
