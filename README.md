@@ -80,6 +80,10 @@ El aviso no añade etiquetas delante de la vía, el sentido ni los kilómetros.
 La ubicación, el sentido, el tramo y la fecha de publicación aparecen en
 cursiva; la causa y la vía, en negrita. Por ejemplo:
 
+Cuando la DGT limita el corte a una salida, una entrada o una vía de servicio,
+el aviso reproduce expresamente el campo oficial como `Singularidad: Salida`,
+`Singularidad: Entrada` o `Singularidad: Vía de servicio`.
+
 > **🔴 CARRETERA CORTADA**
 >
 > *📍 Granada — Güéjar Sierra*  
