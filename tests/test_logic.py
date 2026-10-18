@@ -437,8 +437,26 @@ class ReconciliationTests(unittest.TestCase):
 
         self.assertIn(
             "<b>A-7</b>, Inundación\n"
-            "<b>Solo salida</b>\n"
-            "<i>818,000</i>",
+            "<i>818,000</i>\n"
+            "<b>Singularidad: Salida</b>\n"
+            "<i>Doble sentido</i>",
+            message,
+        )
+
+    def test_service_road_singularity_uses_the_dgt_label_below_kilometres(self):
+        message = format_message(
+            closure(
+                road="A-92",
+                singularity="service_road",
+                km_start=10,
+                km_end=10,
+            ),
+            EVENT_CLOSED,
+        )
+
+        self.assertIn(
+            "<i>10,000</i>\n"
+            "<b>Singularidad: Vía de servicio</b>\n",
             message,
         )
 
@@ -454,7 +472,7 @@ class ReconciliationTests(unittest.TestCase):
             EVENT_CLOSED,
         )
 
-        self.assertIn("<b>Solo acceso</b>", message)
+        self.assertIn("<b>Singularidad: Entrada</b>", message)
 
     def test_scope_change_is_a_visible_update(self):
         state = baseline(closure(road="A-7", km_start=818, km_end=818))
@@ -465,7 +483,7 @@ class ReconciliationTests(unittest.TestCase):
         )
 
         self.assertEqual(len(messages), 1)
-        self.assertIn("<b>Solo salida</b>", messages[0])
+        self.assertIn("<b>Singularidad: Salida</b>", messages[0])
         self.assertEqual(only_active(next_state)["singularity"], "exit")
 
     def test_geographic_fallback_does_not_confuse_exit_with_main_road(self):
@@ -491,7 +509,12 @@ class ReconciliationTests(unittest.TestCase):
         messages, _ = plan_changes(state, [exit_ramp], NOW_2)
 
         self.assertEqual(len(messages), 2)
-        self.assertTrue(any("<b>Solo salida</b>" in message for message in messages))
+        self.assertTrue(
+            any(
+                "<b>Singularidad: Salida</b>" in message
+                for message in messages
+            )
+        )
         self.assertTrue(any("CARRETERA REABIERTA" in message for message in messages))
 
     def test_event_dates_follow_the_event_semantics(self):
