@@ -1,37 +1,5 @@
 {
   "active": {
-    "src-0266228e2a8782cfd83b": {
-      "alternative": "",
-      "cause_code": "roadMaintenance",
-      "detail_code": "roadworks",
-      "direction": "both",
-      "first_seen_at": "2026-10-22T08:37:47+02:00",
-      "km_end": "7.7",
-      "km_start": "4",
-      "last_changed_at": "2026-10-22T08:37:47+02:00",
-      "last_seen_at": "2026-10-22T14:29:05+02:00",
-      "localities": [
-        "Almáchar",
-        "El Borge"
-      ],
-      "province": "Málaga",
-      "published_at": "2026-10-22T07:20:58+02:00",
-      "reason": "Obras",
-      "record_ids": [
-        "29060405",
-        "29060406"
-      ],
-      "road": "MA-3114",
-      "singularity": "",
-      "situation_ids": [
-        "24709405"
-      ],
-      "source_ids": [
-        "24709405:29060405",
-        "24709405:29060406"
-      ],
-      "source_updated_at": "2026-10-22T07:21:02+02:00"
-    },
     "src-02c97803275be3daf540": {
       "alternative": "Tráfico desviado por un carril reversible habilitado en la calzada contraria",
       "cause_code": "roadMaintenance",
@@ -41,7 +9,7 @@
       "km_end": "374.7",
       "km_start": "372.3",
       "last_changed_at": "2026-10-15T01:40:10+02:00",
-      "last_seen_at": "2026-10-22T14:29:05+02:00",
+      "last_seen_at": "2026-10-22T19:33:07+02:00",
       "localities": [
         "El Carpio"
       ],
@@ -70,7 +38,7 @@
       "km_end": "1.7",
       "km_start": "1",
       "last_changed_at": "2026-09-01T08:00:02+02:00",
-      "last_seen_at": "2026-10-22T14:29:05+02:00",
+      "last_seen_at": "2026-10-22T19:33:07+02:00",
       "localities": [
         "Monachil"
       ],
@@ -101,7 +69,7 @@
       "km_end": "10.9",
       "km_start": "9.2",
       "last_changed_at": "2026-09-14T00:14:26+02:00",
-      "last_seen_at": "2026-10-22T14:29:05+02:00",
+      "last_seen_at": "2026-10-22T19:33:07+02:00",
       "localities": [
         "Badolatosa"
       ],
@@ -132,7 +100,7 @@
       "km_end": "10",
       "km_start": "10",
       "last_changed_at": "2026-08-27T00:52:31+02:00",
-      "last_seen_at": "2026-10-22T14:29:05+02:00",
+      "last_seen_at": "2026-10-22T19:33:07+02:00",
       "localities": [
         "Ronda"
       ],
@@ -161,7 +129,7 @@
       "km_end": "14.14",
       "km_start": "13.64",
       "last_changed_at": "2026-09-29T19:22:44+02:00",
-      "last_seen_at": "2026-10-22T14:29:05+02:00",
+      "last_seen_at": "2026-10-22T19:33:07+02:00",
       "localities": [
         "Marchena"
       ],
@@ -190,7 +158,7 @@
       "km_end": "33.2",
       "km_start": "30",
       "last_changed_at": "2026-08-27T00:52:31+02:00",
-      "last_seen_at": "2026-10-22T14:29:05+02:00",
+      "last_seen_at": "2026-10-22T19:33:07+02:00",
       "localities": [
         "Algodonales"
       ],
@@ -219,7 +187,7 @@
       "km_end": "18",
       "km_start": "9",
       "last_changed_at": "2026-09-28T08:04:05+02:00",
-      "last_seen_at": "2026-10-22T14:29:05+02:00",
+      "last_seen_at": "2026-10-22T19:33:07+02:00",
       "localities": [
         "Arcos de la Frontera",
         "Espera"
@@ -249,7 +217,7 @@
       "km_end": "15.7",
       "km_start": "7.8",
       "last_changed_at": "2026-10-15T01:40:10+02:00",
-      "last_seen_at": "2026-10-22T14:29:05+02:00",
+      "last_seen_at": "2026-10-22T19:33:07+02:00",
       "localities": [
         "Cantillana",
         "Villanueva del Río y Minas"
@@ -281,7 +249,7 @@
       "km_end": "31",
       "km_start": "25",
       "last_changed_at": "2026-08-27T00:52:31+02:00",
-      "last_seen_at": "2026-10-22T14:29:05+02:00",
+      "last_seen_at": "2026-10-22T19:33:07+02:00",
       "localities": [
         "Medina Sidonia"
       ],
@@ -310,7 +278,7 @@
       "km_end": "0.6",
       "km_start": "0",
       "last_changed_at": "2026-08-27T00:52:31+02:00",
-      "last_seen_at": "2026-10-22T14:29:05+02:00",
+      "last_seen_at": "2026-10-22T19:33:07+02:00",
       "localities": [
         "Almedinilla"
       ],
@@ -339,7 +307,7 @@
       "km_end": "392.3",
       "km_start": "390",
       "last_changed_at": "2026-10-19T11:58:20+02:00",
-      "last_seen_at": "2026-10-22T14:29:05+02:00",
+      "last_seen_at": "2026-10-22T19:33:07+02:00",
       "localities": [
         "Pechina",
         "Viator"
@@ -369,7 +337,7 @@
       "km_end": "12.1",
       "km_start": "0",
       "last_changed_at": "2026-09-15T09:01:07+02:00",
-      "last_seen_at": "2026-10-22T14:29:05+02:00",
+      "last_seen_at": "2026-10-22T19:33:07+02:00",
       "localities": [
         "Écija"
       ],
@@ -400,7 +368,7 @@
       "km_end": "2.16",
       "km_start": "0",
       "last_changed_at": "2026-08-27T00:52:31+02:00",
-      "last_seen_at": "2026-10-22T14:29:05+02:00",
+      "last_seen_at": "2026-10-22T19:33:07+02:00",
       "localities": [
         "Sevilla"
       ],
@@ -420,35 +388,6 @@
       ],
       "source_updated_at": "2023-11-21T18:50:51+01:00"
     },
-    "src-46b727474072aafc5a77": {
-      "alternative": "",
-      "cause_code": "accident",
-      "detail_code": "accident",
-      "direction": "increasing",
-      "first_seen_at": "2026-10-21T18:03:35+02:00",
-      "km_end": "22",
-      "km_start": "22",
-      "last_changed_at": "2026-10-21T18:03:35+02:00",
-      "last_seen_at": "2026-10-22T14:29:05+02:00",
-      "localities": [
-        "Dos Hermanas"
-      ],
-      "province": "Sevilla",
-      "published_at": "2026-10-21T17:02:19+02:00",
-      "reason": "Accidente",
-      "record_ids": [
-        "29266386"
-      ],
-      "road": "SE-40",
-      "singularity": "entry",
-      "situation_ids": [
-        "24902661"
-      ],
-      "source_ids": [
-        "24902661:29266386"
-      ],
-      "source_updated_at": "2026-10-21T17:02:19+02:00"
-    },
     "src-4d1d0ddbc1d3c451c4e7": {
       "alternative": "",
       "cause_code": "roadMaintenance",
@@ -458,7 +397,7 @@
       "km_end": "6.85",
       "km_start": "6.8",
       "last_changed_at": "2026-10-16T08:15:34+02:00",
-      "last_seen_at": "2026-10-22T14:29:05+02:00",
+      "last_seen_at": "2026-10-22T19:33:07+02:00",
       "localities": [
         "La Línea de la Concepción"
       ],
@@ -487,7 +426,7 @@
       "km_end": "11",
       "km_start": "2",
       "last_changed_at": "2026-08-27T00:52:31+02:00",
-      "last_seen_at": "2026-10-22T14:29:05+02:00",
+      "last_seen_at": "2026-10-22T19:33:07+02:00",
       "localities": [
         "Carmona"
       ],
@@ -516,7 +455,7 @@
       "km_end": "18",
       "km_start": "9.2",
       "last_changed_at": "2026-09-28T08:04:05+02:00",
-      "last_seen_at": "2026-10-22T14:29:05+02:00",
+      "last_seen_at": "2026-10-22T19:33:07+02:00",
       "localities": [
         "Arcos de la Frontera",
         "Espera"
@@ -546,7 +485,7 @@
       "km_end": "49.7",
       "km_start": "49.2",
       "last_changed_at": "2026-09-23T10:13:13+02:00",
-      "last_seen_at": "2026-10-22T14:29:05+02:00",
+      "last_seen_at": "2026-10-22T19:33:07+02:00",
       "localities": [
         "Montilla"
       ],
@@ -575,7 +514,7 @@
       "km_end": "33",
       "km_start": "32",
       "last_changed_at": "2026-08-27T00:52:31+02:00",
-      "last_seen_at": "2026-10-22T14:29:05+02:00",
+      "last_seen_at": "2026-10-22T19:33:07+02:00",
       "localities": [
         "Montefrío"
       ],
@@ -604,7 +543,7 @@
       "km_end": "59.7",
       "km_start": "55.8",
       "last_changed_at": "2026-08-27T00:52:31+02:00",
-      "last_seen_at": "2026-10-22T14:29:05+02:00",
+      "last_seen_at": "2026-10-22T19:33:07+02:00",
       "localities": [
         "Cárcheles",
         "Pegalajar"
@@ -634,7 +573,7 @@
       "km_end": "335",
       "km_start": "327",
       "last_changed_at": "2026-10-19T11:58:20+02:00",
-      "last_seen_at": "2026-10-22T14:29:05+02:00",
+      "last_seen_at": "2026-10-22T19:33:07+02:00",
       "localities": [
         "Abrucena",
         "Fiñana"
@@ -664,7 +603,7 @@
       "km_end": "64",
       "km_start": "61.8",
       "last_changed_at": "2026-08-27T00:52:31+02:00",
-      "last_seen_at": "2026-10-22T14:29:05+02:00",
+      "last_seen_at": "2026-10-22T19:33:07+02:00",
       "localities": [
         "Villacarrillo"
       ],
@@ -693,7 +632,7 @@
       "km_end": "3",
       "km_start": "0",
       "last_changed_at": "2026-08-27T00:52:31+02:00",
-      "last_seen_at": "2026-10-22T14:29:05+02:00",
+      "last_seen_at": "2026-10-22T19:33:07+02:00",
       "localities": [
         "Lucainena de las Torres",
         "Turrillas"
@@ -725,7 +664,7 @@
       "km_end": "2.25",
       "km_start": "1.2",
       "last_changed_at": "2026-08-27T00:52:31+02:00",
-      "last_seen_at": "2026-10-22T14:29:05+02:00",
+      "last_seen_at": "2026-10-22T19:33:07+02:00",
       "localities": [
         "Casares"
       ],
@@ -745,34 +684,35 @@
       ],
       "source_updated_at": "2026-02-03T16:45:05+01:00"
     },
-    "src-b9dfb1656974ff206d0a": {
-      "alternative": "",
+    "src-b13790cab12d709f3a8f": {
+      "alternative": "Tráfico desviado por un carril reversible habilitado en la calzada contraria",
       "cause_code": "roadMaintenance",
       "detail_code": "roadworks",
-      "direction": "increasing",
-      "first_seen_at": "2026-10-22T08:37:47+02:00",
-      "km_end": "148",
-      "km_start": "147",
-      "last_changed_at": "2026-10-22T08:37:47+02:00",
-      "last_seen_at": "2026-10-22T14:29:05+02:00",
+      "direction": "decreasing",
+      "first_seen_at": "2026-10-22T19:33:07+02:00",
+      "km_end": "374.7",
+      "km_start": "369.5",
+      "last_changed_at": "2026-10-22T19:33:07+02:00",
+      "last_seen_at": "2026-10-22T19:33:07+02:00",
       "localities": [
-        "Vélez-Rubio"
+        "El Carpio",
+        "Pedro Abad"
       ],
-      "province": "Almería",
-      "published_at": "2026-10-22T08:12:06+02:00",
+      "province": "Córdoba",
+      "published_at": "2026-10-22T15:27:24+02:00",
       "reason": "Obras",
       "record_ids": [
-        "29021371"
+        "29179026"
       ],
-      "road": "A-317",
+      "road": "A-4",
       "singularity": "",
       "situation_ids": [
-        "24673207"
+        "24820261"
       ],
       "source_ids": [
-        "24673207:29021371"
+        "24820261:29179026"
       ],
-      "source_updated_at": "2026-10-22T08:12:06+02:00"
+      "source_updated_at": "2026-10-22T15:27:24+02:00"
     },
     "src-b9ec5d0d68f7d9e0f4b3": {
       "alternative": "",
@@ -783,7 +723,7 @@
       "km_end": "17",
       "km_start": "13",
       "last_changed_at": "2026-09-01T08:45:42+02:00",
-      "last_seen_at": "2026-10-22T14:29:05+02:00",
+      "last_seen_at": "2026-10-22T19:33:07+02:00",
       "localities": [
         "El Gastor",
         "Grazalema"
@@ -813,7 +753,7 @@
       "km_end": "54",
       "km_start": "46",
       "last_changed_at": "2026-10-22T08:37:47+02:00",
-      "last_seen_at": "2026-10-22T14:29:05+02:00",
+      "last_seen_at": "2026-10-22T19:33:07+02:00",
       "localities": [
         "Cortes de la Frontera"
       ],
@@ -844,7 +784,7 @@
       "km_end": "3.38",
       "km_start": "3.28",
       "last_changed_at": "2026-10-16T13:46:45+02:00",
-      "last_seen_at": "2026-10-22T14:29:05+02:00",
+      "last_seen_at": "2026-10-22T19:33:07+02:00",
       "localities": [
         "Manzanilla"
       ],
@@ -866,6 +806,38 @@
       ],
       "source_updated_at": "2026-10-16T10:05:10+02:00"
     },
+    "src-dd5dc019ee46a69f0696": {
+      "alternative": "",
+      "cause_code": "roadMaintenance",
+      "detail_code": "roadworks",
+      "direction": "both",
+      "first_seen_at": "2026-10-22T19:33:07+02:00",
+      "km_end": "32.7",
+      "km_start": "23",
+      "last_changed_at": "2026-10-22T19:33:07+02:00",
+      "last_seen_at": "2026-10-22T19:33:07+02:00",
+      "localities": [
+        "Cazorla",
+        "La Iruela"
+      ],
+      "province": "Jaén",
+      "published_at": "2026-10-22T16:00:26+02:00",
+      "reason": "Obras",
+      "record_ids": [
+        "29105707",
+        "29105708"
+      ],
+      "road": "A-319",
+      "singularity": "",
+      "situation_ids": [
+        "24750764"
+      ],
+      "source_ids": [
+        "24750764:29105707",
+        "24750764:29105708"
+      ],
+      "source_updated_at": "2026-10-22T16:00:32+02:00"
+    },
     "src-f3a4f68c6b40fbfcc54f": {
       "alternative": "",
       "cause_code": "roadMaintenance",
@@ -875,7 +847,7 @@
       "km_end": "28.5",
       "km_start": "27.7",
       "last_changed_at": "2026-08-27T11:23:09+02:00",
-      "last_seen_at": "2026-10-22T14:29:05+02:00",
+      "last_seen_at": "2026-10-22T19:33:07+02:00",
       "localities": [
         "La Rambla"
       ],
@@ -906,7 +878,7 @@
       "km_end": "8.1",
       "km_start": "0",
       "last_changed_at": "2026-09-16T14:31:25+02:00",
-      "last_seen_at": "2026-10-22T14:29:05+02:00",
+      "last_seen_at": "2026-10-22T19:33:07+02:00",
       "localities": [
         "Las Cabezas de San Juan",
         "Lebrija"
@@ -938,7 +910,7 @@
       "km_end": "1.2",
       "km_start": "0.6",
       "last_changed_at": "2026-08-27T00:52:31+02:00",
-      "last_seen_at": "2026-10-22T14:29:05+02:00",
+      "last_seen_at": "2026-10-22T19:33:07+02:00",
       "localities": [
         "Algeciras"
       ],
@@ -963,7 +935,7 @@
   },
   "initialized": true,
   "initialized_at": "2026-08-27T00:52:31+02:00",
-  "revision": 4593,
+  "revision": 4594,
   "telegram_archive": [
     {
       "final_summary": "<b>🟢 CORTE FINALIZADO</b>\n\n📍 Granada\n<i>Polopos</i>\n\n<b>GR-6204</b>, Otro motivo: sports meeting\n<i>7,000–13,000</i>\n<i>Creciente</i>\n\n<b>Historial de la incidencia</b>\n• 03/10/2026 · 10:03 h — Corte comunicado por Otro motivo: sports meeting\n• 03/10/2026 · 15:53 h — Carretera reabierta\n\n<i>Duración total: 5 horas y 50 minutos</i>",
@@ -4106,6 +4078,222 @@
         "source_updated_at": "2026-10-18T21:15:03+02:00"
       },
       "started_at": "2026-10-18T21:15:03+02:00"
+    },
+    {
+      "final_summary": "<b>🟢 CORTE FINALIZADO</b>\n\n📍 Málaga\n<i>Almáchar / El Borge</i>\n\n<b>MA-3114</b>, Obras\n<i>4,000–7,700</i>\n<i>Doble sentido</i>\n\n<b>Historial de la incidencia</b>\n• 22/10/2026 · 07:20 h — Corte comunicado por Obras\n• 22/10/2026 · 19:33 h — Carretera reabierta\n\n<i>Duración total: 12 horas y 12 minutos</i>",
+      "finalized_at": "2026-10-22T19:33:07+02:00",
+      "history": [
+        {
+          "at": "2026-10-22T07:20:58+02:00",
+          "description": "Corte comunicado por Obras",
+          "event": "closed"
+        },
+        {
+          "at": "2026-10-22T19:33:07+02:00",
+          "description": "Carretera reabierta",
+          "event": "reopened"
+        }
+      ],
+      "initial_closure": {
+        "alternative": "",
+        "cause_code": "roadMaintenance",
+        "detail_code": "roadworks",
+        "direction": "both",
+        "km_end": "7.7",
+        "km_start": "4",
+        "localities": [
+          "Almáchar",
+          "El Borge"
+        ],
+        "province": "Málaga",
+        "published_at": "2026-10-22T07:20:58+02:00",
+        "reason": "Obras",
+        "record_ids": [
+          "29060405",
+          "29060406"
+        ],
+        "road": "MA-3114",
+        "singularity": "",
+        "situation_ids": [
+          "24709405"
+        ],
+        "source_ids": [
+          "24709405:29060405",
+          "24709405:29060406"
+        ],
+        "source_updated_at": "2026-10-22T07:21:02+02:00"
+      },
+      "key": "src-0266228e2a8782cfd83b",
+      "latest_closure": {
+        "alternative": "",
+        "cause_code": "roadMaintenance",
+        "detail_code": "roadworks",
+        "direction": "both",
+        "km_end": "7.7",
+        "km_start": "4",
+        "localities": [
+          "Almáchar",
+          "El Borge"
+        ],
+        "province": "Málaga",
+        "published_at": "2026-10-22T07:20:58+02:00",
+        "reason": "Obras",
+        "record_ids": [
+          "29060405",
+          "29060406"
+        ],
+        "road": "MA-3114",
+        "singularity": "",
+        "situation_ids": [
+          "24709405"
+        ],
+        "source_ids": [
+          "24709405:29060405",
+          "24709405:29060406"
+        ],
+        "source_updated_at": "2026-10-22T07:21:02+02:00"
+      },
+      "started_at": "2026-10-22T07:20:58+02:00"
+    },
+    {
+      "final_summary": "<b>🟢 CORTE FINALIZADO</b>\n\n📍 Sevilla\n<i>Dos Hermanas</i>\n\n<b>SE-40</b>, Accidente\n<i>22,000</i>\n<b>Singularidad: Entrada</b>\n<i>Creciente</i>\n\n<b>Historial de la incidencia</b>\n• 21/10/2026 · 17:02 h — Cierre de entrada comunicado por Accidente\n• 22/10/2026 · 19:33 h — Entrada reabierta\n\n<i>Duración total: 1 día y 2 horas y 30 minutos</i>",
+      "finalized_at": "2026-10-22T19:33:07+02:00",
+      "history": [
+        {
+          "at": "2026-10-21T17:02:19+02:00",
+          "description": "Cierre de entrada comunicado por Accidente",
+          "event": "closed"
+        },
+        {
+          "at": "2026-10-22T19:33:07+02:00",
+          "description": "Entrada reabierta",
+          "event": "reopened"
+        }
+      ],
+      "initial_closure": {
+        "alternative": "",
+        "cause_code": "accident",
+        "detail_code": "accident",
+        "direction": "increasing",
+        "km_end": "22",
+        "km_start": "22",
+        "localities": [
+          "Dos Hermanas"
+        ],
+        "province": "Sevilla",
+        "published_at": "2026-10-21T17:02:19+02:00",
+        "reason": "Accidente",
+        "record_ids": [
+          "29266386"
+        ],
+        "road": "SE-40",
+        "singularity": "entry",
+        "situation_ids": [
+          "24902661"
+        ],
+        "source_ids": [
+          "24902661:29266386"
+        ],
+        "source_updated_at": "2026-10-21T17:02:19+02:00"
+      },
+      "key": "src-46b727474072aafc5a77",
+      "latest_closure": {
+        "alternative": "",
+        "cause_code": "accident",
+        "detail_code": "accident",
+        "direction": "increasing",
+        "km_end": "22",
+        "km_start": "22",
+        "localities": [
+          "Dos Hermanas"
+        ],
+        "province": "Sevilla",
+        "published_at": "2026-10-21T17:02:19+02:00",
+        "reason": "Accidente",
+        "record_ids": [
+          "29266386"
+        ],
+        "road": "SE-40",
+        "singularity": "entry",
+        "situation_ids": [
+          "24902661"
+        ],
+        "source_ids": [
+          "24902661:29266386"
+        ],
+        "source_updated_at": "2026-10-21T17:02:19+02:00"
+      },
+      "started_at": "2026-10-21T17:02:19+02:00"
+    },
+    {
+      "final_summary": "<b>🟢 CORTE FINALIZADO</b>\n\n📍 Almería\n<i>Vélez-Rubio</i>\n\n<b>A-317</b>, Obras\n<i>147,000–148,000</i>\n<i>Creciente</i>\n\n<b>Historial de la incidencia</b>\n• 22/10/2026 · 08:12 h — Corte comunicado por Obras\n• 22/10/2026 · 19:33 h — Carretera reabierta\n\n<i>Duración total: 11 horas y 21 minutos</i>",
+      "finalized_at": "2026-10-22T19:33:07+02:00",
+      "history": [
+        {
+          "at": "2026-10-22T08:12:06+02:00",
+          "description": "Corte comunicado por Obras",
+          "event": "closed"
+        },
+        {
+          "at": "2026-10-22T19:33:07+02:00",
+          "description": "Carretera reabierta",
+          "event": "reopened"
+        }
+      ],
+      "initial_closure": {
+        "alternative": "",
+        "cause_code": "roadMaintenance",
+        "detail_code": "roadworks",
+        "direction": "increasing",
+        "km_end": "148",
+        "km_start": "147",
+        "localities": [
+          "Vélez-Rubio"
+        ],
+        "province": "Almería",
+        "published_at": "2026-10-22T08:12:06+02:00",
+        "reason": "Obras",
+        "record_ids": [
+          "29021371"
+        ],
+        "road": "A-317",
+        "singularity": "",
+        "situation_ids": [
+          "24673207"
+        ],
+        "source_ids": [
+          "24673207:29021371"
+        ],
+        "source_updated_at": "2026-10-22T08:12:06+02:00"
+      },
+      "key": "src-b9dfb1656974ff206d0a",
+      "latest_closure": {
+        "alternative": "",
+        "cause_code": "roadMaintenance",
+        "detail_code": "roadworks",
+        "direction": "increasing",
+        "km_end": "148",
+        "km_start": "147",
+        "localities": [
+          "Vélez-Rubio"
+        ],
+        "province": "Almería",
+        "published_at": "2026-10-22T08:12:06+02:00",
+        "reason": "Obras",
+        "record_ids": [
+          "29021371"
+        ],
+        "road": "A-317",
+        "singularity": "",
+        "situation_ids": [
+          "24673207"
+        ],
+        "source_ids": [
+          "24673207:29021371"
+        ],
+        "source_updated_at": "2026-10-22T08:12:06+02:00"
+      },
+      "started_at": "2026-10-22T08:12:06+02:00"
     }
   ],
   "telegram_cleanup": [
@@ -4430,95 +4618,51 @@
       "delete_after": "2026-10-24T13:29:05+02:00",
       "destination": "forum",
       "message_id": 12643
+    },
+    {
+      "chat_id": "@carreterascortadas_andalucia",
+      "created_at": "2026-10-22T19:33:07+02:00",
+      "delete_after": "2026-10-24T18:33:07+02:00",
+      "destination": "channel",
+      "message_id": 772
+    },
+    {
+      "chat_id": "-1001337700771",
+      "created_at": "2026-10-22T19:33:07+02:00",
+      "delete_after": "2026-10-24T18:33:07+02:00",
+      "destination": "forum",
+      "message_id": 12644
+    },
+    {
+      "chat_id": "@carreterascortadas_andalucia",
+      "created_at": "2026-10-22T19:33:07+02:00",
+      "delete_after": "2026-10-24T18:33:07+02:00",
+      "destination": "channel",
+      "message_id": 775
+    },
+    {
+      "chat_id": "-1001337700771",
+      "created_at": "2026-10-22T19:33:07+02:00",
+      "delete_after": "2026-10-24T18:33:07+02:00",
+      "destination": "forum",
+      "message_id": 12647
+    },
+    {
+      "chat_id": "@carreterascortadas_andalucia",
+      "created_at": "2026-10-22T19:33:07+02:00",
+      "delete_after": "2026-10-24T18:33:07+02:00",
+      "destination": "channel",
+      "message_id": 776
+    },
+    {
+      "chat_id": "-1001337700771",
+      "created_at": "2026-10-22T19:33:07+02:00",
+      "delete_after": "2026-10-24T18:33:07+02:00",
+      "destination": "forum",
+      "message_id": 12648
     }
   ],
   "telegram_incidents": {
-    "src-0266228e2a8782cfd83b": {
-      "alerts": [],
-      "destinations": {
-        "channel": {
-          "chat_id": "@carreterascortadas_andalucia",
-          "content_hash": "9eca329b7831af81f7d84125b7c9ecc619ef35d8587651ce43d6d990c8f11ff4",
-          "message_thread_id": null,
-          "primary_id": 769,
-          "primary_sent_at": "2026-10-22T08:37:47+02:00"
-        },
-        "forum": {
-          "chat_id": "-1001337700771",
-          "content_hash": "9eca329b7831af81f7d84125b7c9ecc619ef35d8587651ce43d6d990c8f11ff4",
-          "message_thread_id": 1358,
-          "primary_id": 12638,
-          "primary_sent_at": "2026-10-22T08:37:47+02:00"
-        }
-      },
-      "history": [
-        {
-          "at": "2026-10-22T07:20:58+02:00",
-          "description": "Corte comunicado por Obras",
-          "event": "closed"
-        }
-      ],
-      "initial_closure": {
-        "alternative": "",
-        "cause_code": "roadMaintenance",
-        "detail_code": "roadworks",
-        "direction": "both",
-        "km_end": "7.7",
-        "km_start": "4",
-        "localities": [
-          "Almáchar",
-          "El Borge"
-        ],
-        "province": "Málaga",
-        "published_at": "2026-10-22T07:20:58+02:00",
-        "reason": "Obras",
-        "record_ids": [
-          "29060405",
-          "29060406"
-        ],
-        "road": "MA-3114",
-        "singularity": "",
-        "situation_ids": [
-          "24709405"
-        ],
-        "source_ids": [
-          "24709405:29060405",
-          "24709405:29060406"
-        ],
-        "source_updated_at": "2026-10-22T07:21:02+02:00"
-      },
-      "key": "src-0266228e2a8782cfd83b",
-      "latest_closure": {
-        "alternative": "",
-        "cause_code": "roadMaintenance",
-        "detail_code": "roadworks",
-        "direction": "both",
-        "km_end": "7.7",
-        "km_start": "4",
-        "localities": [
-          "Almáchar",
-          "El Borge"
-        ],
-        "province": "Málaga",
-        "published_at": "2026-10-22T07:20:58+02:00",
-        "reason": "Obras",
-        "record_ids": [
-          "29060405",
-          "29060406"
-        ],
-        "road": "MA-3114",
-        "singularity": "",
-        "situation_ids": [
-          "24709405"
-        ],
-        "source_ids": [
-          "24709405:29060405",
-          "24709405:29060406"
-        ],
-        "source_updated_at": "2026-10-22T07:21:02+02:00"
-      },
-      "started_at": "2026-10-22T07:20:58+02:00"
-    },
     "src-02c97803275be3daf540": {
       "alerts": [],
       "destinations": {
@@ -4766,86 +4910,6 @@
       },
       "started_at": "2026-10-19T10:34:04+02:00"
     },
-    "src-46b727474072aafc5a77": {
-      "alerts": [],
-      "destinations": {
-        "channel": {
-          "chat_id": "@carreterascortadas_andalucia",
-          "content_hash": "76e8552b141297f607f1358506ab3b7add85dc4f0024fb9726fecffaa1944159",
-          "message_thread_id": null,
-          "primary_id": 761,
-          "primary_sent_at": "2026-10-21T18:03:35+02:00"
-        },
-        "forum": {
-          "chat_id": "-1001337700771",
-          "content_hash": "76e8552b141297f607f1358506ab3b7add85dc4f0024fb9726fecffaa1944159",
-          "message_thread_id": 1359,
-          "primary_id": 12529,
-          "primary_sent_at": "2026-10-21T18:03:35+02:00"
-        }
-      },
-      "history": [
-        {
-          "at": "2026-10-21T17:02:19+02:00",
-          "description": "Cierre de entrada comunicado por Accidente",
-          "event": "closed"
-        }
-      ],
-      "initial_closure": {
-        "alternative": "",
-        "cause_code": "accident",
-        "detail_code": "accident",
-        "direction": "increasing",
-        "km_end": "22",
-        "km_start": "22",
-        "localities": [
-          "Dos Hermanas"
-        ],
-        "province": "Sevilla",
-        "published_at": "2026-10-21T17:02:19+02:00",
-        "reason": "Accidente",
-        "record_ids": [
-          "29266386"
-        ],
-        "road": "SE-40",
-        "singularity": "entry",
-        "situation_ids": [
-          "24902661"
-        ],
-        "source_ids": [
-          "24902661:29266386"
-        ],
-        "source_updated_at": "2026-10-21T17:02:19+02:00"
-      },
-      "key": "src-46b727474072aafc5a77",
-      "latest_closure": {
-        "alternative": "",
-        "cause_code": "accident",
-        "detail_code": "accident",
-        "direction": "increasing",
-        "km_end": "22",
-        "km_start": "22",
-        "localities": [
-          "Dos Hermanas"
-        ],
-        "province": "Sevilla",
-        "published_at": "2026-10-21T17:02:19+02:00",
-        "reason": "Accidente",
-        "record_ids": [
-          "29266386"
-        ],
-        "road": "SE-40",
-        "singularity": "entry",
-        "situation_ids": [
-          "24902661"
-        ],
-        "source_ids": [
-          "24902661:29266386"
-        ],
-        "source_updated_at": "2026-10-21T17:02:19+02:00"
-      },
-      "started_at": "2026-10-21T17:02:19+02:00"
-    },
     "src-4d1d0ddbc1d3c451c4e7": {
       "alerts": [],
       "destinations": {
@@ -5006,85 +5070,86 @@
       },
       "started_at": "2026-10-19T11:30:22+02:00"
     },
-    "src-b9dfb1656974ff206d0a": {
-      "alerts": [],
+    "src-b13790cab12d709f3a8f": {
       "destinations": {
         "channel": {
           "chat_id": "@carreterascortadas_andalucia",
-          "content_hash": "a52b60cd8062a2bf32ab2719614ce97472046e40d9c801e4e6c625bd03cef6c4",
+          "content_hash": "43d41c61cfdcb62ca5f1df396a9b9318c2af659d78483bba7262df85fca5a249",
           "message_thread_id": null,
-          "primary_id": 768,
-          "primary_sent_at": "2026-10-22T08:37:47+02:00"
+          "primary_id": 773,
+          "primary_sent_at": "2026-10-22T19:33:07+02:00"
         },
         "forum": {
           "chat_id": "-1001337700771",
-          "content_hash": "a52b60cd8062a2bf32ab2719614ce97472046e40d9c801e4e6c625bd03cef6c4",
-          "message_thread_id": 1299,
-          "primary_id": 12637,
-          "primary_sent_at": "2026-10-22T08:37:47+02:00"
+          "content_hash": "43d41c61cfdcb62ca5f1df396a9b9318c2af659d78483bba7262df85fca5a249",
+          "message_thread_id": 1597,
+          "primary_id": 12645,
+          "primary_sent_at": "2026-10-22T19:33:07+02:00"
         }
       },
       "history": [
         {
-          "at": "2026-10-22T08:12:06+02:00",
+          "at": "2026-10-22T15:27:24+02:00",
           "description": "Corte comunicado por Obras",
           "event": "closed"
         }
       ],
       "initial_closure": {
-        "alternative": "",
+        "alternative": "Tráfico desviado por un carril reversible habilitado en la calzada contraria",
         "cause_code": "roadMaintenance",
         "detail_code": "roadworks",
-        "direction": "increasing",
-        "km_end": "148",
-        "km_start": "147",
+        "direction": "decreasing",
+        "km_end": "374.7",
+        "km_start": "369.5",
         "localities": [
-          "Vélez-Rubio"
+          "El Carpio",
+          "Pedro Abad"
         ],
-        "province": "Almería",
-        "published_at": "2026-10-22T08:12:06+02:00",
+        "province": "Córdoba",
+        "published_at": "2026-10-22T15:27:24+02:00",
         "reason": "Obras",
         "record_ids": [
-          "29021371"
+          "29179026"
         ],
-        "road": "A-317",
+        "road": "A-4",
         "singularity": "",
         "situation_ids": [
-          "24673207"
+          "24820261"
         ],
         "source_ids": [
-          "24673207:29021371"
+          "24820261:29179026"
         ],
-        "source_updated_at": "2026-10-22T08:12:06+02:00"
+        "source_updated_at": "2026-10-22T15:27:24+02:00"
       },
-      "key": "src-b9dfb1656974ff206d0a",
+      "key": "src-b13790cab12d709f3a8f",
       "latest_closure": {
-        "alternative": "",
+        "alternative": "Tráfico desviado por un carril reversible habilitado en la calzada contraria",
         "cause_code": "roadMaintenance",
         "detail_code": "roadworks",
-        "direction": "increasing",
-        "km_end": "148",
-        "km_start": "147",
+        "direction": "decreasing",
+        "km_end": "374.7",
+        "km_start": "369.5",
         "localities": [
-          "Vélez-Rubio"
+          "El Carpio",
+          "Pedro Abad"
         ],
-        "province": "Almería",
-        "published_at": "2026-10-22T08:12:06+02:00",
+        "province": "Córdoba",
+        "published_at": "2026-10-22T15:27:24+02:00",
         "reason": "Obras",
         "record_ids": [
-          "29021371"
+          "29179026"
         ],
-        "road": "A-317",
+        "road": "A-4",
         "singularity": "",
         "situation_ids": [
-          "24673207"
+          "24820261"
         ],
         "source_ids": [
-          "24673207:29021371"
+          "24820261:29179026"
         ],
-        "source_updated_at": "2026-10-22T08:12:06+02:00"
+        "source_updated_at": "2026-10-22T15:27:24+02:00"
       },
-      "started_at": "2026-10-22T08:12:06+02:00"
+      "started_at": "2026-10-22T15:27:24+02:00"
     },
     "src-d1d92ef16fe617daa016": {
       "alerts": [],
@@ -5251,8 +5316,93 @@
         "source_updated_at": "2026-10-16T10:05:10+02:00"
       },
       "started_at": "2026-10-16T10:04:16+02:00"
+    },
+    "src-dd5dc019ee46a69f0696": {
+      "destinations": {
+        "channel": {
+          "chat_id": "@carreterascortadas_andalucia",
+          "content_hash": "a4bb4a36e93265fd86b01899af25018fd0e9e42717099456156dfed7a301647f",
+          "message_thread_id": null,
+          "primary_id": 774,
+          "primary_sent_at": "2026-10-22T19:33:07+02:00"
+        },
+        "forum": {
+          "chat_id": "-1001337700771",
+          "content_hash": "a4bb4a36e93265fd86b01899af25018fd0e9e42717099456156dfed7a301647f",
+          "message_thread_id": 2397,
+          "primary_id": 12646,
+          "primary_sent_at": "2026-10-22T19:33:07+02:00"
+        }
+      },
+      "history": [
+        {
+          "at": "2026-10-22T16:00:26+02:00",
+          "description": "Corte comunicado por Obras",
+          "event": "closed"
+        }
+      ],
+      "initial_closure": {
+        "alternative": "",
+        "cause_code": "roadMaintenance",
+        "detail_code": "roadworks",
+        "direction": "both",
+        "km_end": "32.7",
+        "km_start": "23",
+        "localities": [
+          "Cazorla",
+          "La Iruela"
+        ],
+        "province": "Jaén",
+        "published_at": "2026-10-22T16:00:26+02:00",
+        "reason": "Obras",
+        "record_ids": [
+          "29105707",
+          "29105708"
+        ],
+        "road": "A-319",
+        "singularity": "",
+        "situation_ids": [
+          "24750764"
+        ],
+        "source_ids": [
+          "24750764:29105707",
+          "24750764:29105708"
+        ],
+        "source_updated_at": "2026-10-22T16:00:32+02:00"
+      },
+      "key": "src-dd5dc019ee46a69f0696",
+      "latest_closure": {
+        "alternative": "",
+        "cause_code": "roadMaintenance",
+        "detail_code": "roadworks",
+        "direction": "both",
+        "km_end": "32.7",
+        "km_start": "23",
+        "localities": [
+          "Cazorla",
+          "La Iruela"
+        ],
+        "province": "Jaén",
+        "published_at": "2026-10-22T16:00:26+02:00",
+        "reason": "Obras",
+        "record_ids": [
+          "29105707",
+          "29105708"
+        ],
+        "road": "A-319",
+        "singularity": "",
+        "situation_ids": [
+          "24750764"
+        ],
+        "source_ids": [
+          "24750764:29105707",
+          "24750764:29105708"
+        ],
+        "source_updated_at": "2026-10-22T16:00:32+02:00"
+      },
+      "started_at": "2026-10-22T16:00:26+02:00"
     }
   },
-  "updated_at": "2026-10-22T14:29:05+02:00",
+  "updated_at": "2026-10-22T19:33:07+02:00",
   "version": 1
 }
