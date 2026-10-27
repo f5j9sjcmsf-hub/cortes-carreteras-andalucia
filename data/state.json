@@ -9,7 +9,7 @@
       "km_end": "374.7",
       "km_start": "372.3",
       "last_changed_at": "2026-10-15T01:40:10+02:00",
-      "last_seen_at": "2026-10-27T02:13:40+01:00",
+      "last_seen_at": "2026-10-27T07:22:36+01:00",
       "localities": [
         "El Carpio"
       ],
@@ -29,36 +29,6 @@
       ],
       "source_updated_at": "2026-10-13T10:01:46+02:00"
     },
-    "src-07a9ccc9a1b1c1d6f012": {
-      "alternative": "",
-      "cause_code": "roadMaintenance",
-      "detail_code": "roadworks",
-      "direction": "increasing",
-      "first_seen_at": "2026-10-26T22:53:22+01:00",
-      "km_end": "22.4",
-      "km_start": "20",
-      "last_changed_at": "2026-10-26T22:53:22+01:00",
-      "last_seen_at": "2026-10-27T02:13:40+01:00",
-      "localities": [
-        "Camas",
-        "Sevilla"
-      ],
-      "province": "Sevilla",
-      "published_at": "2026-10-26T22:02:41+01:00",
-      "reason": "Obras",
-      "record_ids": [
-        "29254144"
-      ],
-      "road": "SE-30",
-      "singularity": "",
-      "situation_ids": [
-        "24891681"
-      ],
-      "source_ids": [
-        "24891681:29254144"
-      ],
-      "source_updated_at": "2026-10-26T22:02:41+01:00"
-    },
     "src-082d6c0e085eade2347f": {
       "alternative": "",
       "cause_code": "roadMaintenance",
@@ -68,7 +38,7 @@
       "km_end": "1.7",
       "km_start": "1",
       "last_changed_at": "2026-09-01T08:00:02+02:00",
-      "last_seen_at": "2026-10-27T02:13:40+01:00",
+      "last_seen_at": "2026-10-27T07:22:36+01:00",
       "localities": [
         "Monachil"
       ],
@@ -99,7 +69,7 @@
       "km_end": "10.9",
       "km_start": "9.2",
       "last_changed_at": "2026-09-14T00:14:26+02:00",
-      "last_seen_at": "2026-10-27T02:13:40+01:00",
+      "last_seen_at": "2026-10-27T07:22:36+01:00",
       "localities": [
         "Badolatosa"
       ],
@@ -130,7 +100,7 @@
       "km_end": "3.6",
       "km_start": "0",
       "last_changed_at": "2026-10-23T10:51:30+02:00",
-      "last_seen_at": "2026-10-27T02:13:40+01:00",
+      "last_seen_at": "2026-10-27T07:22:36+01:00",
       "localities": [
         "Alcalá del Valle",
         "Olvera"
@@ -167,7 +137,7 @@
       "km_end": "10",
       "km_start": "10",
       "last_changed_at": "2026-08-27T00:52:31+02:00",
-      "last_seen_at": "2026-10-27T02:13:40+01:00",
+      "last_seen_at": "2026-10-27T07:22:36+01:00",
       "localities": [
         "Ronda"
       ],
@@ -196,7 +166,7 @@
       "km_end": "14.14",
       "km_start": "13.64",
       "last_changed_at": "2026-09-29T19:22:44+02:00",
-      "last_seen_at": "2026-10-27T02:13:40+01:00",
+      "last_seen_at": "2026-10-27T07:22:36+01:00",
       "localities": [
         "Marchena"
       ],
@@ -225,7 +195,7 @@
       "km_end": "33.2",
       "km_start": "30",
       "last_changed_at": "2026-08-27T00:52:31+02:00",
-      "last_seen_at": "2026-10-27T02:13:40+01:00",
+      "last_seen_at": "2026-10-27T07:22:36+01:00",
       "localities": [
         "Algodonales"
       ],
@@ -254,7 +224,7 @@
       "km_end": "18",
       "km_start": "9",
       "last_changed_at": "2026-09-28T08:04:05+02:00",
-      "last_seen_at": "2026-10-27T02:13:40+01:00",
+      "last_seen_at": "2026-10-27T07:22:36+01:00",
       "localities": [
         "Arcos de la Frontera",
         "Espera"
@@ -284,7 +254,7 @@
       "km_end": "15.7",
       "km_start": "7.8",
       "last_changed_at": "2026-10-15T01:40:10+02:00",
-      "last_seen_at": "2026-10-27T02:13:40+01:00",
+      "last_seen_at": "2026-10-27T07:22:36+01:00",
       "localities": [
         "Cantillana",
         "Villanueva del Río y Minas"
@@ -316,7 +286,7 @@
       "km_end": "31",
       "km_start": "25",
       "last_changed_at": "2026-08-27T00:52:31+02:00",
-      "last_seen_at": "2026-10-27T02:13:40+01:00",
+      "last_seen_at": "2026-10-27T07:22:36+01:00",
       "localities": [
         "Medina Sidonia"
       ],
@@ -345,7 +315,7 @@
       "km_end": "32",
       "km_start": "23",
       "last_changed_at": "2026-10-26T12:24:15+01:00",
-      "last_seen_at": "2026-10-27T02:13:40+01:00",
+      "last_seen_at": "2026-10-27T07:22:36+01:00",
       "localities": [
         "Cazorla",
         "La Iruela"
@@ -375,7 +345,7 @@
       "km_end": "0.6",
       "km_start": "0",
       "last_changed_at": "2026-08-27T00:52:31+02:00",
-      "last_seen_at": "2026-10-27T02:13:40+01:00",
+      "last_seen_at": "2026-10-27T07:22:36+01:00",
       "localities": [
         "Almedinilla"
       ],
@@ -404,7 +374,7 @@
       "km_end": "392.3",
       "km_start": "390",
       "last_changed_at": "2026-10-19T11:58:20+02:00",
-      "last_seen_at": "2026-10-27T02:13:40+01:00",
+      "last_seen_at": "2026-10-27T07:22:36+01:00",
       "localities": [
         "Pechina",
         "Viator"
@@ -434,7 +404,7 @@
       "km_end": "12.1",
       "km_start": "0",
       "last_changed_at": "2026-09-15T09:01:07+02:00",
-      "last_seen_at": "2026-10-27T02:13:40+01:00",
+      "last_seen_at": "2026-10-27T07:22:36+01:00",
       "localities": [
         "Écija"
       ],
@@ -465,7 +435,7 @@
       "km_end": "30",
       "km_start": "27",
       "last_changed_at": "2026-10-26T12:24:15+01:00",
-      "last_seen_at": "2026-10-27T02:13:40+01:00",
+      "last_seen_at": "2026-10-27T07:22:36+01:00",
       "localities": [
         "Arroyomolinos de León"
       ],
@@ -496,7 +466,7 @@
       "km_end": "2.16",
       "km_start": "0",
       "last_changed_at": "2026-08-27T00:52:31+02:00",
-      "last_seen_at": "2026-10-27T02:13:40+01:00",
+      "last_seen_at": "2026-10-27T07:22:36+01:00",
       "localities": [
         "Sevilla"
       ],
@@ -525,7 +495,7 @@
       "km_end": "6.85",
       "km_start": "6.8",
       "last_changed_at": "2026-10-16T08:15:34+02:00",
-      "last_seen_at": "2026-10-27T02:13:40+01:00",
+      "last_seen_at": "2026-10-27T07:22:36+01:00",
       "localities": [
         "La Línea de la Concepción"
       ],
@@ -554,7 +524,7 @@
       "km_end": "11",
       "km_start": "2",
       "last_changed_at": "2026-08-27T00:52:31+02:00",
-      "last_seen_at": "2026-10-27T02:13:40+01:00",
+      "last_seen_at": "2026-10-27T07:22:36+01:00",
       "localities": [
         "Carmona"
       ],
@@ -583,7 +553,7 @@
       "km_end": "18",
       "km_start": "9.2",
       "last_changed_at": "2026-09-28T08:04:05+02:00",
-      "last_seen_at": "2026-10-27T02:13:40+01:00",
+      "last_seen_at": "2026-10-27T07:22:36+01:00",
       "localities": [
         "Arcos de la Frontera",
         "Espera"
@@ -604,35 +574,6 @@
       ],
       "source_updated_at": "2026-09-28T07:48:12+02:00"
     },
-    "src-7e9bc0c8d944d31d28f9": {
-      "alternative": "",
-      "cause_code": "roadMaintenance",
-      "detail_code": "roadworks",
-      "direction": "increasing",
-      "first_seen_at": "2026-10-27T02:13:40+01:00",
-      "km_end": "19",
-      "km_start": "19",
-      "last_changed_at": "2026-10-27T02:13:40+01:00",
-      "last_seen_at": "2026-10-27T02:13:40+01:00",
-      "localities": [
-        "Camas"
-      ],
-      "province": "Sevilla",
-      "published_at": "2026-10-26T23:22:08+01:00",
-      "reason": "Obras",
-      "record_ids": [
-        "29232769"
-      ],
-      "road": "SE-30",
-      "singularity": "exit",
-      "situation_ids": [
-        "24871267"
-      ],
-      "source_ids": [
-        "24871267:29232769"
-      ],
-      "source_updated_at": "2026-10-26T23:22:08+01:00"
-    },
     "src-84a723d899f840d41dca": {
       "alternative": "",
       "cause_code": "environmentalObstruction",
@@ -642,7 +583,7 @@
       "km_end": "33",
       "km_start": "32",
       "last_changed_at": "2026-08-27T00:52:31+02:00",
-      "last_seen_at": "2026-10-27T02:13:40+01:00",
+      "last_seen_at": "2026-10-27T07:22:36+01:00",
       "localities": [
         "Montefrío"
       ],
@@ -671,7 +612,7 @@
       "km_end": "59.7",
       "km_start": "55.8",
       "last_changed_at": "2026-08-27T00:52:31+02:00",
-      "last_seen_at": "2026-10-27T02:13:40+01:00",
+      "last_seen_at": "2026-10-27T07:22:36+01:00",
       "localities": [
         "Cárcheles",
         "Pegalajar"
@@ -701,7 +642,7 @@
       "km_end": "335",
       "km_start": "327",
       "last_changed_at": "2026-10-19T11:58:20+02:00",
-      "last_seen_at": "2026-10-27T02:13:40+01:00",
+      "last_seen_at": "2026-10-27T07:22:36+01:00",
       "localities": [
         "Abrucena",
         "Fiñana"
@@ -731,7 +672,7 @@
       "km_end": "64",
       "km_start": "61.8",
       "last_changed_at": "2026-08-27T00:52:31+02:00",
-      "last_seen_at": "2026-10-27T02:13:40+01:00",
+      "last_seen_at": "2026-10-27T07:22:36+01:00",
       "localities": [
         "Villacarrillo"
       ],
@@ -760,7 +701,7 @@
       "km_end": "358.2",
       "km_start": "353.3",
       "last_changed_at": "2026-10-26T18:32:52+01:00",
-      "last_seen_at": "2026-10-27T02:13:40+01:00",
+      "last_seen_at": "2026-10-27T07:22:36+01:00",
       "localities": [
         "Gérgal",
         "Nacimiento"
@@ -790,7 +731,7 @@
       "km_end": "3",
       "km_start": "0",
       "last_changed_at": "2026-08-27T00:52:31+02:00",
-      "last_seen_at": "2026-10-27T02:13:40+01:00",
+      "last_seen_at": "2026-10-27T07:22:36+01:00",
       "localities": [
         "Lucainena de las Torres",
         "Turrillas"
@@ -822,7 +763,7 @@
       "km_end": "2.25",
       "km_start": "1.2",
       "last_changed_at": "2026-08-27T00:52:31+02:00",
-      "last_seen_at": "2026-10-27T02:13:40+01:00",
+      "last_seen_at": "2026-10-27T07:22:36+01:00",
       "localities": [
         "Casares"
       ],
@@ -851,7 +792,7 @@
       "km_end": "374.7",
       "km_start": "369.5",
       "last_changed_at": "2026-10-22T19:33:07+02:00",
-      "last_seen_at": "2026-10-27T02:13:40+01:00",
+      "last_seen_at": "2026-10-27T07:22:36+01:00",
       "localities": [
         "El Carpio",
         "Pedro Abad"
@@ -881,7 +822,7 @@
       "km_end": "17",
       "km_start": "13",
       "last_changed_at": "2026-09-01T08:45:42+02:00",
-      "last_seen_at": "2026-10-27T02:13:40+01:00",
+      "last_seen_at": "2026-10-27T07:22:36+01:00",
       "localities": [
         "El Gastor",
         "Grazalema"
@@ -911,7 +852,7 @@
       "km_end": "3.38",
       "km_start": "3.28",
       "last_changed_at": "2026-10-16T13:46:45+02:00",
-      "last_seen_at": "2026-10-27T02:13:40+01:00",
+      "last_seen_at": "2026-10-27T07:22:36+01:00",
       "localities": [
         "Manzanilla"
       ],
@@ -942,7 +883,7 @@
       "km_end": "28.5",
       "km_start": "27.7",
       "last_changed_at": "2026-08-27T11:23:09+02:00",
-      "last_seen_at": "2026-10-27T02:13:40+01:00",
+      "last_seen_at": "2026-10-27T07:22:36+01:00",
       "localities": [
         "La Rambla"
       ],
@@ -973,7 +914,7 @@
       "km_end": "8.1",
       "km_start": "0",
       "last_changed_at": "2026-09-16T14:31:25+02:00",
-      "last_seen_at": "2026-10-27T02:13:40+01:00",
+      "last_seen_at": "2026-10-27T07:22:36+01:00",
       "localities": [
         "Las Cabezas de San Juan",
         "Lebrija"
@@ -1005,7 +946,7 @@
       "km_end": "1.2",
       "km_start": "0.6",
       "last_changed_at": "2026-08-27T00:52:31+02:00",
-      "last_seen_at": "2026-10-27T02:13:40+01:00",
+      "last_seen_at": "2026-10-27T07:22:36+01:00",
       "localities": [
         "Algeciras"
       ],
@@ -1030,7 +971,7 @@
   },
   "initialized": true,
   "initialized_at": "2026-08-27T00:52:31+02:00",
-  "revision": 4621,
+  "revision": 4622,
   "telegram_archive": [
     {
       "final_summary": "<b>🟢 CORTE FINALIZADO</b>\n\n📍 Granada\n<i>Polopos</i>\n\n<b>GR-6204</b>, Otro motivo: sports meeting\n<i>7,000–13,000</i>\n<i>Creciente</i>\n\n<b>Historial de la incidencia</b>\n• 03/10/2026 · 10:03 h — Corte comunicado por Otro motivo: sports meeting\n• 03/10/2026 · 15:53 h — Carretera reabierta\n\n<i>Duración total: 5 horas y 50 minutos</i>",
@@ -5122,6 +5063,148 @@
         "source_updated_at": "2026-10-26T07:09:59+01:00"
       },
       "started_at": "2026-10-26T07:09:57+01:00"
+    },
+    {
+      "final_summary": "<b>🟢 CORTE FINALIZADO</b>\n\n📍 Sevilla\n<i>Camas / Sevilla</i>\n\n<b>SE-30</b>, Obras\n<i>20,000–22,400</i>\n<i>Creciente</i>\n\n<b>Historial de la incidencia</b>\n• 26/10/2026 · 22:02 h — Corte comunicado por Obras\n• 27/10/2026 · 07:22 h — Carretera reabierta\n\n<i>Duración total: 9 horas y 19 minutos</i>",
+      "finalized_at": "2026-10-27T07:22:36+01:00",
+      "history": [
+        {
+          "at": "2026-10-26T22:02:41+01:00",
+          "description": "Corte comunicado por Obras",
+          "event": "closed"
+        },
+        {
+          "at": "2026-10-27T07:22:36+01:00",
+          "description": "Carretera reabierta",
+          "event": "reopened"
+        }
+      ],
+      "initial_closure": {
+        "alternative": "",
+        "cause_code": "roadMaintenance",
+        "detail_code": "roadworks",
+        "direction": "increasing",
+        "km_end": "22.4",
+        "km_start": "20",
+        "localities": [
+          "Camas",
+          "Sevilla"
+        ],
+        "province": "Sevilla",
+        "published_at": "2026-10-26T22:02:41+01:00",
+        "reason": "Obras",
+        "record_ids": [
+          "29254144"
+        ],
+        "road": "SE-30",
+        "singularity": "",
+        "situation_ids": [
+          "24891681"
+        ],
+        "source_ids": [
+          "24891681:29254144"
+        ],
+        "source_updated_at": "2026-10-26T22:02:41+01:00"
+      },
+      "key": "src-07a9ccc9a1b1c1d6f012",
+      "latest_closure": {
+        "alternative": "",
+        "cause_code": "roadMaintenance",
+        "detail_code": "roadworks",
+        "direction": "increasing",
+        "km_end": "22.4",
+        "km_start": "20",
+        "localities": [
+          "Camas",
+          "Sevilla"
+        ],
+        "province": "Sevilla",
+        "published_at": "2026-10-26T22:02:41+01:00",
+        "reason": "Obras",
+        "record_ids": [
+          "29254144"
+        ],
+        "road": "SE-30",
+        "singularity": "",
+        "situation_ids": [
+          "24891681"
+        ],
+        "source_ids": [
+          "24891681:29254144"
+        ],
+        "source_updated_at": "2026-10-26T22:02:41+01:00"
+      },
+      "started_at": "2026-10-26T22:02:41+01:00"
+    },
+    {
+      "final_summary": "<b>🟢 CORTE FINALIZADO</b>\n\n📍 Sevilla\n<i>Camas</i>\n\n<b>SE-30</b>, Obras\n<i>19,000</i>\n<b>Singularidad: Salida</b>\n<i>Creciente</i>\n\n<b>Historial de la incidencia</b>\n• 26/10/2026 · 23:22 h — Cierre de salida comunicado por Obras\n• 27/10/2026 · 07:22 h — Salida reabierta\n\n<i>Duración total: 8 horas</i>",
+      "finalized_at": "2026-10-27T07:22:36+01:00",
+      "history": [
+        {
+          "at": "2026-10-26T23:22:08+01:00",
+          "description": "Cierre de salida comunicado por Obras",
+          "event": "closed"
+        },
+        {
+          "at": "2026-10-27T07:22:36+01:00",
+          "description": "Salida reabierta",
+          "event": "reopened"
+        }
+      ],
+      "initial_closure": {
+        "alternative": "",
+        "cause_code": "roadMaintenance",
+        "detail_code": "roadworks",
+        "direction": "increasing",
+        "km_end": "19",
+        "km_start": "19",
+        "localities": [
+          "Camas"
+        ],
+        "province": "Sevilla",
+        "published_at": "2026-10-26T23:22:08+01:00",
+        "reason": "Obras",
+        "record_ids": [
+          "29232769"
+        ],
+        "road": "SE-30",
+        "singularity": "exit",
+        "situation_ids": [
+          "24871267"
+        ],
+        "source_ids": [
+          "24871267:29232769"
+        ],
+        "source_updated_at": "2026-10-26T23:22:08+01:00"
+      },
+      "key": "src-7e9bc0c8d944d31d28f9",
+      "latest_closure": {
+        "alternative": "",
+        "cause_code": "roadMaintenance",
+        "detail_code": "roadworks",
+        "direction": "increasing",
+        "km_end": "19",
+        "km_start": "19",
+        "localities": [
+          "Camas"
+        ],
+        "province": "Sevilla",
+        "published_at": "2026-10-26T23:22:08+01:00",
+        "reason": "Obras",
+        "record_ids": [
+          "29232769"
+        ],
+        "road": "SE-30",
+        "singularity": "exit",
+        "situation_ids": [
+          "24871267"
+        ],
+        "source_ids": [
+          "24871267:29232769"
+        ],
+        "source_updated_at": "2026-10-26T23:22:08+01:00"
+      },
+      "started_at": "2026-10-26T23:22:08+01:00"
     }
   ],
   "telegram_cleanup": [
@@ -5418,6 +5501,34 @@
       "delete_after": "2026-10-28T21:53:22+01:00",
       "destination": "forum",
       "message_id": 12706
+    },
+    {
+      "chat_id": "@carreterascortadas_andalucia",
+      "created_at": "2026-10-27T07:22:36+01:00",
+      "delete_after": "2026-10-29T06:22:36+01:00",
+      "destination": "channel",
+      "message_id": 804
+    },
+    {
+      "chat_id": "-1001337700771",
+      "created_at": "2026-10-27T07:22:36+01:00",
+      "delete_after": "2026-10-29T06:22:36+01:00",
+      "destination": "forum",
+      "message_id": 12710
+    },
+    {
+      "chat_id": "@carreterascortadas_andalucia",
+      "created_at": "2026-10-27T07:22:36+01:00",
+      "delete_after": "2026-10-29T06:22:36+01:00",
+      "destination": "channel",
+      "message_id": 805
+    },
+    {
+      "chat_id": "-1001337700771",
+      "created_at": "2026-10-27T07:22:36+01:00",
+      "delete_after": "2026-10-29T06:22:36+01:00",
+      "destination": "forum",
+      "message_id": 12711
     }
   ],
   "telegram_incidents": {
@@ -5498,88 +5609,6 @@
         "source_updated_at": "2026-10-13T10:01:46+02:00"
       },
       "started_at": "2026-10-13T10:00:22+02:00"
-    },
-    "src-07a9ccc9a1b1c1d6f012": {
-      "alerts": [],
-      "destinations": {
-        "channel": {
-          "chat_id": "@carreterascortadas_andalucia",
-          "content_hash": "1f89254d434c6558768d2fa073438f21d0653e2e8f22b1dd4c412a177642f6b8",
-          "message_thread_id": null,
-          "primary_id": 802,
-          "primary_sent_at": "2026-10-26T22:53:22+01:00"
-        },
-        "forum": {
-          "chat_id": "-1001337700771",
-          "content_hash": "1f89254d434c6558768d2fa073438f21d0653e2e8f22b1dd4c412a177642f6b8",
-          "message_thread_id": 1359,
-          "primary_id": 12707,
-          "primary_sent_at": "2026-10-26T22:53:22+01:00"
-        }
-      },
-      "history": [
-        {
-          "at": "2026-10-26T22:02:41+01:00",
-          "description": "Corte comunicado por Obras",
-          "event": "closed"
-        }
-      ],
-      "initial_closure": {
-        "alternative": "",
-        "cause_code": "roadMaintenance",
-        "detail_code": "roadworks",
-        "direction": "increasing",
-        "km_end": "22.4",
-        "km_start": "20",
-        "localities": [
-          "Camas",
-          "Sevilla"
-        ],
-        "province": "Sevilla",
-        "published_at": "2026-10-26T22:02:41+01:00",
-        "reason": "Obras",
-        "record_ids": [
-          "29254144"
-        ],
-        "road": "SE-30",
-        "singularity": "",
-        "situation_ids": [
-          "24891681"
-        ],
-        "source_ids": [
-          "24891681:29254144"
-        ],
-        "source_updated_at": "2026-10-26T22:02:41+01:00"
-      },
-      "key": "src-07a9ccc9a1b1c1d6f012",
-      "latest_closure": {
-        "alternative": "",
-        "cause_code": "roadMaintenance",
-        "detail_code": "roadworks",
-        "direction": "increasing",
-        "km_end": "22.4",
-        "km_start": "20",
-        "localities": [
-          "Camas",
-          "Sevilla"
-        ],
-        "province": "Sevilla",
-        "published_at": "2026-10-26T22:02:41+01:00",
-        "reason": "Obras",
-        "record_ids": [
-          "29254144"
-        ],
-        "road": "SE-30",
-        "singularity": "",
-        "situation_ids": [
-          "24891681"
-        ],
-        "source_ids": [
-          "24891681:29254144"
-        ],
-        "source_updated_at": "2026-10-26T22:02:41+01:00"
-      },
-      "started_at": "2026-10-26T22:02:41+01:00"
     },
     "src-0b30780e163159aa1efd": {
       "alerts": [],
@@ -6090,85 +6119,6 @@
       },
       "started_at": "2026-10-16T07:16:39+02:00"
     },
-    "src-7e9bc0c8d944d31d28f9": {
-      "destinations": {
-        "channel": {
-          "chat_id": "@carreterascortadas_andalucia",
-          "content_hash": "a4bb924aa6272a102af3fab0db8c0051de4c2edea04fe82b89e83a554200c265",
-          "message_thread_id": null,
-          "primary_id": 803,
-          "primary_sent_at": "2026-10-27T02:13:40+01:00"
-        },
-        "forum": {
-          "chat_id": "-1001337700771",
-          "content_hash": "a4bb924aa6272a102af3fab0db8c0051de4c2edea04fe82b89e83a554200c265",
-          "message_thread_id": 1359,
-          "primary_id": 12709,
-          "primary_sent_at": "2026-10-27T02:13:40+01:00"
-        }
-      },
-      "history": [
-        {
-          "at": "2026-10-26T23:22:08+01:00",
-          "description": "Cierre de salida comunicado por Obras",
-          "event": "closed"
-        }
-      ],
-      "initial_closure": {
-        "alternative": "",
-        "cause_code": "roadMaintenance",
-        "detail_code": "roadworks",
-        "direction": "increasing",
-        "km_end": "19",
-        "km_start": "19",
-        "localities": [
-          "Camas"
-        ],
-        "province": "Sevilla",
-        "published_at": "2026-10-26T23:22:08+01:00",
-        "reason": "Obras",
-        "record_ids": [
-          "29232769"
-        ],
-        "road": "SE-30",
-        "singularity": "exit",
-        "situation_ids": [
-          "24871267"
-        ],
-        "source_ids": [
-          "24871267:29232769"
-        ],
-        "source_updated_at": "2026-10-26T23:22:08+01:00"
-      },
-      "key": "src-7e9bc0c8d944d31d28f9",
-      "latest_closure": {
-        "alternative": "",
-        "cause_code": "roadMaintenance",
-        "detail_code": "roadworks",
-        "direction": "increasing",
-        "km_end": "19",
-        "km_start": "19",
-        "localities": [
-          "Camas"
-        ],
-        "province": "Sevilla",
-        "published_at": "2026-10-26T23:22:08+01:00",
-        "reason": "Obras",
-        "record_ids": [
-          "29232769"
-        ],
-        "road": "SE-30",
-        "singularity": "exit",
-        "situation_ids": [
-          "24871267"
-        ],
-        "source_ids": [
-          "24871267:29232769"
-        ],
-        "source_updated_at": "2026-10-26T23:22:08+01:00"
-      },
-      "started_at": "2026-10-26T23:22:08+01:00"
-    },
     "src-94903e029b314b3676f6": {
       "alerts": [],
       "destinations": {
@@ -6514,6 +6464,6 @@
       "started_at": "2026-10-16T10:04:16+02:00"
     }
   },
-  "updated_at": "2026-10-27T02:13:40+01:00",
+  "updated_at": "2026-10-27T07:22:36+01:00",
   "version": 1
 }
