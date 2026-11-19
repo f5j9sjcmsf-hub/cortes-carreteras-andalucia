@@ -9,7 +9,7 @@
       "km_end": "18.5",
       "km_start": "5",
       "last_changed_at": "2026-11-10T11:58:16+01:00",
-      "last_seen_at": "2026-11-19T00:31:08+01:00",
+      "last_seen_at": "2026-11-19T05:31:50+01:00",
       "localities": [
         "La Puebla de los Infantes",
         "Lora del Río"
@@ -41,7 +41,7 @@
       "km_end": "374.1",
       "km_start": "365.4",
       "last_changed_at": "2026-11-17T19:13:33+01:00",
-      "last_seen_at": "2026-11-19T00:31:08+01:00",
+      "last_seen_at": "2026-11-19T05:31:50+01:00",
       "localities": [
         "Gérgal",
         "Tabernas"
@@ -71,7 +71,7 @@
       "km_end": "10",
       "km_start": "10",
       "last_changed_at": "2026-08-27T00:52:31+02:00",
-      "last_seen_at": "2026-11-19T00:31:08+01:00",
+      "last_seen_at": "2026-11-19T05:31:50+01:00",
       "localities": [
         "Ronda"
       ],
@@ -100,7 +100,7 @@
       "km_end": "14.14",
       "km_start": "13.64",
       "last_changed_at": "2026-09-29T19:22:44+02:00",
-      "last_seen_at": "2026-11-19T00:31:08+01:00",
+      "last_seen_at": "2026-11-19T05:31:50+01:00",
       "localities": [
         "Marchena"
       ],
@@ -129,7 +129,7 @@
       "km_end": "375",
       "km_start": "365",
       "last_changed_at": "2026-11-03T18:36:04+01:00",
-      "last_seen_at": "2026-11-19T00:31:08+01:00",
+      "last_seen_at": "2026-11-19T05:31:50+01:00",
       "localities": [
         "El Carpio",
         "Montoro"
@@ -159,7 +159,7 @@
       "km_end": "33.2",
       "km_start": "30",
       "last_changed_at": "2026-08-27T00:52:31+02:00",
-      "last_seen_at": "2026-11-19T00:31:08+01:00",
+      "last_seen_at": "2026-11-19T05:31:50+01:00",
       "localities": [
         "Algodonales"
       ],
@@ -188,7 +188,7 @@
       "km_end": "18",
       "km_start": "9",
       "last_changed_at": "2026-09-28T08:04:05+02:00",
-      "last_seen_at": "2026-11-19T00:31:08+01:00",
+      "last_seen_at": "2026-11-19T05:31:50+01:00",
       "localities": [
         "Arcos de la Frontera",
         "Espera"
@@ -218,7 +218,7 @@
       "km_end": "1.7",
       "km_start": "1",
       "last_changed_at": "2026-11-03T10:52:43+01:00",
-      "last_seen_at": "2026-11-19T00:31:08+01:00",
+      "last_seen_at": "2026-11-19T05:31:50+01:00",
       "localities": [
         "Monachil"
       ],
@@ -249,7 +249,7 @@
       "km_end": "15.7",
       "km_start": "7.8",
       "last_changed_at": "2026-10-15T01:40:10+02:00",
-      "last_seen_at": "2026-11-19T00:31:08+01:00",
+      "last_seen_at": "2026-11-19T05:31:50+01:00",
       "localities": [
         "Cantillana",
         "Villanueva del Río y Minas"
@@ -281,7 +281,7 @@
       "km_end": "8",
       "km_start": "7",
       "last_changed_at": "2026-10-29T18:26:29+01:00",
-      "last_seen_at": "2026-11-19T00:31:08+01:00",
+      "last_seen_at": "2026-11-19T05:31:50+01:00",
       "localities": [
         "Zalamea la Real"
       ],
@@ -312,7 +312,7 @@
       "km_end": "2.5",
       "km_start": "0",
       "last_changed_at": "2026-10-29T12:08:16+01:00",
-      "last_seen_at": "2026-11-19T00:31:08+01:00",
+      "last_seen_at": "2026-11-19T05:31:50+01:00",
       "localities": [
         "Medina Sidonia"
       ],
@@ -343,7 +343,7 @@
       "km_end": "31",
       "km_start": "25",
       "last_changed_at": "2026-08-27T00:52:31+02:00",
-      "last_seen_at": "2026-11-19T00:31:08+01:00",
+      "last_seen_at": "2026-11-19T05:31:50+01:00",
       "localities": [
         "Medina Sidonia"
       ],
@@ -372,7 +372,7 @@
       "km_end": "0.6",
       "km_start": "0",
       "last_changed_at": "2026-08-27T00:52:31+02:00",
-      "last_seen_at": "2026-11-19T00:31:08+01:00",
+      "last_seen_at": "2026-11-19T05:31:50+01:00",
       "localities": [
         "Almedinilla"
       ],
@@ -401,7 +401,7 @@
       "km_end": "12.1",
       "km_start": "0",
       "last_changed_at": "2026-09-15T09:01:07+02:00",
-      "last_seen_at": "2026-11-19T00:31:08+01:00",
+      "last_seen_at": "2026-11-19T05:31:50+01:00",
       "localities": [
         "Écija"
       ],
@@ -423,6 +423,35 @@
       ],
       "source_updated_at": "2026-09-15T08:53:36+02:00"
     },
+    "src-38faa0fbb6ca19b73593": {
+      "alternative": "",
+      "cause_code": "accident",
+      "detail_code": "accident",
+      "direction": "increasing",
+      "first_seen_at": "2026-11-19T05:31:50+01:00",
+      "km_end": "285",
+      "km_start": "285",
+      "last_changed_at": "2026-11-19T05:31:50+01:00",
+      "last_seen_at": "2026-11-19T05:31:50+01:00",
+      "localities": [
+        "Guarromán"
+      ],
+      "province": "Jaén",
+      "published_at": "2026-11-19T03:38:22+01:00",
+      "reason": "Accidente",
+      "record_ids": [
+        "30178039"
+      ],
+      "road": "A-4",
+      "singularity": "",
+      "situation_ids": [
+        "25753255"
+      ],
+      "source_ids": [
+        "25753255:30178039"
+      ],
+      "source_updated_at": "2026-11-19T03:38:22+01:00"
+    },
     "src-4197525dc796d7929e01": {
       "alternative": "",
       "cause_code": "roadMaintenance",
@@ -432,7 +461,7 @@
       "km_end": "30",
       "km_start": "27",
       "last_changed_at": "2026-10-26T12:24:15+01:00",
-      "last_seen_at": "2026-11-19T00:31:08+01:00",
+      "last_seen_at": "2026-11-19T05:31:50+01:00",
       "localities": [
         "Arroyomolinos de León"
       ],
@@ -463,7 +492,7 @@
       "km_end": "2.16",
       "km_start": "0",
       "last_changed_at": "2026-08-27T00:52:31+02:00",
-      "last_seen_at": "2026-11-19T00:31:08+01:00",
+      "last_seen_at": "2026-11-19T05:31:50+01:00",
       "localities": [
         "Sevilla"
       ],
@@ -492,7 +521,7 @@
       "km_end": "0.5",
       "km_start": "0",
       "last_changed_at": "2026-10-30T16:03:49+01:00",
-      "last_seen_at": "2026-11-19T00:31:08+01:00",
+      "last_seen_at": "2026-11-19T05:31:50+01:00",
       "localities": [
         "San Roque"
       ],
@@ -523,7 +552,7 @@
       "km_end": "11",
       "km_start": "2",
       "last_changed_at": "2026-08-27T00:52:31+02:00",
-      "last_seen_at": "2026-11-19T00:31:08+01:00",
+      "last_seen_at": "2026-11-19T05:31:50+01:00",
       "localities": [
         "Carmona"
       ],
@@ -552,7 +581,7 @@
       "km_end": "341.2",
       "km_start": "339.5",
       "last_changed_at": "2026-11-03T18:36:04+01:00",
-      "last_seen_at": "2026-11-19T00:31:08+01:00",
+      "last_seen_at": "2026-11-19T05:31:50+01:00",
       "localities": [
         "Marmolejo"
       ],
@@ -581,7 +610,7 @@
       "km_end": "15",
       "km_start": "8.5",
       "last_changed_at": "2026-11-17T09:51:35+01:00",
-      "last_seen_at": "2026-11-19T00:31:08+01:00",
+      "last_seen_at": "2026-11-19T05:31:50+01:00",
       "localities": [
         "Lantejuela",
         "Osuna"
@@ -613,7 +642,7 @@
       "km_end": "18",
       "km_start": "9.2",
       "last_changed_at": "2026-09-28T08:04:05+02:00",
-      "last_seen_at": "2026-11-19T00:31:08+01:00",
+      "last_seen_at": "2026-11-19T05:31:50+01:00",
       "localities": [
         "Arcos de la Frontera",
         "Espera"
@@ -643,7 +672,7 @@
       "km_end": "33",
       "km_start": "32",
       "last_changed_at": "2026-08-27T00:52:31+02:00",
-      "last_seen_at": "2026-11-19T00:31:08+01:00",
+      "last_seen_at": "2026-11-19T05:31:50+01:00",
       "localities": [
         "Montefrío"
       ],
@@ -672,7 +701,7 @@
       "km_end": "33",
       "km_start": "30",
       "last_changed_at": "2026-11-11T19:34:21+01:00",
-      "last_seen_at": "2026-11-19T00:31:08+01:00",
+      "last_seen_at": "2026-11-19T05:31:50+01:00",
       "localities": [
         "Algodonales"
       ],
@@ -703,7 +732,7 @@
       "km_end": "64",
       "km_start": "61.8",
       "last_changed_at": "2026-08-27T00:52:31+02:00",
-      "last_seen_at": "2026-11-19T00:31:08+01:00",
+      "last_seen_at": "2026-11-19T05:31:50+01:00",
       "localities": [
         "Villacarrillo"
       ],
@@ -732,7 +761,7 @@
       "km_end": "3",
       "km_start": "0",
       "last_changed_at": "2026-08-27T00:52:31+02:00",
-      "last_seen_at": "2026-11-19T00:31:08+01:00",
+      "last_seen_at": "2026-11-19T05:31:50+01:00",
       "localities": [
         "Lucainena de las Torres",
         "Turrillas"
@@ -764,7 +793,7 @@
       "km_end": "2.25",
       "km_start": "1.2",
       "last_changed_at": "2026-08-27T00:52:31+02:00",
-      "last_seen_at": "2026-11-19T00:31:08+01:00",
+      "last_seen_at": "2026-11-19T05:31:50+01:00",
       "localities": [
         "Casares"
       ],
@@ -793,7 +822,7 @@
       "km_end": "16.1",
       "km_start": "14.7",
       "last_changed_at": "2026-10-28T15:23:48+01:00",
-      "last_seen_at": "2026-11-19T00:31:08+01:00",
+      "last_seen_at": "2026-11-19T05:31:50+01:00",
       "localities": [
         "Priego de Córdoba"
       ],
@@ -824,7 +853,7 @@
       "km_end": "392.3",
       "km_start": "390",
       "last_changed_at": "2026-11-13T19:06:02+01:00",
-      "last_seen_at": "2026-11-19T00:31:08+01:00",
+      "last_seen_at": "2026-11-19T05:31:50+01:00",
       "localities": [
         "Pechina",
         "Viator"
@@ -854,7 +883,7 @@
       "km_end": "17",
       "km_start": "13",
       "last_changed_at": "2026-10-28T15:23:48+01:00",
-      "last_seen_at": "2026-11-19T00:31:08+01:00",
+      "last_seen_at": "2026-11-19T05:31:50+01:00",
       "localities": [
         "El Gastor",
         "Grazalema"
@@ -886,7 +915,7 @@
       "km_end": "369.4",
       "km_start": "362.9",
       "last_changed_at": "2026-11-09T21:44:30+01:00",
-      "last_seen_at": "2026-11-19T00:31:08+01:00",
+      "last_seen_at": "2026-11-19T05:31:50+01:00",
       "localities": [
         "Gérgal"
       ],
@@ -915,7 +944,7 @@
       "km_end": "3.1",
       "km_start": "1.4",
       "last_changed_at": "2026-11-19T00:31:08+01:00",
-      "last_seen_at": "2026-11-19T00:31:08+01:00",
+      "last_seen_at": "2026-11-19T05:31:50+01:00",
       "localities": [
         "Mijas"
       ],
@@ -946,7 +975,7 @@
       "km_end": "3.38",
       "km_start": "3.28",
       "last_changed_at": "2026-10-16T13:46:45+02:00",
-      "last_seen_at": "2026-11-19T00:31:08+01:00",
+      "last_seen_at": "2026-11-19T05:31:50+01:00",
       "localities": [
         "Manzanilla"
       ],
@@ -977,7 +1006,7 @@
       "km_end": "348.5",
       "km_start": "347.6",
       "last_changed_at": "2026-11-19T00:31:08+01:00",
-      "last_seen_at": "2026-11-19T00:31:08+01:00",
+      "last_seen_at": "2026-11-19T05:31:50+01:00",
       "localities": [
         "Villa del Río"
       ],
@@ -1006,7 +1035,7 @@
       "km_end": "28.4",
       "km_start": "27.7",
       "last_changed_at": "2026-11-04T10:56:31+01:00",
-      "last_seen_at": "2026-11-19T00:31:08+01:00",
+      "last_seen_at": "2026-11-19T05:31:50+01:00",
       "localities": [
         "La Rambla"
       ],
@@ -1031,7 +1060,7 @@
   },
   "initialized": true,
   "initialized_at": "2026-08-27T00:52:31+02:00",
-  "revision": 4713,
+  "revision": 4714,
   "telegram_archive": [
     {
       "final_summary": "<b>🟢 CORTE FINALIZADO</b>\n\n📍 Granada\n<i>Polopos</i>\n\n<b>GR-6204</b>, Otro motivo: sports meeting\n<i>7,000–13,000</i>\n<i>Creciente</i>\n\n<b>Historial de la incidencia</b>\n• 03/10/2026 · 10:03 h — Corte comunicado por Otro motivo: sports meeting\n• 03/10/2026 · 15:53 h — Carretera reabierta\n\n<i>Duración total: 5 horas y 50 minutos</i>",
@@ -10397,34 +10426,6 @@
   "telegram_cleanup": [
     {
       "chat_id": "@carreterascortadas_andalucia",
-      "created_at": "2026-11-12T02:00:32+01:00",
-      "delete_after": "2026-11-14T01:00:32+01:00",
-      "destination": "channel",
-      "message_id": 920
-    },
-    {
-      "chat_id": "-1001337700771",
-      "created_at": "2026-11-12T02:00:32+01:00",
-      "delete_after": "2026-11-14T01:00:32+01:00",
-      "destination": "forum",
-      "message_id": 13545
-    },
-    {
-      "chat_id": "@carreterascortadas_andalucia",
-      "created_at": "2026-11-12T02:00:32+01:00",
-      "delete_after": "2026-11-14T01:00:32+01:00",
-      "destination": "channel",
-      "message_id": 921
-    },
-    {
-      "chat_id": "-1001337700771",
-      "created_at": "2026-11-12T02:00:32+01:00",
-      "delete_after": "2026-11-14T01:00:32+01:00",
-      "destination": "forum",
-      "message_id": 13546
-    },
-    {
-      "chat_id": "@carreterascortadas_andalucia",
       "created_at": "2026-11-12T23:40:10+01:00",
       "delete_after": "2026-11-14T22:40:10+01:00",
       "destination": "channel",
@@ -11325,6 +11326,85 @@
       },
       "started_at": "2026-10-29T10:36:55+01:00"
     },
+    "src-38faa0fbb6ca19b73593": {
+      "destinations": {
+        "channel": {
+          "chat_id": "@carreterascortadas_andalucia",
+          "content_hash": "1eb9dcce4e2030182d544ec033a0b10901f98c650d00a5c80fc16353e367a027",
+          "message_thread_id": null,
+          "primary_id": 967,
+          "primary_sent_at": "2026-11-19T05:31:50+01:00"
+        },
+        "forum": {
+          "chat_id": "-1001337700771",
+          "content_hash": "1eb9dcce4e2030182d544ec033a0b10901f98c650d00a5c80fc16353e367a027",
+          "message_thread_id": 2397,
+          "primary_id": 13634,
+          "primary_sent_at": "2026-11-19T05:31:50+01:00"
+        }
+      },
+      "history": [
+        {
+          "at": "2026-11-19T03:38:22+01:00",
+          "description": "Corte comunicado por Accidente",
+          "event": "closed"
+        }
+      ],
+      "initial_closure": {
+        "alternative": "",
+        "cause_code": "accident",
+        "detail_code": "accident",
+        "direction": "increasing",
+        "km_end": "285",
+        "km_start": "285",
+        "localities": [
+          "Guarromán"
+        ],
+        "province": "Jaén",
+        "published_at": "2026-11-19T03:38:22+01:00",
+        "reason": "Accidente",
+        "record_ids": [
+          "30178039"
+        ],
+        "road": "A-4",
+        "singularity": "",
+        "situation_ids": [
+          "25753255"
+        ],
+        "source_ids": [
+          "25753255:30178039"
+        ],
+        "source_updated_at": "2026-11-19T03:38:22+01:00"
+      },
+      "key": "src-38faa0fbb6ca19b73593",
+      "latest_closure": {
+        "alternative": "",
+        "cause_code": "accident",
+        "detail_code": "accident",
+        "direction": "increasing",
+        "km_end": "285",
+        "km_start": "285",
+        "localities": [
+          "Guarromán"
+        ],
+        "province": "Jaén",
+        "published_at": "2026-11-19T03:38:22+01:00",
+        "reason": "Accidente",
+        "record_ids": [
+          "30178039"
+        ],
+        "road": "A-4",
+        "singularity": "",
+        "situation_ids": [
+          "25753255"
+        ],
+        "source_ids": [
+          "25753255:30178039"
+        ],
+        "source_updated_at": "2026-11-19T03:38:22+01:00"
+      },
+      "started_at": "2026-11-19T03:38:22+01:00"
+    },
     "src-4197525dc796d7929e01": {
       "alerts": [],
       "destinations": {
@@ -12006,6 +12086,7 @@
       "started_at": "2026-11-09T14:22:12+01:00"
     },
     "src-cafbf0aadabf7b5463b5": {
+      "alerts": [],
       "destinations": {
         "channel": {
           "chat_id": "@carreterascortadas_andalucia",
@@ -12171,6 +12252,7 @@
       "started_at": "2026-10-16T10:04:16+02:00"
     },
     "src-ede369e2ba769e771f5b": {
+      "alerts": [],
       "destinations": {
         "channel": {
           "chat_id": "@carreterascortadas_andalucia",
@@ -12334,6 +12416,6 @@
       "started_at": "2026-11-04T08:20:34+01:00"
     }
   },
-  "updated_at": "2026-11-19T00:31:08+01:00",
+  "updated_at": "2026-11-19T05:31:50+01:00",
   "version": 1
 }
